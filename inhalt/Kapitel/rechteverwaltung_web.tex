@@ -1,0 +1,19 @@
+\chapter{Rechteverwaltung - Web}
+\label{cha:rechteverwaltung_web}
+Die Web Administration stellt die zentrale Kontrolleinheit des gesamten Projekts dar. Über die Web Administration werden sämtliche Einträge der Datenbank verwaltet, dies schließt neben der Benutzer- und Geräteverwaltung ebenfalls die Verwaltung aller Regale und Produkte ein.\\
+Dies sollte selbstverständlich ausschließlich durch autorisierte Personen durchführbar sein.\\
+
+Die folgenden Kapitel befassen sich mit der Identifikation (\acs{AuthN}) und mit der Berechtigungskontrolle (\acs{AuthZ}) eines Benutzers gegenüber dem Webserver.
+
+\section{\acf{AuthN}}
+Dummy dummy dummy
+
+\section{\acf{AuthZ}}
+Im Gegensatz zu den Benutzern der \ac{VR}-Geräte, die mit einer Aufgabe beauftragt werden und somit keine Berechtigungsunterschiede benötigen, gibt es in der Web Administration verschiedenste Benutzern mit unterschiedlichen Berechtigungen im Unternehmen.\\
+Während der Filialleiter sowohl Zugriff auf die Benutzerverwaltung, als auch auf die Regal- und Produktverwaltung haben sollte, so sollte ein Mitarbeiter, der für die Warenannahme und -einräumung beauftragt wurde, keinen Zugriff auf die Benutzerverwaltung haben.\\
+Vor Allem durch die Benutzerverwaltung ist hier ebenfalls auf rechtliche Bestimmungen zu achten. § 3a Satz 2 \acs{BDSG}\footnote{\acf{BDSG}}:
+\begin{quote}
+	\glqq \textit{Die Erhebung, Verarbeitung und Nutzung personenbezogener Daten und die Auswahl und Gestaltung von Datenverarbeitungssystemen sind an dem Ziel auszurichten, so wenig personenbezogene Daten wie möglich zu erheben, zu verarbeiten oder zu nutzen. Insbesondere sind personenbezogene Daten zu anonymisieren oder zu pseudonymisieren, soweit dies nach dem Verwendungszweck möglich ist und keinen im Verhältnis zu dem angestrebten Schutzzweck unverhältnismäßigen Aufwand erfordert.}\grqq
+\end{quote}
+sagt aus, dass auch die Nutzung von personenbezogenen Daten, wie sie in der Benutzerverwaltung abgespeichert werden müssen, so weit wie möglich reduziert werden soll. Ein Mitarbeiter, der nicht im Personalmanagement angestellt ist oder mit Aufgaben der Benutzerverwaltung beauftragt ist, sollte somit auch keinen Zugriff auf personenbezogene Daten haben. Im Zweifelsfall wäre dieser Benutzer eventuell sogar unberechtigt diese Daten einzusehen.\\
+

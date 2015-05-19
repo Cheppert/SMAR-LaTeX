@@ -1,0 +1,13 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+	\item [{ABAP}]\begingroup Advanced Business Application Programming\nomeqref {0.0}\nompageref{1}
+	\item [{DHBW}]\begingroup Duale Hochschule Baden-Württemberg\nomeqref {0.0}\nompageref{1}
+	\item [{GDV}]\begingroup Gesamtverband der Deutschen Versicherungswirtschaft\nomeqref {0.0}\nompageref{1}
+	\item [{HIS}]\begingroup Hinweis und Informationssystem\nomeqref {0.0}\nompageref{1}
+	\item [{IIRFP}]\begingroup informa Insurance Risk and Fraud Prevention GmbH\nomeqref {0.0}\nompageref{1}
+	\item [{Sem}]\begingroup Semester\nomeqref {0.0}\nompageref{1}
+	\item [{VU}]\begingroup Versicherungsunternehmen\nomeqref {0.0}\nompageref{1}
+
+\end{thenomenclature}

@@ -1,0 +1,2 @@
+%%% jurabib url repository
+\expandafter\urldef\csname jburl@cas\endcsname\url{http://www.childrensaidsociety.org/about}

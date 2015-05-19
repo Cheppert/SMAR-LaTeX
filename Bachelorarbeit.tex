@@ -1,0 +1,218 @@
+% Präambel
+\documentclass[12pt,a4paper,oneside, 
+liststotoc, 					% Tabellen- und Abbildungsverzeichnis ins Inhaltsverzeichnis
+bibtotoc,						% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+titlepage, 						% Titlepage-Umgebung statt \maketitle
+headsepline, 					% horizontale Linie unter Kolumnentitel
+%abstracton,					% Überschrift beim Abstract einschalten, Abstract muss dazu in {abstract}-Umgebung stehen
+%DIV11,							% auskommentieren, um den Seitenspiegel zu vergrößern
+BCOR10mm,						% Bindekorrektur, die den Seitenspiegel um 15mm nach rechts verschiebt,
+]{scrreprt}			
+\usepackage{ucs} 				% Dokument in utf8-Codierung schreiben und speichern
+\usepackage[utf8x]{inputenc} 	% ermöglicht die direkte Eingabe von Umlauten
+\usepackage[english, ngerman]{babel} 	% deutsche Trennungsregeln und Übersetzung der festcodierten Überschriften
+\usepackage[T1]{fontenc} 		% Ausgabe aller zeichen in einer T1-Codierung (wichtig für die Ausgabe von Umlauten!)
+\usepackage{graphicx}  			% Einbinden von Grafiken erlauben
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{mathpazo} 			% Einstellung der verwendeten Schriftarten
+\usepackage{textcomp} 			% zum Einsatz von Eurozeichen u. a. Symbolen
+\usepackage{listings}			% Datstellung von Quellcode mit den Umgebungen {lstlisting}, \lstinline und\lstinputlisting
+\usepackage{xcolor} 			% einfache Verwendung von Farben in nahezu allen Farbmodellen
+%\usepackage[intoc]{nomencl} 	% zur Erstellung des Abkürzungsberzeichnisses
+\usepackage{fancyhdr}			% Zusatzpaket zur Gestaltung von Fuß und Kopfzeilen
+\usepackage{jurabib}			% Paket für das Literaturverzeichniss
+\usepackage{bibgerm}			% Deutsche Zitierweise
+\usepackage[printonlyused]{acronym}
+\usepackage{hyperref} 
+\usepackage{float}
+\usepackage{setspace}
+
+
+%Zeilenumbrüche in URLs (besonders im Literaturverzeichnis)
+\let\oldurlbraks=\UrlBreaks
+\renewcommand{\UrlBreaks}{\oldurlbraks\do\a\do\b\do\c\do\d\do\e\do\f\do\g%
+                           \do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p%
+                           \do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x%
+                           \do\y\do\z\do\?\do\&} 
+
+
+% -----------------------------------------------------------------------------------------------------------------
+% Zum Aktualisieren des Abkürzungsverzeichnisses bitte auf der Kommandozeile folgenden Befehl aufrufen :
+%  makeindex Bachelorarbeit.nlo -s nomencl.ist -o Bachelorarbeit.nls
+% -----------------------------------------------------------------------------------------------------------------
+
+% Hier die persönlichen Daten eingeben:
+
+\newcommand{\titel}{Optimierung des Shelf-Managements}
+\newcommand{\titelzwei}{Shelf Management Augmented Reality}
+\newcommand{\untertitel}{mit Hilfe von Augmented Reality auf Wearable-Computern}
+\newcommand{\arbeit}{Große Studienarbeit}
+\newcommand{\studiengang}{Angewandte Informatik Business Competence}
+\newcommand{\autor}{Stephan Giesau, Sebastian Kowalski, Raffael Wojtas}
+\newcommand{\matrikelnr}{5890600, 6664480, 7998056}
+\newcommand{\kurs}{TINF12AI-BC}
+\newcommand{\firma}{FIRMA?!}
+\newcommand{\zeitraum}{12.05.2014 - 31.05.2015}
+\newcommand{\betreuerdhbw}{Prof. Dr. Christian Buergy}
+\newcommand{\betreuerfirma}{Max Mustermann}
+\newcommand{\location}{Walldorf}
+
+\newcommand{\jahr}{2015}			% für Angabe im Copyright-Vermerk der Titelseite
+
+% Abkürzungen
+\newcommand{\ua}{\mbox{u.\,a.\ }}
+\newcommand{\zB}{\mbox{z.\,B.\ }}
+\newcommand{\bs}{$\backslash$}
+\newcommand{\bzw}{bzw. }
+
+%\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\renewcommand{\baselinestretch}{1.5}
+
+% -------------------------------------------------------------------------------------------
+%                      Definition der Kopf- und Fußzeilen -------------------------------------------------------------------------------------------
+\lhead{}								% Kopf links
+\chead{}								% Kopf mitte
+\rhead{\sffamily{\titelzwei}}				% Kopf rechts
+\lfoot{}								% Fuß links
+\cfoot{\sffamily{\thepage}}				% Fuß mitte
+\rfoot{\sffamily{\autor}}				% Fuß rechts
+\renewcommand{\headrulewidth}{0.4pt}	% Liniendicke Kopf
+\renewcommand{\footrulewidth}{0.4pt}	% Liniendicke Fuß
+
+
+%\makenomenclature							% Abkürzungsverzeichnis erstellen
+%\input{Inhalt/abkuerzungen}					% Datei mit Abkürzungen laden
+% -------------------------------------------------------------------------------------------
+%                     Setup Literaturverzeichnis & Zitate -------------------------------------------------------------------------------------------
+
+%\jurabibsetup{
+%    commabeforerest,
+%    ibidem=strict,
+%    citefull=first,            %zitiert nur das erste Auftreten voll
+%    see,
+%    human,                    %Einstellungen für Geisteswissenschaftler   
+%    titleformat={colonsep,all},
+%}
+
+\renewcommand{\bibnumberformat}[1]{[#1]}
+\jurabibsetup{bibformat={numbered}}
+
+
+\title=%5Crenewcommand">renewcommand*{\bibbtsep}{In: }
+\title=%5Crenewcommand">renewcommand*{\bibjtsep}{In: }
+\title=%5Crenewcommand">renewcommand*{\bibtfont}{\textit} 
+\title=%5Crenewcommand">renewcommand*{\bibbtfont}{\textit}
+
+
+
+% -------------------------------------------------------------------------------------------
+%                     Beginn des Dokumenteninhalts -------------------------------------------------------------------------------------------
+\begin{document}
+\setcounter{secnumdepth}{3}					% Nummerierungstiefe fürs Inhaltsverzeichnis
+\setcounter{tocdepth}{3}
+%\setkomafont{sectioning}{\rmfamily} 
+\sffamily									% für die Titelei serifenlose Schrift verwenden
+\setlength{\parindent}{0pt}					% Einrückungen ausschalten
+
+% -------------------------------------------------------------------------------------------
+%                      Titelei -------------------------------------------------------------------------------------------
+\setlength{\voffset}{-1cm}
+\begin{spacing}{1}
+	\include{Inhalt/titelseite} 				% erzeugt die Titelseite
+\end{spacing}
+\setlength{\voffset}{0cm}
+\pagenumbering{Roman}						% große, römische Seitenzahlen für Titelei
+% \include{Inhalt/sperrvermerk}
+\include{Inhalt/erklaerung} 				% Einbinden der eidestattlichen Erklärung
+\include{Inhalt/abstract}   				% Einbinden des Abstracts
+% \include{Inhalt/formular_aufgabenstellung}	% Einbinden des Formulars der Aufgabenstellung
+
+\tableofcontents							% Erzeugen des Inhalsverzeichnisses
+%\printnomenclature[2.0cm]					% Erzeugen des Abkürzungsverzeichnisses
+\newpage
+\input{Inhalt/acronym}
+\addcontentsline{toc}{chapter}{Acronym}
+\newpage
+\listoffigures 								% Erzeugen des Abbildungsverzeichnisses 
+%\lstlistoflistings 							% Erzeugen des Quellcodeverzeichniss
+\pagebreak
+
+
+
+% ------------------------------------------------------------------------------------------- 
+%                      Listings -------------------------------------------------------------------------------------------
+\makeatletter
+\renewcommand*{\lstlistoflistings}{%
+  \begingroup
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \lol@heading
+    \setlength{\parskip}{\z@}%
+    \setlength{\parindent}{\z@}%
+    \setlength{\parfillskip}{\z@ \@plus 1fil}%
+    \@starttoc{lol}%
+    \if@restonecol\twocolumn\fi
+  \endgroup
+}
+\makeatother
+
+%Settings ABAP
+\lstset{language=[R/3 6.10]ABAP}		
+\lstset{morecomment=[f][commentstyle][0]*}
+\lstset{captionpos=b}
+\lstset{numbers=left}
+\lstset{numberstyle=\small}
+\lstset{numbersep=10pt}
+\lstset{keywordstyle=\bfseries\color{violet}}
+\lstset{commentstyle=\color{red}}
+\lstset{stringstyle=\itshape\color{darkgray}}
+\lstset{showstringspaces=false} 
+\lstset{frame=single}
+\lstset{framexleftmargin=8mm}
+\lstset{breaklines=true}
+\lstset{lineskip={-4.0pt}}
+% ----------------------------------------------------------------------------------------------
+%                    Inhalt der Bachelorarbeit
+%---------------------------------------------------------------------------------------------
+\pagenumbering{arabic}						% arabische Seitenzahlen für den Hauptteil
+\pagestyle{fancy}					
+\rmfamily
+
+\include{Inhalt/Kapitel/bedarfsanalyse}
+% \include{Inhalt/Kapitel/kapitel01}
+% \include{Inhalt/Kapitel/kapitel02}
+% \include{Inhalt/Kapitel/kapitel03}
+% \include{Inhalt/Kapitel/kapitel04}
+\include{Inhalt/Kapitel/architektur}
+\include{Inhalt/Kapitel/jwt}
+\include{Inhalt/Kapitel/rechteverwaltung_web}
+\include{Inhalt/Kapitel/authentifizierung}
+\include{Inhalt/Kapitel/zusammenfassung}	
+
+
+% --------------------------------------------------------------------------------------------- 
+%                    Literaturverzeichnis ---------------------------------------------------------------------------------------------
+
+% Anhang
+\clearpage
+\pagenumbering{roman}
+
+
+\bibliography{Inhalt/bib}
+\bibliographystyle{jurabib}
+% ---------------------------------------------------------------------------------------------
+%                    Anhang ---------------------------------------------------------------------------------------------
+
+\begin{appendix}
+\clearpage
+\pagenumbering{Roman}						% römische Seitenzahlen für Anhang
+\include{Inhalt/anhang}
+\end{appendix}
+
+
+\end{document}

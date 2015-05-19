@@ -1,0 +1,51 @@
+%
+% This bibliography was produced by using jurabib.bst
+%
+\begin{thebibliography}{}
+
+\backrefparscanfalse
+\bibitem[{Berg\jbbtasep Silvia\jbdy {2013}}%
+         {}%
+         {{0}{}{book}{2013}{}{}{}{}%
+          {Galileo PRESS\bibbdsep {} 2013}}%
+         {{Einführung in SAP HANA}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{einfuehung_sap_hana}
+ \jbbibargs {\bibnf {Berg} {Bjarne} {B.} {} {}\Bibbtasep \bibnf {Silvia}
+  {Penny} {P.} {} {}} {Bjarne BergPenny Silvia} {aus} {sexless} {\bibtfont
+  {Einführung in SAP HANA}\bibatsep {}  \apyformat {\jbpublisher{Galileo
+  PRESS\bibbdsep {}} 2013}} {\bibhowcited} \jbdoitem {{Berg}{Bjarne}{B.}{}{};
+  {Silvia}{Penny}{P.}{}{}} {} {} \bibAnnoteFile {einfuehung_sap_hana}
+
+\backrefparscanfalse
+\bibitem[{CAS(a)}%
+         {}%
+         {{0}{}{}{}{}{}{}{}%
+          {}}%
+         {{The Children's Aid Society - Overview}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{cas}
+ \jburldef {cas}{http://www.childrensaidsociety.org/about}%
+ \jbbibargs {\bibnf {CAS(a)} {} {} {} {}} { CAS(a)} {au} {sexless} {\bibtfont
+  {The Children's Aid Society - Overview}\bibatsep {}  \jburluse
+  {cas}\bibbudcsep {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {{CAS(a)}{}{}{}{}} {} {} \bibAnnoteFile {cas}
+
+\backrefparscanfalse
+\bibitem[{Steyer\jbbtasep Softic\jbdy {2015}}%
+         {}%
+         {{0}{}{book}{2015}{}{}{}{}%
+          {Köln\bpubaddr {} O'Reilly Germany\bibbdsep {} 2015}}%
+         {{Angular JS: Moderne Webanwendungen und Single Page Applications mit
+  JavaScript -}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{book_jwt}
+ \jbbibargs {\bibnf {Steyer} {Manfred} {M.} {} {}\Bibbtasep \bibnf {Softic}
+  {Vildan} {V.} {} {}} {Manfred SteyerVildan Softic} {aus} {sexless} {\bibtfont
+  {Angular JS: Moderne Webanwendungen und Single Page Applications mit
+  JavaScript -}\bibatsep {}  \apyformat {Köln\jbpublisher{\bpubaddr {}
+  O'Reilly Germany}\bibbdsep {} 2015}\jbisbn {978--3--955--61951--0}}
+  {\bibhowcited} \jbdoitem {{Steyer}{Manfred}{M.}{}{};
+  {Softic}{Vildan}{V.}{}{}} {} {} \bibAnnoteFile {book_jwt}
+
+\end{thebibliography}
