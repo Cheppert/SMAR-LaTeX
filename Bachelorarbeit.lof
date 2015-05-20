@@ -9,7 +9,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{25}{figure.4.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {JWT}-Header}}{31}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Generierung eines \acs {JWT}}}{30}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{31}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \acs {JWT}-Header}}{31}{figure.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{39}{figure.8.1}

@@ -1,8 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.18)  20 MAY 2015 21:46
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.16)  20 MAY 2015 23:41
 entering extended mode
 **Bachelorarbeit.tex
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -394,8 +395,8 @@ LaTeX Info: Redefining \jbarchnameformat on input line 1257.
 LaTeX Info: Redefining \jbapifont on input line 1529.
 \jb@urlfile=\write3
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.url
-)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.url)
 \jb@tempfile=\read1
 \c@jbbibcnt=\count105
 \c@jbbibcnta=\count106
@@ -595,40 +596,40 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
-
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
-x)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/anf
-orderungsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur0.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.aux
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.aux
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/titels
+eite.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/erklae
+rung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/abstra
+ct.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/bedarfsanalyse.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/anforderungsanalyse.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur0.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur.aux
 
 LaTeX Warning: Label `cha:architektur' multiply defined.
 
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_device.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
-)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/jwt.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_web.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/rechteverwaltung_web.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_device.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/authentifizierung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/zusammenfassung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/anhang
+.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
@@ -697,18 +698,18 @@ LaTeX Info: Redefining \ref on input line 112.
 LaTeX Info: Redefining \pageref on input line 112.
 LaTeX Info: Redefining \nameref on input line 112.
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
-)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
-)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.out)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 116.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-tex <Bilder/logo_dhbw_ma.jpg, id=215, 133.2177pt x 66.2475pt>
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/titels
+eite.tex <Bilder/logo_dhbw_ma.jpg, id=215, 133.2177pt x 66.2475pt>
 File: Bilder/logo_dhbw_ma.jpg Graphic file (type jpg)
 
 <use Bilder/logo_dhbw_ma.jpg>
@@ -733,10 +734,10 @@ File: uni-0.def 2012/08/28 UCS: Unicode data U+0000..U+00FF
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/IBM_ADMIN/Docume
-nts/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/logo_dhbw_ma.jpg>])
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-tex
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Sebastian/Docume
+nts/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/logo_dhbw_ma.jpg>])
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/erklae
+rung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
@@ -755,14 +756,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.te
-x) [2
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/abstra
+ct.tex) [2
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.toc
-[3
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.toc [3
 
 
 ]
@@ -790,10 +791,10 @@ although it is yet undefined on input line 40.
 [4])
 \tf@toc=\write6
  [5]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/acronym.tex
-) [6]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.lof
-)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/acrony
+m.tex) [6]
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.lof)
 \tf@lof=\write7
  [7
 
@@ -824,8 +825,8 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/bedarfsanalyse.tex
 Kapitel 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -863,8 +864,8 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 52.
 )
 [6]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/anf
-orderungsanalyse.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/anforderungsanalyse.tex
 Kapitel 2.
 [7
 
@@ -883,8 +884,8 @@ an-ce der Smartglass.
  []
 
 ) [12]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur0.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur0.tex
 Kapitel 3.
 
 Overfull \hbox (17.68338pt too wide) in paragraph at lines 3--4
@@ -902,7 +903,7 @@ Overfull \hbox (35.81493pt too wide) in paragraph at lines 24--25
 l-le zwi-schen Smartglass
  []
 
-<Bilder/komponentendarstellung.png, id=421, 701.62125pt x 532.99126pt>
+<Bilder/komponentendarstellung.png, id=428, 701.62125pt x 532.99126pt>
 File: Bilder/komponentendarstellung.png Graphic file (type png)
 
 <use Bilder/komponentendarstellung.png>
@@ -915,8 +916,8 @@ re.3.1}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.55 \begin{itemize}
-                     <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaT
-eX/Bilder/komponentendarstellung.png>] [17]
+                     <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMA
+R-LaTeX/Bilder/komponentendarstellung.png>] [17]
 Underfull \hbox (badness 10000) in paragraph at lines 80--82
 
  []
@@ -934,8 +935,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--87
 LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <12> not available
 (Font)              Font shape `T1/ppl/b/it' tried instead on input line 94.
 ) [19]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur.tex
 Kapitel 4.
 Package acronym Info: Label `acro:WLAN' newly defined as it shall be overridden
 
@@ -945,7 +946,7 @@ although it is yet undefined on input line 22.
 
 
 ]
-<Bilder/Abbildungen/architektur_serverclient.png, id=458, 701.62125pt x 532.991
+<Bilder/Abbildungen/architektur_serverclient.png, id=465, 701.62125pt x 532.991
 26pt>
 File: Bilder/Abbildungen/architektur_serverclient.png Graphic file (type png)
  <use Bilder/Abbildungen/architektur_serverclient.png>
@@ -958,15 +959,15 @@ re.4.1}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.38 
-      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
-dungen/architektur_serverclient.png>]
+      <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/
+Abbildungen/architektur_serverclient.png>]
 Package acronym Info: Label `acro:DBMS' newly defined as it shall be overridden
 
 although it is yet undefined on input line 42.
 Package acronym Info: Label `acro:SQL' newly defined as it shall be overridden
 although it is yet undefined on input line 42.
  [23] [24]
-<Bilder/Abbildungen/architektur_datenbankschema.png, id=487, 1050.92625pt x 652
+<Bilder/Abbildungen/architektur_datenbankschema.png, id=494, 1050.92625pt x 652
 .68843pt>
 File: Bilder/Abbildungen/architektur_datenbankschema.png Graphic file (type png
 )
@@ -990,8 +991,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.71 
-      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
-dungen/architektur_datenbankschema.png>]
+      <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/
+Abbildungen/architektur_datenbankschema.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
@@ -1038,8 +1039,8 @@ Kapitel 5.
 ) [29
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/jwt.tex
 Kapitel 6.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 5.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
@@ -1049,70 +1050,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
+<Bilder/jwt_encode.png, id=525, 314.3745pt x 84.91725pt>
+File: Bilder/jwt_encode.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
+<use Bilder/jwt_encode.png>
+Package pdftex.def Info: Bilder/jwt_encode.png used on input line 10.
+(pdftex.def)             Requested size: 314.37372pt x 84.91704pt.
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
-although it is yet undefined on input line 10.
+although it is yet undefined on input line 15.
 
-Overfull \hbox (5.4312pt too wide) in paragraph at lines 10--11
-[]\T1/ppl/m/n/12 Abbildung TO-DO: RE-FE-RENZ zeigt die Ge-ne-rie-rung ei-nes []
-[]. $to-ken be-schreibt
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Overfull \hbox (5.59946pt too wide) in paragraph at lines 17--18
-[]\T1/ppl/m/n/12 JSON-Objekt be-ste-hend aus ver-schie-de-nen Name/Wert-Paaren 
-(Claims-Set),
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
  []
 
 [30
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-<Bilder/jwt_header.jpg, id=538, 96.36pt x 82.80937pt>
-File: Bilder/jwt_header.jpg Graphic file (type jpg)
-
-<use Bilder/jwt_header.jpg>
-Package pdftex.def Info: Bilder/jwt_header.jpg used on input line 29.
-(pdftex.def)             Requested size: 96.35974pt x 82.80916pt.
-Package acronym Info: Label `acro:SMAR' newly defined as it shall be overridden
-
-although it is yet undefined on input line 33.
-
-Overfull \hbox (35.23938pt too wide) in paragraph at lines 33--35
-[]\T1/ppl/m/n/12 Der Hea-der be-schreibt den Typ (JWT) und den ver-wen-de-ten A
-l-go-rith-mus (älg":"HS256")
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-
- []
-
-) [31pdfTeX warning (ext4): destination with the same identifier (name{figure.6
-.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.195 \include{Inhalt/Kapitel/jwt}
-                                   <C:/Users/IBM_ADMIN/Documents/Studienarbeit_
-LaTeX/SMAR-LaTeX/Bilder/jwt_header.jpg>] [32]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_web.tex
+l.18 
+      <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/
+jwt_encode.png>] <Bilder/jwt_decode.png, id=541, 392.06474pt x 16.26076pt>
+File: Bilder/jwt_decode.png Graphic file (type png)
+
+<use Bilder/jwt_decode.png>
+Package pdftex.def Info: Bilder/jwt_decode.png used on input line 21.
+(pdftex.def)             Requested size: 392.06378pt x 16.26071pt.
+
+Overfull \hbox (5.59946pt too wide) in paragraph at lines 29--30
+[]\T1/ppl/m/n/12 JSON-Objekt be-ste-hend aus ver-schie-de-nen Name/Wert-Paaren 
+(Claims-Set),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+<Bilder/jwt_header.jpg, id=550, 96.36pt x 82.80937pt>
+File: Bilder/jwt_header.jpg Graphic file (type jpg)
+
+<use Bilder/jwt_header.jpg>
+Package pdftex.def Info: Bilder/jwt_header.jpg used on input line 41.
+(pdftex.def)             Requested size: 96.35974pt x 82.80916pt.
+Package acronym Info: Label `acro:SMAR' newly defined as it shall be overridden
+
+although it is yet undefined on input line 45.
+
+Overfull \hbox (41.97136pt too wide) in paragraph at lines 45--47
+[]\T1/ppl/m/n/12 Der Hea-der be-schreibt den Typ (JWT) und den ver-wen-de-ten A
+l-go-rith-mus  ("alg":"HS256")
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 
+      <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/
+jwt_decode.png> <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaT
+eX/Bilder/jwt_header.jpg>]) [32]
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_web.tex
 Kapitel 7.
 
 LaTeX Warning: Reference `cha:intro' on page 33 undefined on input line 7.
@@ -1137,8 +1158,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
 
 ] [34]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/rechteverwaltung_web.tex
 Kapitel 8.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
@@ -1178,12 +1199,6 @@ Package acronym Info: Label `acro:VR' newly defined as it shall be overridden
 although it is yet undefined on input line 40.
 Package acronym Info: Label `acro:AR' newly defined as it shall be overridden
 although it is yet undefined on input line 40.
-
-Package acronym Warning: Acronym `AR' is not defined on input line 40.
-
-
-Package acronym Warning: Acronym `AR' is not defined on input line 40.
-
 Package acronym Info: Label `acro:BDSG' newly defined as it shall be overridden
 
 although it is yet undefined on input line 42.
@@ -1197,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[38] <Bilder/role_web.jpg, id=618, 842.39719pt x 337.26pt>
+[38] <Bilder/role_web.jpg, id=638, 842.39719pt x 337.26pt>
 File: Bilder/role_web.jpg Graphic file (type jpg)
 
 <use Bilder/role_web.jpg>
@@ -1207,9 +1222,6 @@ Package pdftex.def Info: Bilder/role_web.jpg used on input line 63.
 Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
-
-
-Package acronym Warning: Acronym `AR' is not defined on input line 69.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 69--70
@@ -1222,15 +1234,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--70
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.70 
-      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/role_
-web.jpg>] [40])
+      <C:/Users/Sebastian/Documents/DHBW-Stuff/Studienarbeit/SMAR-LaTeX/Bilder/
+role_web.jpg>] [40])
 Underfull \hbox (badness 10000) in paragraph at lines 71--197
 
  []
 
 [41]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_device.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_device.tex
 Kapitel 9.
 
 LaTeX Warning: Reference `cha:intro' on page 42 undefined on input line 7.
@@ -1255,8 +1267,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
 
 ] [43]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/authentifizierung.tex
 Kapitel 10.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
@@ -1359,8 +1371,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
  []
 
 ) [50]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/zusammenfassung.tex
 Kapitel 11.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1399,13 +1411,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.11.1})
                                                   \fi \fi 
 l.200 \include{Inhalt/Kapitel/zusammenfassung}
                                               ] [52]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.bbl
-) [1
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.bbl) [1
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.tex
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/anhang
+.tex
 Anhang A.
 )pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
  been already used, duplicate ignored
@@ -1420,36 +1433,36 @@ l.219 \include{Inhalt/anhang}
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
-
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
-x)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/anf
-orderungsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur0.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/imp
-lementierung_device.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
-)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Bachelorarbei
+t.aux
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/titels
+eite.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/erklae
+rung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/abstra
+ct.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/bedarfsanalyse.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/anforderungsanalyse.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur0.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/architektur.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/jwt.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_web.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/rechteverwaltung_web.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/implementierung_device.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/authentifizierung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/Kapite
+l/zusammenfassung.aux)
+(C:\Users\Sebastian\Documents\DHBW-Stuff\Studienarbeit\SMAR-LaTeX\Inhalt/anhang
+.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
@@ -1467,10 +1480,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
  ) 
 Here is how much of TeX's memory you used:
- 13675 strings out of 493921
- 209411 string characters out of 3147270
- 351083 words of memory out of 3000000
- 16449 multiletter control sequences out of 15000+200000
+ 13689 strings out of 493921
+ 210221 string characters out of 3147270
+ 351216 words of memory out of 3000000
+ 16458 multiletter control sequences out of 15000+200000
  37240 words of font info for 76 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  44i,12n,67p,2224b,805s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1520,9 +1533,9 @@ iKTeX 2.9/fonts/type1/public/cm-super/sftt1200.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Bachelorarbeit.pdf (62 pages, 709966 bytes).
+Output written on Bachelorarbeit.pdf (62 pages, 720537 bytes).
 PDF statistics:
- 825 PDF objects out of 1000 (max. 8388607)
- 182 named destinations out of 1000 (max. 500000)
- 455 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 846 PDF objects out of 1000 (max. 8388607)
+ 185 named destinations out of 1000 (max. 500000)
+ 465 words of extra memory for PDF output out of 10000 (max. 10000000)
 
