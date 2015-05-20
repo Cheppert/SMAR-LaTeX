@@ -1,0 +1,77 @@
+\chapter{Anforderungsanalyse}
+\label{annforderungnsanalyse}
+Nachdem die Ziele der Arbeit definiert und sich für Wearable Computing, genau eine Smartglass, als technische Umsetzung entschieden wurde, kann nun die Softwareentwicklung beginnen. Dabei gilt [LAUT QUELLE KLEUCKER] die Anforderungsanalyse als systematischer Einstieg. Deshalb werden in diesem Abschnitt die Anforderungen an das gesamte Softwareprojekt gestellt. Dazu werden anfangs die funktionalen Anforderungen, welche anhand der Arbeitsprozesse aufgeteilt werden, und anschließend die nicht funktionalen Anforderungen erläutert.\\
+Hinweis: In diesem Abschnitt werden die Anforderungen hergeleitet und erläutert, allerdings nicht bis ins kleinste Detail analysiert und auch nicht alle Anforderungen vorgestellt. Eine vollständige Liste aller Anforderungen ist dem Anhang zu entnehmen.
+
+\section{Ware einräumen}
+Zu Beginn stellt sich die grundsätzliche Frage, wie die Smartglass dem Mitarbeiter überhaupt konkret helfen kann, Ware in das richtige Regal einzuräumen. Die Idee der Nutzung der Smartglass ist es, dass der Mitarbeiter dauerhaft ein Display bei der Arbeit mit sich trägt. So kann dem Mitarbeiter angezeigt werden, wo ein entsprechendes Produkt eingelagert werden soll. Dies geschieht indem, der Mitarbeiter das jeweilige Produkt digital erfasst und anschließend die Smartglass den Lagerort auf dem Display anzeigt bzw. ihn sogar dorthin führt. Dazu muss es eine Möglichkeit geben das Produkt zu erfassen. 
+
+\begin{itemize}
+	\item Anforderung B10: Es gibt eine Möglichkeit, ein einen Produktcode digital zu erfassen. \label{anforderung_b10}
+\end{itemize}
+Nachdem die Smartglass die Möglichkeit hat, ein Produkt digital zu erfassen, muss eine Zuordnung zwischen dem Code und dem Produkt geschehen. Als Anforderung ergibt sich eine Mappingfunktion zwischen eingescanntem Code und Produkt. 
+
+\begin{itemize}
+	\item Anforderung B20: Es gibt eine Möglichkeit, mithilfe des eingescannten Codes ein Produkt zu identifizieren. \label{anforderung_b20}
+\end{itemize}
+
+Damit auf dem Display nun der entsprechende Regalplatz angezeigt werden kann, muss die Smartglass
+eine Möglichkeit haben zu wissen bzw. zu erfahren, wo dieses Produkt einzuräumen ist. 
+\\
+Grundlegend dafür ist eine Karte von einem Regal mit hinterlegten Informationen zu den entsprechenden Produkten. Diese Karte muss offensichtlich erstellt, bearbeitet und gelöscht werden können. Zusätzlich muss die Karte von der Brille erreichbar sein, sodass eine Zusammenarbeit möglich ist. Daraus ergeben sich folgende Anforderungen:
+
+\begin{itemize}
+	\item Anforderung A10: Es gibt eine Möglichkeit Produkte zu administrieren.\label{anforderung_a10}
+	\item Anforderung A20: Es gibt eine Möglichkeit einzelne und mehrere Regale zu administrieren. \label{anforderung_a20}
+	\item Anforderung A30: Es gibt eine Möglichkeit innerhalb der Regale verschiedene Regalplätze zu definieren und diesen einzelne Produkte zuzuordnen. \label{anforderung_a30}
+\end{itemize}
+
+Nachdem es eine Karte mit Produktinformationen und eine Produktidentifikation gefordert wurde, ist es nötig zwischen diesen beiden ein Mapping durchzuführen und anschließend dem Mitarbeiter bzw. dem Nutzer der Brille ein Bild anzuzeigen, dass den Mitarbeiter zum entsprechenden Platz des Regal führt. Das führt zu folgenden Anforderungen:
+
+\begin{itemize}
+	\item Anforderung B40: Es gibt eine Möglichkeit, eine Zuordnung zwischen dem Produkt und dem Regalplatz durchzuführen. \label{anforderung_b40}
+	\item Anforderung B40.1: Es gibt eine Möglichkeit, aus der Zuordnung zwischen Produkt und dem Regalplatz eine visuelle Darstellung zu erzeugen und diese dem Nutzer anzuzeigen.\label{anforderung_b40_1}
+\end{itemize}
+
+Eine weitere wichtige Hilfe für den Mitarbeiter ist das Anzeigen, \textbf{wann} ein Produkt eingeräumt werden muss. Das schon oben beschriebene Problem ist, dass der Mitarbeiter einen Fehlstand erkennen muss, um dann einzugreifen. Selbst dabei sollte der Mitarbeiter unterstützt werden, indem ihm angezeigt wird,  dass ein Produkt nachgeräumt werden sollte. 
+Dazu ist es erforderlich, dass die Smartglass den Füllstand der Ware auf der Verkaufsfläche und im Lager kennt und diese auch aktualisiert wird. Deshalb muss verfolgt werden, wie viel Ware überhaupt vorhanden ist. Zusätzlich ist eine Trennung zwischen der Ware im Verkaufsraum und im Lager notwendig, und bei entsprechendem Umräumen auch eine Neuverteilung der Informationen. Die daraus resultierenden Anforderungen sind: 
+\begin{itemize}
+	\item Anforderung S10: Es gibt eine Möglichkeit die Füllstandsinformationen (von Verkaufsfläche und Lagerraum separat) zu speichern und zu aktualisieren. \label{anforderung_s10}
+	\item Anforderung S10.1: Es gibt eine Möglichkeit, dass die Smartglass diese Informationen (automatisch) abrufen kann. \label{anforderung_s10_1}
+\end{itemize}
+\section{Warenannahme}
+Eine weitere Frage stellt sich, wie es mithilfe der Smartglass dem Mitarbeiter bei der Warenannahme einfacher gemacht werden kann. \\
+Dazu muss zu aller erst die Setzliste entfernt und ersetzt werden. Grundsätzlich muss der Mitarbeiter weiterhin die eingetroffene Ware kontrollieren und zählen. Dabei sollte das Zählen und das Abspeichern dessen von der Brille durchgeführt werden, damit leichtsinnige Fehler vermieden werden. Damit der Mitarbeiter möglichst stark unterstützt wird, sollte dem Mitarbeiter weiterhin die Bestellung angezeigt werden, damit er ungefähr abschätzen kann, wie viel Ware hätte kommen müssen. Hierzu muss, zum Beispiel ein Lieferschein erfasst werden, um eine Lieferung eindeutig zu erkennen.\\
+Zusammengefasst sind die Anforderungen der Warenannahme: 
+
+\begin{itemize}
+	\item Anforderung B50: Es gibt eine Möglichkeit mit der Brille die eingetroffene Lieferung zu erfassen und damit dem aktuellen Lagerbestand hinzuzufügen. \label{anforderung_b50}
+	\item Anforderung B60: Es gibt eine Möglichkeit, dass bei der Warenabnahme die aktuelle Bestellung angezeigt wird. \label{anforderung_b60}
+	\item Anforderung B70: Es gibt eine Möglichkeit, einen Lieferschein einzuscannen. \label{anforderung_b70}
+\end{itemize}
+\section{Kundenzufriedenheit} 
+Neben den beiden großen Prozessen der Warenannahme und des Waren einräumen, ist als Ziel definiert, die Kundenzufriedenheit zu erhöhen. Im Kapitel 1.3 Kundenservice wurde auf das Problem hingewiesen, Kunden Produktinformationen zu liefern. Um das Ziel zu erreichen, ergeben sich folgende Anforderungen: 
+\begin{itemize}
+	\item Anforderung B45: Es gibt die Möglichkeit, dass der Füllstand eines Artikels angezeigt wird. \label{anforderung_b45}
+	\item Anforderung 
+	
+\end{itemize}
+\section{Nicht funktionale Anforderungen}
+Einer der wichtigsten Punkte ist, dass der Mitarbeiter durch die Smartglass bei seiner Arbeit nicht behindert wird, sonst würde er die Technik nicht akzeptieren und nicht damit arbeiten wollen. \\
+Deshalb ist es enorm wichtig die Performance sehr hoch zu halten. Das bedeutet, dass das System geringe Antwortzeiten anstreben muss, sodass der Nutzer nicht den Eindruck hat, auf eine Antwort warten zu müssen. 
+Zusätzlich ist es dabei wichtig dem Nutzer die Bedienung so einfach wie möglich zu machen. Damit ist einmal eine detaillierte und selbsterklärende Menüführung und Anwendungsbeschreibung gemeint, aber gleichzeitig auch der Umgang mit der Brille bzw. die Eingaben auf der Brille. \\
+Die Robustheit spielt eine wichtige Rolle. Das bedeutet, dass das System niemals abstürzen bzw. den Nutzer niemals ohne eine entsprechende Antwort zurücklassen sollte, da von Mitarbeitern in einer Filiale nicht erwartet werden darf, dass sie sich gut mit solchen Geräten auskennen. Zusätzlich zur Ausfallsicherheit ist die Fehlertoleranz ein entscheidender Faktor. Bei Fehleingaben sollte das System entsprechend reagieren, sodass der Mitarbeiter seinen Fehler erkennt und weiß, was er tun muss, um sein Ziel zu erreichen. \\
+Eine weitere nicht funktionale Anforderung ist eine gewisse Energiesparsamkeit. Diese Anforderung entsteht aus dem praktischen Nutzen der Smartglass. Sie muss entsprechend lang funktionsfähig sein, damit sie sinnvoll eingesetzt werden kann, und nicht dauerhaft während des Betriebs ausfällt. 
+\\
+Die zusammengefassten, nicht funktionalen Anforderungen lauten:
+\begin{itemize}
+	\item Anforderung BN1: Es gibt eine entsprechend hohe Perforcmance der Smartglass. 
+	\item Anforderung BN1.10: Das Scannen eines Produktes sollte im Durchschnitt nicht länger als 1 Sekunde dauern. 
+	\item Anforderung BN1.20: Der Abruf der Produktposition inklusive Anzeige des Regalplatzes sollte höchstens 3 Sekunden dauern. Im Durchschnitt nur 1,5 Sekunden.
+	\item Anforderung BN20: Die Smartglass bzw. deren Software sollte ein gewisses, hohes Maß an Robustheit vorzeigen.
+	\item Anforderung BN20.10: Abstürze sollten nicht vorkommen. 
+	\begin{itemize}
+		\item Anfoderung BN20.10.1: Falls doch Abstürze vorkommen sollten, sollte eine beschreibende und zielführende Meldung erscheinen.
+	\end{itemize}
+	\item Anforderung BN30: Die Software sollte durch Einsparung von Ressourcen möglichst wenig Energie verbrauchen.
+\end{itemize}

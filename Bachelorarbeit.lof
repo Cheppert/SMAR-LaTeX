@@ -2,12 +2,19 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{4}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{6}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \acs {JWT}-Header}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Netzwerkkomponentendiagramm}}{16}{figure.3.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{22}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{25}{figure.4.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \acs {JWT}-Header}}{31}{figure.6.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{39}{figure.8.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{22}{figure.6.1}
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{51}{figure.11.1}
 \addvspace {10\p@ }
