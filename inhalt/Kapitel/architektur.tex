@@ -1,10 +1,27 @@
 \chapter{Architektur der Software}
 \label{cha:architektur}
+\sloppy
 
 Im Folgenden werden die allgemeine Architektur der Anwendung mit einbezogener Hard- und Software (Server-Client-Architektur, Kapitel \ref{sec:architektur_serverclient}) sowie im Speziellen die Datenbank-Architektur (Kapitel \ref{sec:architektur_datenbank}) vorgestellt. Von den gegebenen Anforderungen lassen sich bereits viele Eigenschaften der Architektur ableiten.
 
 \section{Server-Client-Architektur}
 \label{sec:architektur_serverclient}
+
+\subsection{Physischer Systemaufbau}
+
+Wie in der Bedarfsanalyse und in den Anforderungen schon herausgestellt wurde, muss es drei Akteure geben, die im System interagieren können:
+
+\begin{itemize}
+	\item einen oder mehrere Clients, über welche die Mitarbeiter die Prozesse (wie z.B: Regale einräumen) abwickeln können;
+	\item einen zentralen Server, welcher die Clients verwaltet;
+	\item sowie eine Systemadministration, um das System zu konfigurieren.
+\end{itemize}
+
+Damit diese untereinander kommunizieren können, müssen sie über ein Netzwerk verbunden sein. Dies kann in der Praxis über das Internet oder über ein privates Netzwerk (z.B. Intranet) erfolgen. Da der Zugriff in der Regel nur während der Arbeitszeiten und dann auch nur in der Filiale erfolgt, ist eine ortsgebundene, private Netzwerkinfrastruktur ohne Internetanbindung zunächst ausreichend.
+
+Die Netzwerkeinbindung kann kabelgebunden oder kabellos erfolgen. Die operativen Benutzer müssen sich während ihrer Arbeit im Lager und auf der Verkaufsfläche frei bewegen können -- eine kabelgebundene Netzwerkeinbindung der Clients wäre dabei sehr hinderlich oder sogar unmöglich. Daher ist die kabellose Einbindung der Clients über ein Drahtlosnetzwerk (\ac{WLAN}) eine gute Lösung, da sich hier über die Access Points des \ac{WLAN}-Netzwerkes der Empfangsbereich auch auf Lager und Verkaufsfläche beschränken lässt und somit eine höhere Sicherheit vor Fremdzugriffen von außen gegeben ist.
+
+Die Administrationsoberfläche hingegen muss nicht zwingend im gesamten Arbeitsbereich zugänglich sein, da hierüber nicht das operative Tagesgeschäft abgewickelt wird. Prinzipiell könnte der Zugang auf ein einziges Gerät (z.B. im Büro des Filialleiters) beschränkt sein, da die Anzahl der administrativen Benutzer i.d.R. ebenfalls sehr beschränkt ist. Es wäre jedoch praktisch, auch flächendeckend in der Filiale auf die Administration zugreifen zu können, z.B. über einen Tablet-Computer. Dazu bietet sich die Bereitstellung der Administration als Webanwendung an, weil diese einfach über den Webbrowser jedes Gerätes im Netzwerk geöffnet werden kann.
 
 Kommunikation zwischen Geräten\\
 Server kommuniziert mit DB
@@ -16,11 +33,24 @@ Server kommuniziert mit DB
 	\label{fig:architektur_serverclient}
 \end{figure}
 
+Im Folgenden werden die einzelnen Akteure mit ihren jeweiligen Komponenten genauer beschrieben.
+
 \subsection{Server}
+
+Der Server ist logisch in drei Komponenten unterteilt: einen Datenbankserver, und einen Webserver mit Web-Interface und \ac{REST} \ac{API}. Diese Komponenten müssen nicht zwingend auf dem selben Server bzw. auf dem selben Gerät installiert sein -- es kann es Sinn machen, ressourcenintensive Anwendungen auf weitere Geräte auszulagern. Gäbe es zum Beispiel sehr viele Clients, die viel Netzwerktraffic über die REST API erzeugen, wäre eine Auslagerung der API auf einen separaten Server bzw. Serverprozess denkbar, um die Performance der anderen Anwendungen nicht zu verringern. Ebenso wäre eine Auslagerung der Datenbank oder des Web-Interface möglich.
+
+Der Einfachheit halber wird bei den folgenden Erläuterungen in dieser Arbeit davon ausgegangen, dass alle Komponenten auf dem selben Server liegen.
+
+\subsubsection{Datenbankserver}
+Der Datenbankserver (auch Datenbankmanagementsystem \ac{DBMS})
 
 \subsubsection{Web-Interface}
 Serverseitige Scriptsprache PHP (Implementierung)
-\subsubsection{REST API}
+
+kann theoretisch auf jedem gerät im netzwerk bereitsgestellt,m da nur anbindung an DB nötig - sinn aber, um geräte zu spraen, auf zentralen server
+netzwerk entsprehcende größe: performancegründen eigener server
+
+\subsubsection{\ac{REST} \ac{API}}
 Slim Framework (Implementierung)
 
 \subsection{Clients}
@@ -28,7 +58,7 @@ Slim Framework (Implementierung)
 \section{Datenbank-Architektur}
 \label{sec:architektur_datenbank}
 
-Der Entwurf der Datenbank erfordert besonders sorgsame Planung. Das Datenbankschema sollte künftige Erweiterungen der Software unterstützen und späteren Anpassungen am Schema möglichst vorbeugen, da sowohl das Web-Interface als auch die REST API auf dem Schema arbeiten und somit bei Änderung des Schemas auch weitreichende Änderungen im Quellcode die Folge wären (Anmerkung: für die App auf der Brille oder .
+Der Entwurf der Datenbank erfordert besonders sorgsame Planung. Das Datenbankschema sollte künftige Erweiterungen der Software unterstützen und späteren Anpassungen am Schema möglichst vorbeugen, da sowohl das Web-Interface als auch die REST API auf dem Schema arbeiten und somit bei Änderung des Schemas auch weitreichende Änderungen im Quellcode die Folge wären (Anmerkung: für die App auf der Brille oder anderen Clients wären durch die Abstraktion über die REST API u.U. keine Anpassungen nötig).
 Deshalb wurden bei der Planung der Datenbank für SMAR bereits Funktionen berücksichtigt, die in der dieser Arbeit zugrunde liegenden Version noch nicht implementiert sind, und entsprechende Tabellen und Spalten angelegt. Die grafische Übersicht veranschaulicht das Schema mit allen Tabellen, Spalten und Beziehungen von Feldern untereinander und wird im Folgenden näher erläutert:
 
 \begin{figure}[H]
@@ -50,7 +80,7 @@ Neben dem Produkt ist das Verkaufsregal eine weitere wesentliche Entität im She
 
 Die Verbindung zwischen Regalen und Produkten bilden die Regalfächer (\glqq sections\grqq ) in der Tabelle \textit{\textbf{section}}. Ein Regalfach wird genau einem Regal zugeordnet und kann genau einen Produkttyp aufnehmen. Es werden die Größe des Fachs (Breite, Höhe) sowie die Position des Fachs im zugeordneten Regal (Abstand zu linker oberer Ecke als X/Y Koordinaten) abgespeichert. Außerdem ist die maximale Kapazität des Regals angegeben (also die höchstmögliche Befüllung mit dem zugeordneten Produkt), sowie optional ein Mindestfüllbestand. Letzterer kann verwendet werden, um im System anzuzeigen, welche Produkte aufgefüllt werden müssen, damit die entsprechenden Regalfächer nicht komplett leer werden.\\
 
-Mit der Tabelle  \textit{\textbf{shelf}} sind ebenfalls noch weitere Tabellen verbunden. Die Tabelle  \textit{\textbf{shelf\_ graphic}} speichert vorgenerierte Grafiken der Regale im SVG-Format, die von der App auf der Brille direkt verwendet werden können, um Rechenaufwand zu sparen. Um eine Wegfindung zu Regalen auf der Verkaufsfläche realisieren zu können, können in der Tabelle \textit{\textbf{map}} Verkaufsflächen definiert werden, sowie über die Tabelle \textit{\textbf{map\_ shelf}} Regale auf einer Verkaufsfläche angeordnet werden.\\
+Mit der Tabelle  \textit{\textbf{shelf}} sind ebenfalls noch weitere Tabellen verbunden. Die Tabelle  \textit{\textbf{shelf\_ graphic}} speichert vorgenerierte Grafiken der Regale im \ac{SVG}-Format, die von der App auf der Brille direkt verwendet werden können, um Rechenaufwand zu sparen. Um eine Wegfindung zu Regalen auf der Verkaufsfläche realisieren zu können, können in der Tabelle \textit{\textbf{map}} Verkaufsflächen definiert werden, sowie über die Tabelle \textit{\textbf{map\_ shelf}} Regale auf einer Verkaufsfläche angeordnet werden.\\
 
 Um bei der Warenannahme die erhaltene Ware mit vorausgegangenen Bestellungen abgleichen zu können, müssen die Bestellungen im System hinterlegt sein. In der Tabelle \textit{\textbf{order}} können einzelne Bestellungen gespeichert werden, die zugehörigen Positionen liegen in der Tabelle \textit{\textbf{order\_ item}}, welche wiederum auf Entitäten der Tabellen  \textit{\textbf{product}} und \textit{\textbf{unit}} verweist.\\
 
