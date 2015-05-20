@@ -23,9 +23,6 @@ Die Netzwerkeinbindung kann kabelgebunden oder kabellos erfolgen. Die operativen
 
 Die Administrationsoberfläche hingegen muss nicht zwingend im gesamten Arbeitsbereich zugänglich sein, da hierüber nicht das operative Tagesgeschäft abgewickelt wird. Prinzipiell könnte der Zugang auf ein einziges Gerät (z.B. im Büro des Filialleiters) beschränkt sein, da die Anzahl der administrativen Benutzer i.d.R. ebenfalls sehr beschränkt ist. Es wäre jedoch praktisch, auch flächendeckend in der Filiale auf die Administration zugreifen zu können, z.B. über einen Tablet-Computer. Dazu bietet sich die Bereitstellung der Administration als Webanwendung an, weil diese einfach über den Webbrowser jedes Gerätes im Netzwerk geöffnet werden kann.
 
-Kommunikation zwischen Geräten\\
-Server kommuniziert mit DB
-
 \begin{figure}[H]
 	\centering
 	{\includegraphics[width=\textwidth]{Bilder/Abbildungen/architektur_serverclient.png}}
@@ -42,18 +39,31 @@ Der Server ist logisch in drei Komponenten unterteilt: einen Datenbankserver, un
 Der Einfachheit halber wird bei den folgenden Erläuterungen in dieser Arbeit davon ausgegangen, dass alle Komponenten auf dem selben Server liegen.
 
 \subsubsection{Datenbankserver}
-Der Datenbankserver (auch Datenbankmanagementsystem \ac{DBMS})
+Der Datenbankserver (auch Datenbankmanagementsystem \ac{DBMS}) bildet die Kommunikationsschnittstelle, über die alle Anwendungen auf die Datenbank zugreifen. Die Datenbank selbst ist eine relationale \ac{SQL}-Datenbank, auf welche als \ac{DBMS} MySQL aufgesetzt wurde. Diese Entscheidung liegt darin begründet, dass für das Web-Interface und die REST API als serverseitige Scriptsprache \ac{PHP} gewählt wurde und dazu üblicherweise MySQL als DBMS verwendet wird, aufgrund der guten Kompatibilität und Bewährtheit.
 
 \subsubsection{Web-Interface}
-Serverseitige Scriptsprache PHP (Implementierung)
+Das Web-Interface bildet die Administrationsoberfläche, über die das System gesteuert werden kann. Hier können die Benutzer des Systems sowie ihre Berechtigungen verwaltet werden. Außerdem bietet die Webadministration umfangreiche Möglichkeiten, um die Entitäten des Systems zu konfigurieren, wie z.B. Produkte oder Regale auf der Verkaufsfläche.
+
+
+
+wie bereits in architektur angedeutet, Serverseitige Scriptsprache PHP (Implementierung)
 
 kann theoretisch auf jedem gerät im netzwerk bereitsgestellt,m da nur anbindung an DB nötig - sinn aber, um geräte zu spraen, auf zentralen server
 netzwerk entsprehcende größe: performancegründen eigener server
 
 \subsubsection{\ac{REST} \ac{API}}
+Damit die Clients Daten aus der Datenbank abfragen oder ändern können, wird eine weitere Systemschnittstelle benötigt -- die Verwendung der Webadministration zur Datenmanipulation, z.B. über die Datenbrille, ist aus ergonomischen Gründen nicht geeignet, da die Brille über eingeschränkte Eingabemöglichkeiten verfügt und ohnehin eine eigens abgestimmte App mit Zusatzfunktionen wie z.B. Barcode-Scanner verfügt.
+
+Für diese Client-Schnittstelle fiel die Wahl auf eine REST API. Dabei handelt es sich um einen Webservice, der Ressourcen über fest definierte Routen (virtuelle Dateipfade auf dem Server) bereitstellt. Diese Routen können über die Standard-HTTP-Befehle wie z.B. GET oder POST angesprochen werden und sind somit technologisch sehr flexibel -- HTTP-Anfragen können von fast allen Programmiersprachen und -umgebungen versendet und empfangen werden.
+
+Die Schnittstelle stellt Dienste für alle Funktionen bereit, die von den Clients benötigt werden, z.B. einen Dienst zum Abruf von Produktinformationen, oder einen Dienst zum Aktualisieren des Warenbestandes. Das Kommunikationsverfahren und die bereitgestellten Dienste werden im Implementierungsteil dieser Arbeit erläutert.
+
+
 Slim Framework (Implementierung)
 
 \subsection{Clients}
+
+Wie bereits in der Einführung der Architektur angedeutet, handelt es sich bei den Clients im System von SMAR um alle Geräte, die von operativen Benutzern im System verwendet werden: z.B. Smartphones, Tablets und -- im Fall dieser Arbeit mit besonderem Fokus -- Datenbrillen. Diese Geräte kommunizieren über das Netzwerk mit der REST API, um Lese- und Schreibzugriffe auf den Daten auszuführen.
 
 \section{Datenbank-Architektur}
 \label{sec:architektur_datenbank}
@@ -91,11 +101,3 @@ Zuletzt sei auch die Tabelle \textit{\textbf{user}} genannt, welche wesentlich f
 
 %TODO: Erläutern, warum Berechnung der Kapazität abgelehnt wird
 
-Aufzählung:
-\begin{itemize}
-	\item basd
-	\item ...
-\end{itemize}
-
-\underline{sdfsdf}
-$\rightarrow$
