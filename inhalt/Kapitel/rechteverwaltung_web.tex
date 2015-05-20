@@ -6,7 +6,35 @@ Dies sollte selbstverständlich ausschließlich durch autorisierte Personen durc
 Die folgenden Kapitel befassen sich mit der Identifikation (\acs{AuthN}) und mit der Berechtigungskontrolle (\acs{AuthZ}) eines Benutzers gegenüber dem Webserver.
 
 \section{\acf{AuthN}}
-Dummy dummy dummy
+Ruft ein Benutzer eine URL der Webadministration auf, so wird zunächst überprüft, ob bereits eine mit Inhalt gefüllte \ac{PHP}-Session besteht, ist dies nicht der Fall wird der Benutzer auf die Login-Seite weitergeleitet. Der Benutzer hat nicht die Möglichkeit ohne \acl{AuthN} auf die Startseite oder eine Unterseite der Anwendung zu gelangen. Dementsprechend können ebenfalls keine Funktionen aufgerufen werden.\\
+Ein Zugriff auf die \ac{REST} \ac{API} ist ohne Anmeldung ebenfalls nicht möglich, da der \ac{JWT} erst bei der Anmeldung generiert wird und Anfragen ohne gültigen \ac{JWT} abgebrochen werden.\\
+
+Die Login-Seite hält ein \ac{HTML}-Formular mit zwei Eingabe-Feldern bereit, die die Eingabe des Benutzernamens und des Passworts ermöglichen. Diese Daten werden durch Absenden des Formulars an ein \ac{PHP}-Skript auf dem Server verschickt. Dieses Skript ruft den Eintrag der Datenbank ab, bei dem der Benutzername mit dem eingegebenen Namen identisch ist. Dem eingegebenen Passwort wird anschließend der Salt-Wert, der dem Benutzer in der Datenbank zugeordnet ist, angehängt und das zusammengesetzte Passwort wird mit dem SHA256-Verfahren gehasht. Das Passwort in der Datenbank wurde ebenfalls mit dem selben Verfahren gehasht und sollte daher identisch mit dem gehashten eingegebenen Passwort sein. Hat die Anfrage nach dem Benutzernamen einen Eintrag zurückgeliefert und die gehashten Passwörter sind identisch, so war der Login erfolgreich.\\
+Bei einem erfolgreichen Login werden anschließend folgende Daten in einer neu erstellten \ac{PHP}-Session gespeichert:
+\begin{itemize}
+	\item Benutzer-ID (Primary Key der Datenbank)
+	\item Benutzername
+	\item Vorname
+	\item Nachname
+	\item gehashtes Password
+	\item Personalnummer
+	\item Berechtigungsstufe
+	\item Loginzeit (Datum + Uhrzeit)
+	\item Zeit seit dem letzten Seitenaufruf (Datum + Uhrzeit)
+	\item ein gültiger \ac{JWT} zur Authentifizierung gegenüber der \ac{REST} \ac{API}\footnote{Siehe Kapitel \ref{cha:jwt} \nameref{cha:jwt}}
+\end{itemize}
+Der \ac{JWT} wird im Rahmen der der Session-Erstellung generiert.\\
+Nach Generierung der Session wird nun die Startseite der Anwendung angezeigt.\\
+Sollte der Login-Vorgang aufgrund einer ungültigen Benutzername/Passwort-Kombination so wird die Login-Seite mit einer entsprechenden Fehlermeldung erneut angezeigt.\\
+
+Das Hash-Verfahren für das Passwort, so wie ein individueller Salt-Wert pro Benutzer stellen eine Authentifizierung nach aktuellem Standard mit hoher Sicherheit dar. Auch wenn einem Angreifer das Auslesen der Benutzerdaten aus der Datenbank gelingt, kann er das Passwort eines Benutzers und somit den Zugriff mit einer vorgefertigten Rainbowtabelle nicht erlangen. Er muss eine große, für jeden Benutzer individuelle Rainbowtabelle anlegen, die bei einer Passwortlänge von mindestens 64 Zeichen (Salt-Wert-Länge) bei mindestens 52 möglichen Zeichen (A-Z und a-z) mehrere hundert Terabyte groß ist.\footnote{TODO: Rechnung}\\
+
+TODO:
+\begin{itemize}
+	\item Session-Überprüfung/Aufrufen weiterer Seiten bei Anmeldung
+	\item REST Api?
+	\item Benutzerverwaltung erklären
+\end{itemize}
 
 \section{\acf{AuthZ}}
 Im Gegensatz zu den Benutzern der \ac{VR}-Geräte, die entweder durch ihre Aufgabe volle Berechtigung auf den \ac{AR}-Geräten oder keine Berechtigung benötigen und es somit keine verschiedene Berechtigungsstufen benötigt, gibt es in der Web Administration verschiedenste Benutzern mit unterschiedlichen Berechtigungen im Unternehmen.\\
