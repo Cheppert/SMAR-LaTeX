@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.18)  19 MAY 2015 19:06
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.18)  20 MAY 2015 10:03
 entering extended mode
 **Bachelorarbeit.tex
 
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.tex
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -395,8 +394,8 @@ LaTeX Info: Redefining \jbarchnameformat on input line 1257.
 LaTeX Info: Redefining \jbapifont on input line 1529.
 \jb@urlfile=\write3
 
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.url)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.url
+)
 \jb@tempfile=\read1
 \c@jbbibcnt=\count105
 \c@jbbibcnta=\count106
@@ -416,7 +415,8 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 387
 5.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Try loading font information for OMS+zplm on input line 387
@@ -595,28 +595,28 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.aux
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/titelseite.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/erklaerung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/abstract.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/bedarfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/architektur.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/jwt.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/rechteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/authentifizierung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/zusammenfassung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/anhang.aux))
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
+
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
+aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
+aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
+x)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
+arfsanalyse.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
+hitektur.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
+.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
+hteverwaltung_web.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
+hentifizierung.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
+ammenfassung.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
@@ -639,7 +639,8 @@ LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Try loading font information for T1+ppl on input line 112.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ppl.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ppl.fd"
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
@@ -684,19 +685,18 @@ LaTeX Info: Redefining \ref on input line 112.
 LaTeX Info: Redefining \pageref on input line 112.
 LaTeX Info: Redefining \nameref on input line 112.
 
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.out)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.out)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
+)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
+)
 \@outlinefile=\write5
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 116.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/titelseite.tex
-<Bilder/logo_dhbw_ma.jpg, id=107, 133.2177pt x 66.2475pt>
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
+tex <Bilder/logo_dhbw_ma.jpg, id=115, 133.2177pt x 66.2475pt>
 File: Bilder/logo_dhbw_ma.jpg Graphic file (type jpg)
 
 <use Bilder/logo_dhbw_ma.jpg>
@@ -721,11 +721,10 @@ File: uni-0.def 2012/08/28 UCS: Unicode data U+0000..U+00FF
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/IBM_ADMIN/Downlo
-ads/Studienarbeit_2015-05-18/Latexdokument/Latexdokument/Bilder/logo_dhbw_ma.jp
-g>])
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/erklaerung.tex
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/IBM_ADMIN/Docume
+nts/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/logo_dhbw_ma.jpg>])
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
+tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
@@ -744,39 +743,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
 
 ]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/abstract.tex) [2
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.te
+x) [2
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.toc
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.toc
 Package acronym Info: Label `acro:PHP' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 17.
 Package acronym Info: Label `acro:JWT' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 17.
 Package acronym Info: Label `acro:AuthN' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 17.
+although it is yet undefined on input line 19.
 Package acronym Info: Label `acro:AuthZ' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 18.
- [3
+although it is yet undefined on input line 20.
+[3
 
 
 ])
 \tf@toc=\write6
  [4]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/acronym.tex) [5]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.lof)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/acronym.tex
+) [5]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.lof
+)
 \tf@lof=\write7
  [6
 
-]
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
@@ -803,8 +800,8 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
 File: lstlang2.sty 2004/09/05 1.3 listings language file
 )
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/bedarfsanalyse.tex
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
+arfsanalyse.tex
 Kapitel 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -845,31 +842,97 @@ l.186 \include{Inhalt/Kapitel/bedarfsanalyse}
 
 
 ] [2]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/architektur.tex
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
+hitektur.tex
 Kapitel 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+<Bilder/Abbildungen/architektur_serverclient.png, id=232, 701.62125pt x 532.991
+26pt>
+File: Bilder/Abbildungen/architektur_serverclient.png Graphic file (type png)
+ <use Bilder/Abbildungen/architektur_serverclient.png>
+Package pdftex.def Info: Bilder/Abbildungen/architektur_serverclient.png used o
+n input line 14.
+(pdftex.def)             Requested size: 426.7914pt x 324.22145pt.
+ [3
+
+
+
+] [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.33 
+      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
+dungen/architektur_serverclient.png>]
+<Bilder/Abbildungen/architektur_datenbankschema.png, id=241, 1050.92625pt x 652
+.68843pt>
+File: Bilder/Abbildungen/architektur_datenbankschema.png Graphic file (type png
+)
+ <use Bilder/Abbildungen/architektur_datenbankschema.png>
+Package pdftex.def Info: Bilder/Abbildungen/architektur_datenbankschema.png use
+d on input line 36.
+(pdftex.def)             Requested size: 426.7914pt x 265.06439pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[][]\T1/ppl/m/n/12 Tabellendefinitionen der Da-ten-bank (Screens-hot aus
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--17
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 
+      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
+dungen/architektur_datenbankschema.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
-) [3
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
-] [4]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/jwt.tex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+[8]) [9]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
+.tex
 Kapitel 3.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 5.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
@@ -904,7 +967,7 @@ Overfull \hbox (5.59946pt too wide) in paragraph at lines 17--18
 (Claims-Set),
  []
 
-[5
+[10
 
 
 
@@ -913,7 +976,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-<Bilder/jwt_header.jpg, id=249, 96.36pt x 82.80937pt>
+<Bilder/jwt_header.jpg, id=290, 96.36pt x 82.80937pt>
 File: Bilder/jwt_header.jpg Graphic file (type jpg)
 
 <use Bilder/jwt_header.jpg>
@@ -933,16 +996,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
-) [6pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-1}) has been already used, duplicate ignored
+) [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3
+.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.192 \include{Inhalt/Kapitel/jwt}
-                                   <C:/Users/IBM_ADMIN/Downloads/Studienarbeit_
-2015-05-18/Latexdokument/Latexdokument/Bilder/jwt_header.jpg>] [7]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/rechteverwaltung_web.tex
+                                   <C:/Users/IBM_ADMIN/Documents/Studienarbeit_
+LaTeX/SMAR-LaTeX/Bilder/jwt_header.jpg>] [12]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
+hteverwaltung_web.tex
 Kapitel 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
@@ -954,7 +1017,7 @@ although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:BDSG' newly defined as it shall be overridden
 
 although it is yet undefined on input line 14.
-[8
+[13
 
 
 
@@ -963,9 +1026,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-) [9]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/authentifizierung.tex
+) [14]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
+hentifizierung.tex
 Kapitel 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
@@ -977,23 +1040,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-[10
+[15
 
 
 
 ]
 
-LaTeX Warning: Reference `cha:brille' on page 11 undefined on input line 23.
+LaTeX Warning: Reference `cha:brille' on page 16 undefined on input line 23.
 
 
-LaTeX Warning: Reference `cha:brille' on page 11 undefined on input line 23.
+LaTeX Warning: Reference `cha:brille' on page 16 undefined on input line 23.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-[11]
+[16]
 Overfull \hbox (6.83617pt too wide) in paragraph at lines 38--42
 \T1/ppl/m/n/12 Die Ein-ga-be des Be-nut-zer-na-mens über ein Sprach-kom-man-do 
 ge-stal-tet sich schwie-
@@ -1004,7 +1067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 
  []
 
-[12]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
@@ -1019,7 +1082,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[13]
+[18]
 Package acronym Info: Label `acro:WEP' newly defined as it shall be overridden
 although it is yet undefined on input line 59.
 
@@ -1032,7 +1095,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[14]
+[19]
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
 although it is yet undefined on input line 64.
 
@@ -1046,7 +1109,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[15]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
@@ -1067,9 +1130,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-) [16]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/zusammenfassung.tex
+) [21]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
+ammenfassung.tex
 Kapitel 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -1093,13 +1156,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<Bilder/logo_SAP.png, id=359, 72.27pt x 35.6532pt>
-File: Bilder/logo_SAP.png Graphic file (type png)
- <use Bilder/logo_SAP.png>
-Package pdftex.def Info: Bilder/logo_SAP.png used on input line 13.
-(pdftex.def)             Requested size: 288.4727pt x 142.26378pt.
-)
-[17
+File: Bilder/logo_dhbw_ma.jpg Graphic file (type jpg)
+<use Bilder/logo_dhbw_ma.jpg>
+Package pdftex.def Info: Bilder/logo_dhbw_ma.jpg used on input line 13.
+(pdftex.def)             Requested size: 286.13396pt x 142.26378pt.
+) [22
 
 
 
@@ -1109,17 +1170,14 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.195 \include{Inhalt/Kapitel/zusammenfassung}
-                                               <C:/Users/IBM_ADMIN/Downloads/St
-udienarbeit_2015-05-18/Latexdokument/Latexdokument/Bilder/logo_SAP.png>]
-[18]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.bbl) [1
+                                              ] [23]
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.bbl
+) [1
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/anhang.tex
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.tex
 Anhang A.
 )pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
  been already used, duplicate ignored
@@ -1134,32 +1192,32 @@ l.214 \include{Inhalt/anhang}
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
 
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Bachelorarbeit.aux
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/titelseite.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/erklaerung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/abstract.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/bedarfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/architektur.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/jwt.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/rechteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/authentifizierung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/Kapitel/zusammenfassung.aux)
-(C:\Users\IBM_ADMIN\Downloads\Studienarbeit_2015-05-18\Latexdokument\Latexdokum
-ent\Inhalt/anhang.aux))
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
+
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
+aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
+aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
+x)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
+arfsanalyse.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
+hitektur.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
+.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
+hteverwaltung_web.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
+hentifizierung.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
+ammenfassung.aux)
+(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 1F874F5092CDA86BAFA9C05A89B6D24D;1578.
+(rerunfilecheck)             Checksum: A89FE7DC054C85A933EBDBEFC572C461;1760.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1170,13 +1228,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
  ) 
 Here is how much of TeX's memory you used:
- 13157 strings out of 493921
- 201984 string characters out of 3147270
- 341615 words of memory out of 3000000
- 16055 multiletter control sequences out of 15000+200000
+ 13182 strings out of 493921
+ 200928 string characters out of 3147270
+ 341905 words of memory out of 3000000
+ 16069 multiletter control sequences out of 15000+200000
  37240 words of font info for 76 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,12n,67p,1005b,825s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,67p,1005b,828s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1195,8 +1253,8 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Program Files/
-MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Progr
+am Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/cm-super/sfcc1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/cm-super/sfss1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-su
@@ -1208,9 +1266,9 @@ iKTeX 2.9/fonts/type1/public/cm-super/sftt1200.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
 plr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Bachelorarbeit.pdf (27 pages, 382608 bytes).
+Output written on Bachelorarbeit.pdf (32 pages, 506179 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 489 PDF objects out of 1000 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

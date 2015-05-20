@@ -5,22 +5,24 @@
 \BOOKMARK [1][-]{section.1.2}{Another Section}{chapter.1}% 5
 \BOOKMARK [2][-]{subsection.1.2.1}{bla}{section.1.2}% 6
 \BOOKMARK [3][-]{subsubsection.1.2.1.1}{blabla}{subsection.1.2.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Architektur}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Section}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Another Section}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{bla}{section.2.2}% 11
-\BOOKMARK [3][-]{subsubsection.2.2.1.1}{blabla}{subsection.2.2.1}% 12
-\BOOKMARK [0][-]{chapter.3}{PHP JWT}{}% 13
-\BOOKMARK [0][-]{chapter.4}{Rechteverwaltung - Web}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Authentifizierung \(AuthN\)}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{Autorisierung \(AuthZ\)}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Rechteverwaltung - App auf Brille}{}% 17
-\BOOKMARK [1][-]{section.5.1}{Authentifizierung \(AuthN\)}{chapter.5}% 18
-\BOOKMARK [2][-]{subsection.5.1.1}{AuthN gegen\374ber der Brille}{section.5.1}% 19
-\BOOKMARK [2][-]{subsection.5.1.2}{AuthN gegen\374ber dem Server}{section.5.1}% 20
-\BOOKMARK [1][-]{section.5.2}{Autorisierung \(AuthZ\)}{chapter.5}% 21
-\BOOKMARK [0][-]{chapter.6}{Hinweise}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Fazit}{chapter.6}% 23
-\BOOKMARK [1][-]{section.6.2}{Ausblick}{chapter.6}% 24
-\BOOKMARK [0][-]{chapter*.17}{Literaturverzeichnis}{}% 25
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 26
+\BOOKMARK [0][-]{chapter.2}{Architektur der Software}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Server-Client-Architektur}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Server}{section.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.1.1}{Web-Interface}{subsection.2.1.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.1.1.2}{REST API}{subsection.2.1.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.2}{Clients}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Datenbank-Architektur}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{PHP JWT}{}% 15
+\BOOKMARK [0][-]{chapter.4}{Rechteverwaltung - Web}{}% 16
+\BOOKMARK [1][-]{section.4.1}{Authentifizierung \(AuthN\)}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{Autorisierung \(AuthZ\)}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Rechteverwaltung - App auf Brille}{}% 19
+\BOOKMARK [1][-]{section.5.1}{Authentifizierung \(AuthN\)}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.1.1}{AuthN gegen\374ber der Brille}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.2}{AuthN gegen\374ber dem Server}{section.5.1}% 22
+\BOOKMARK [1][-]{section.5.2}{Autorisierung \(AuthZ\)}{chapter.5}% 23
+\BOOKMARK [0][-]{chapter.6}{Hinweise}{}% 24
+\BOOKMARK [1][-]{section.6.1}{Fazit}{chapter.6}% 25
+\BOOKMARK [1][-]{section.6.2}{Ausblick}{chapter.6}% 26
+\BOOKMARK [0][-]{chapter*.17}{Literaturverzeichnis}{}% 27
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 28

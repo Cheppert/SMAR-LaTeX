@@ -2,10 +2,12 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{6}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \acs {JWT}-Header}}{6}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \acs {JWT}-Header}}{11}{figure.3.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{17}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{22}{figure.6.1}
 \addvspace {10\p@ }
