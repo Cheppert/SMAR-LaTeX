@@ -1,21 +1,65 @@
-\chapter{Architektur}
+\chapter{Architektur der Software}
 \label{cha:architektur}
 
+Im Folgenden werden die allgemeine Architektur der Anwendung mit einbezogener Hard- und Software (Server-Client-Architektur, Kapitel \ref{sec:architektur_serverclient}) sowie im Speziellen die Datenbank-Architektur (Kapitel \ref{sec:architektur_datenbank}) vorgestellt. Von den gegebenen Anforderungen lassen sich bereits viele Eigenschaften der Architektur ableiten.
+
+\section{Server-Client-Architektur}
+\label{sec:architektur_serverclient}
+
+Kommunikation zwischen Geräten\\
+Server kommuniziert mit DB
+
+\begin{figure}[H]
+	\centering
+	{\includegraphics[width=\textwidth]{Bilder/Abbildungen/architektur_serverclient.png}}
+	\caption{Schematische Darstellung der Server-Client-Architektur}
+	\label{fig:architektur_serverclient}
+\end{figure}
+
+\subsection{Server}
+
+\subsubsection{Web-Interface}
+Serverseitige Scriptsprache PHP (Implementierung)
+\subsubsection{REST API}
+Slim Framework (Implementierung)
+
+\subsection{Clients}
+
+\section{Datenbank-Architektur}
+\label{sec:architektur_datenbank}
+
+Der Entwurf der Datenbank erfordert besonders sorgsame Planung. Das Datenbankschema sollte künftige Erweiterungen der Software unterstützen und späteren Anpassungen am Schema möglichst vorbeugen, da sowohl das Web-Interface als auch die REST API auf dem Schema arbeiten und somit bei Änderung des Schemas auch weitreichende Änderungen im Quellcode die Folge wären (Anmerkung: für die App auf der Brille oder .
+Deshalb wurden bei der Planung der Datenbank für SMAR bereits Funktionen berücksichtigt, die in der dieser Arbeit zugrunde liegenden Version noch nicht implementiert sind, und entsprechende Tabellen und Spalten angelegt. Die grafische Übersicht veranschaulicht das Schema mit allen Tabellen, Spalten und Beziehungen von Feldern untereinander und wird im Folgenden näher erläutert:
+
+\begin{figure}[H]
+	\centering
+	{\includegraphics[width=\textwidth]{Bilder/Abbildungen/architektur_datenbankschema.png}}
+	\caption{Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}
+	\label{fig:architektur_datenbankschema}
+\end{figure}
+
+Im Shelf Management drehen sich die grundlegenden Prozesse um Produkte -- dementsprechend gehört die Tabelle \textit{\textbf{product}} zu den umfangreichsten Tabellen. Hier werden alle wesentlichen Informationen zu einem Produkt gespeichert, z.B. Bezeichnung, Artikelnummer und Preis. Wichtig ist auch der abgespeicherte Barcode, über den das Produkt beim Scannen über die Brille identifiziert werden kann. Außerdem können die Maße des Produktes (Höhe, Breite, Tiefe) sowie die Stapelbarkeit (ja oder nein) angegeben werden -- diese Daten können bei der Lagerplatzberechnung interessant sein.\\
+
+Mit der Tabelle \textit{\textbf{product}} sind weitere Tabellen logisch verknüpft. Sehr wichtig im Rahmen des Shelf Managements ist der Lagerbestand eines Produktes, welcher in der Tabelle \textit{\textbf{stock}} gespeichert wird. Konzeptionell ließe sich der Warenbestand direkt in \textit{\textbf{product}} speichern -- aus Gründen der Übersichtlichkeit und Performanz wurde die Speicherung vom Produkt logisch getrennt, da die Schreib- und Lesezugriffe auf den Warenbestand in der Anwendung oft isoliert erfolgen. Es können mehrere Bestände für ein Produkt erfasst werden: Bestand im Lager der Filiale (\textit{amount\_ warehouse}) und Bestand im Regal bzw. auf der Verkaufsfläche (\textit{amount\_ shop}). Diese Bestände werden entsprechend bei der Warenannahme, beim Einräumen in das Regal sowie an der Kasse beim Verkauf verändert. Prinzipiell können hier auch weitere Lagerorte hinzugefügt werden.\\
+
+Produkte werden im Lager und im Shelf Management oft nicht nur einzeln, sondern auch in bestimmten größeren Mengen prozessiert, bspw. in Form von Kartons fester Größe; Produkte werden i.d.R. karton- oder sogar palettenweise bestellt und oft auch kartonweise auf der Verkaufsfläche eingeräumt. Für diesen Anwendungsfall können feste Produkteinheiten (\glqq units\grqq ) in der Tabelle \textit{\textbf{unit}} definiert werden. Die Beziehung zwischen einer Einheit und einem Produkt wird in \textit{\textbf{product\_ unit}} beschrieben. Diese Trennung der Produkt-Einheit-Beziehung ermöglicht eine Wiederverwendbarkeit von Produkteinheiten für mehrere Produkte. Jeder Produkt-Einheit-Beziehung kann ein eigener Barcode zugewiesen werden, sodass bspw. ein entsprechender Karton beim Scannen mit der Brille direkt erkannt werden kann.\\
+
+Die Verwendung von Produkteinheiten ist grundsätzlich optional, da diese über Zusatzfunktionen der Software bzw. einen separaten Barcode angesprochen werden. Je nach Umsetzung im Handel haben z.B. Kartons entweder einen eigenen Barcode, oder den selben Barcode wie das Produkt, oder gar keinen Barcode; alle diese Fälle lassen sich mit diesem Datenbankschema abbilden und nutzen.\\
+
+Neben dem Produkt ist das Verkaufsregal eine weitere wesentliche Entität im Shelf Management. Regale werden über die Tabelle \textit{\textbf{shelf}} definiert. Regale haben eine feste Größe (Höhe, Breite, Tiefe) und können ebenfalls über einen Barcode identifiziert werden.\\
+
+Die Verbindung zwischen Regalen und Produkten bilden die Regalfächer (\glqq sections\grqq ) in der Tabelle \textit{\textbf{section}}. Ein Regalfach wird genau einem Regal zugeordnet und kann genau einen Produkttyp aufnehmen. Es werden die Größe des Fachs (Breite, Höhe) sowie die Position des Fachs im zugeordneten Regal (Abstand zu linker oberer Ecke als X/Y Koordinaten) abgespeichert. Außerdem ist die maximale Kapazität des Regals angegeben (also die höchstmögliche Befüllung mit dem zugeordneten Produkt), sowie optional ein Mindestfüllbestand. Letzterer kann verwendet werden, um im System anzuzeigen, welche Produkte aufgefüllt werden müssen, damit die entsprechenden Regalfächer nicht komplett leer werden.\\
+
+Mit der Tabelle  \textit{\textbf{shelf}} sind ebenfalls noch weitere Tabellen verbunden. Die Tabelle  \textit{\textbf{shelf\_ graphic}} speichert vorgenerierte Grafiken der Regale im SVG-Format, die von der App auf der Brille direkt verwendet werden können, um Rechenaufwand zu sparen. Um eine Wegfindung zu Regalen auf der Verkaufsfläche realisieren zu können, können in der Tabelle \textit{\textbf{map}} Verkaufsflächen definiert werden, sowie über die Tabelle \textit{\textbf{map\_ shelf}} Regale auf einer Verkaufsfläche angeordnet werden.\\
+
+Um bei der Warenannahme die erhaltene Ware mit vorausgegangenen Bestellungen abgleichen zu können, müssen die Bestellungen im System hinterlegt sein. In der Tabelle \textit{\textbf{order}} können einzelne Bestellungen gespeichert werden, die zugehörigen Positionen liegen in der Tabelle \textit{\textbf{order\_ item}}, welche wiederum auf Entitäten der Tabellen  \textit{\textbf{product}} und \textit{\textbf{unit}} verweist.\\
+
+Zuletzt sei auch die Tabelle \textit{\textbf{user}} genannt, welche wesentlich für die Sicherheit der Anwendung ist. Sie speichert alle Informationen zu den Benutzern des Systems: die Basisdaten zu einer Person, die Zugangsdaten für das Web-Interface und die Brille, sowie die jeweils zugeordneten Berechtigungen eines Benutzers.\\
 
 
-\section{Section}
-Kapitel \ref{cha:architektur}
 
-\section{Another Section}
-\subsection{bla}
-\subsubsection{blabla}
-\textbf{bla}\\
-Hochkommata: \glqq asdas\grqq~~ sdasd\\
 
-Neue Zeile: nur Backslash Backslash\\
-sadas\\
-
-Absatz\\
+%TODO: Erläutern, warum Berechnung der Kapazität abgelehnt wird
 
 Aufzählung:
 \begin{itemize}
@@ -23,6 +67,5 @@ Aufzählung:
 	\item ...
 \end{itemize}
 
-\textit{\textbf{yxcyxcyxc}}
 \underline{sdfsdf}
 $\rightarrow$
