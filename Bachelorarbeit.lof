@@ -2,13 +2,25 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{5}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{8}{figure.2.2}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \acs {JWT}-Header}}{14}{figure.4.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{25}{figure.7.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Netzwerkkomponentendiagramm}}{23}{figure.5.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{29}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{32}{figure.6.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Generierung eines \acs {JWT}}}{37}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{38}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces \acs {JWT}-Header}}{38}{figure.8.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{47}{figure.10.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Sequenzdiagramm Produkt finden}}{53}{figure.11.1}
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Sequenzdiagramm Produkt einr\IeC {\"a}umen}}{55}{figure.11.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{66}{figure.13.1}
 \addvspace {10\p@ }

@@ -1,31 +1,62 @@
-\BOOKMARK [0][-]{section*.10}{Acronym}{}% 1
-\BOOKMARK [0][-]{chapter*.11}{Abbildungsverzeichnis}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Bedarfsanalyse}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Section}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Another Section}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.2.1}{bla}{section.1.2}% 6
-\BOOKMARK [3][-]{subsubsection.1.2.1.1}{blabla}{subsection.1.2.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Architektur der Software}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Server-Client-Architektur}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.1.1}{Physischer Systemaufbau}{section.2.1}% 10
-\BOOKMARK [2][-]{subsection.2.1.2}{Server}{section.2.1}% 11
-\BOOKMARK [3][-]{subsubsection.2.1.2.1}{Datenbankserver}{subsection.2.1.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.1.2.2}{Web-Interface}{subsection.2.1.2}% 13
-\BOOKMARK [3][-]{subsubsection.2.1.2.3}{REST API}{subsection.2.1.2}% 14
-\BOOKMARK [2][-]{subsection.2.1.3}{Clients}{section.2.1}% 15
-\BOOKMARK [1][-]{section.2.2}{Datenbank-Architektur}{chapter.2}% 16
-\BOOKMARK [0][-]{chapter.3}{Implementierung}{}% 17
-\BOOKMARK [0][-]{chapter.4}{PHP JWT}{}% 18
-\BOOKMARK [0][-]{chapter.5}{Rechteverwaltung - Web}{}% 19
-\BOOKMARK [1][-]{section.5.1}{Authentifizierung \(AuthN\)}{chapter.5}% 20
-\BOOKMARK [1][-]{section.5.2}{Autorisierung \(AuthZ\)}{chapter.5}% 21
-\BOOKMARK [0][-]{chapter.6}{Rechteverwaltung - App auf Brille}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Authentifizierung \(AuthN\)}{chapter.6}% 23
-\BOOKMARK [2][-]{subsection.6.1.1}{AuthN gegen\374ber der Brille}{section.6.1}% 24
-\BOOKMARK [2][-]{subsection.6.1.2}{AuthN gegen\374ber dem Server}{section.6.1}% 25
-\BOOKMARK [1][-]{section.6.2}{Autorisierung \(AuthZ\)}{chapter.6}% 26
-\BOOKMARK [0][-]{chapter.7}{Hinweise}{}% 27
-\BOOKMARK [1][-]{section.7.1}{Fazit}{chapter.7}% 28
-\BOOKMARK [1][-]{section.7.2}{Ausblick}{chapter.7}% 29
-\BOOKMARK [0][-]{chapter*.23}{Literaturverzeichnis}{}% 30
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 31
+\BOOKMARK [0][-]{section*.8}{Acronym}{}% 1
+\BOOKMARK [0][-]{chapter*.9}{Abbildungsverzeichnis}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Vorwort}{}% 3
+\BOOKMARK [0][-]{chapter.2}{Bedarfsanalyse}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Warenannahme}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{Waren einr\344umen}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Kundenservice}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.4}{Zusammenfassung der Schwachstellen}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.5}{Zieldefinition}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Technik}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Ger\344tetypen}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{Vuzix M100}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.2.1}{Technische Daten}{section.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.2.2}{Bewertung}{section.3.2}% 14
+\BOOKMARK [0][-]{chapter.4}{Anforderungsanalyse}{}% 15
+\BOOKMARK [1][-]{section.4.1}{Ware einr\344umen}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.2}{Warenannahme}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.3}{Kundenzufriedenheit}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.4}{Nicht funktionale Anforderungen}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Architektur}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Grunds\344tzliche Entscheidungen}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Section}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.3}{Another Section}{chapter.5}% 23
+\BOOKMARK [2][-]{subsection.5.3.1}{bla}{section.5.3}% 24
+\BOOKMARK [3][-]{subsubsection.5.3.1.1}{blabla}{subsection.5.3.1}% 25
+\BOOKMARK [0][-]{chapter.6}{Architektur der Software}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Server-Client-Architektur}{chapter.6}% 27
+\BOOKMARK [2][-]{subsection.6.1.1}{Physischer Systemaufbau}{section.6.1}% 28
+\BOOKMARK [2][-]{subsection.6.1.2}{Server}{section.6.1}% 29
+\BOOKMARK [3][-]{subsubsection.6.1.2.1}{Datenbankserver}{subsection.6.1.2}% 30
+\BOOKMARK [3][-]{subsubsection.6.1.2.2}{Web-Interface}{subsection.6.1.2}% 31
+\BOOKMARK [3][-]{subsubsection.6.1.2.3}{REST API}{subsection.6.1.2}% 32
+\BOOKMARK [2][-]{subsection.6.1.3}{Clients}{section.6.1}% 33
+\BOOKMARK [1][-]{section.6.2}{Datenbank-Architektur}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{Implementierung}{}% 35
+\BOOKMARK [0][-]{chapter.8}{PHP JWT}{}% 36
+\BOOKMARK [0][-]{chapter.9}{implementierung web}{}% 37
+\BOOKMARK [1][-]{section.9.1}{Projektdefinition}{chapter.9}% 38
+\BOOKMARK [1][-]{section.9.2}{Aufbau der Arbeit}{chapter.9}% 39
+\BOOKMARK [2][-]{subsection.9.2.1}{bla}{section.9.2}% 40
+\BOOKMARK [3][-]{subsubsection.9.2.1.1}{blabla}{subsection.9.2.1}% 41
+\BOOKMARK [0][-]{chapter.10}{Rechteverwaltung - Web}{}% 42
+\BOOKMARK [1][-]{section.10.1}{Authentifizierung \(AuthN\)}{chapter.10}% 43
+\BOOKMARK [1][-]{section.10.2}{Autorisierung \(AuthZ\)}{chapter.10}% 44
+\BOOKMARK [1][-]{section.10.3}{Benutzerverwaltung}{chapter.10}% 45
+\BOOKMARK [0][-]{chapter.11}{Implementierung Device}{}% 46
+\BOOKMARK [1][-]{section.11.1}{Produkt finden}{chapter.11}% 47
+\BOOKMARK [1][-]{section.11.2}{Produkt einr\344umen}{chapter.11}% 48
+\BOOKMARK [1][-]{section.11.3}{Projektdefinition}{chapter.11}% 49
+\BOOKMARK [1][-]{section.11.4}{Aufbau der Arbeit}{chapter.11}% 50
+\BOOKMARK [2][-]{subsection.11.4.1}{bla}{section.11.4}% 51
+\BOOKMARK [3][-]{subsubsection.11.4.1.1}{blabla}{subsection.11.4.1}% 52
+\BOOKMARK [0][-]{chapter.12}{Rechteverwaltung - App auf Brille}{}% 53
+\BOOKMARK [1][-]{section.12.1}{Authentifizierung \(AuthN\)}{chapter.12}% 54
+\BOOKMARK [2][-]{subsection.12.1.1}{AuthN gegen\374ber der Brille}{section.12.1}% 55
+\BOOKMARK [2][-]{subsection.12.1.2}{AuthN gegen\374ber dem Server}{section.12.1}% 56
+\BOOKMARK [1][-]{section.12.2}{Autorisierung \(AuthZ\)}{chapter.12}% 57
+\BOOKMARK [0][-]{chapter.13}{Hinweise}{}% 58
+\BOOKMARK [1][-]{section.13.1}{Fazit}{chapter.13}% 59
+\BOOKMARK [1][-]{section.13.2}{Ausblick}{chapter.13}% 60
+\BOOKMARK [0][-]{chapter*.33}{Literaturverzeichnis}{}% 61
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 62
