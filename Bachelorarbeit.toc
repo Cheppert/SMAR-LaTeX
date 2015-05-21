@@ -37,27 +37,30 @@
 \contentsline {chapter}{\numberline {7}\acs {PHP} \acs {JWT}}{36}{chapter.7}
 \contentsline {chapter}{\numberline {8}Implementierung der Webadministration}{39}{chapter.8}
 \contentsline {section}{\numberline {8.1}Technologische Grundlagen}{39}{section.8.1}
-\contentsline {section}{\numberline {8.2}Aufbau der Arbeit}{40}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}bla}{40}{subsection.8.2.1}
-\contentsline {subsubsection}{\numberline {8.2.1.1}blabla}{40}{subsubsection.8.2.1.1}
-\contentsline {chapter}{\numberline {9}Rechteverwaltung - Web}{41}{chapter.9}
-\contentsline {section}{\numberline {9.1}\acf {AuthN}}{41}{section.9.1}
-\contentsline {section}{\numberline {9.2}\acf {AuthZ}}{45}{section.9.2}
-\contentsline {section}{\numberline {9.3}Benutzerverwaltung}{48}{section.9.3}
-\contentsline {chapter}{\numberline {10}Implementierung Device}{51}{chapter.10}
-\contentsline {section}{\numberline {10.1}Produkt finden}{51}{section.10.1}
-\contentsline {section}{\numberline {10.2}Produkt einr\IeC {\"a}umen}{54}{section.10.2}
-\contentsline {section}{\numberline {10.3}Projektdefinition}{56}{section.10.3}
-\contentsline {section}{\numberline {10.4}Aufbau der Arbeit}{56}{section.10.4}
-\contentsline {subsection}{\numberline {10.4.1}bla}{56}{subsection.10.4.1}
-\contentsline {subsubsection}{\numberline {10.4.1.1}blabla}{56}{subsubsection.10.4.1.1}
-\contentsline {chapter}{\numberline {11}Rechteverwaltung - App auf Brille}{57}{chapter.11}
-\contentsline {section}{\numberline {11.1}\acf {AuthN}}{57}{section.11.1}
-\contentsline {subsection}{\numberline {11.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{57}{subsection.11.1.1}
-\contentsline {subsection}{\numberline {11.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{61}{subsection.11.1.2}
-\contentsline {section}{\numberline {11.2}\acf {AuthZ}}{62}{section.11.2}
-\contentsline {chapter}{\numberline {12}Hinweise}{64}{chapter.12}
-\contentsline {section}{\numberline {12.1}Fazit}{65}{section.12.1}
-\contentsline {section}{\numberline {12.2}Ausblick}{65}{section.12.2}
+\contentsline {section}{\numberline {8.2}Bereiche und Funktionen}{40}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Produkte \& Einheiten}{41}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Regale \& F\IeC {\"a}cher}{41}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Benutzerverwaltung}{41}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Weitere Funktionen}{41}{subsection.8.2.4}
+\contentsline {chapter}{\numberline {9}Implementierung der Client-Schnittstelle}{42}{chapter.9}
+\contentsline {chapter}{\numberline {10}Rechteverwaltung - Web}{43}{chapter.10}
+\contentsline {section}{\numberline {10.1}\acf {AuthN}}{43}{section.10.1}
+\contentsline {section}{\numberline {10.2}\acf {AuthZ}}{47}{section.10.2}
+\contentsline {section}{\numberline {10.3}Benutzerverwaltung}{50}{section.10.3}
+\contentsline {chapter}{\numberline {11}Implementierung Device}{53}{chapter.11}
+\contentsline {section}{\numberline {11.1}Produkt finden}{53}{section.11.1}
+\contentsline {section}{\numberline {11.2}Produkt einr\IeC {\"a}umen}{56}{section.11.2}
+\contentsline {section}{\numberline {11.3}Projektdefinition}{58}{section.11.3}
+\contentsline {section}{\numberline {11.4}Aufbau der Arbeit}{58}{section.11.4}
+\contentsline {subsection}{\numberline {11.4.1}bla}{58}{subsection.11.4.1}
+\contentsline {subsubsection}{\numberline {11.4.1.1}blabla}{58}{subsubsection.11.4.1.1}
+\contentsline {chapter}{\numberline {12}Rechteverwaltung - App auf Brille}{59}{chapter.12}
+\contentsline {section}{\numberline {12.1}\acf {AuthN}}{59}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{59}{subsection.12.1.1}
+\contentsline {subsection}{\numberline {12.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{63}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.2}\acf {AuthZ}}{64}{section.12.2}
+\contentsline {chapter}{\numberline {13}Hinweise}{66}{chapter.13}
+\contentsline {section}{\numberline {13.1}Fazit}{67}{section.13.1}
+\contentsline {section}{\numberline {13.2}Ausblick}{67}{section.13.2}
 \contentsline {chapter}{\nonumberline Literaturverzeichnis}{i}{chapter*.35}
 \contentsline {chapter}{\numberline {A}Anhang}{I}{appendix.A}
