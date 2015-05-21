@@ -1,15 +1,26 @@
-\chapter{\ac{PHP} \ac{JWT}}
+\chapter{\acs{PHP} \acs{JWT}}
 \label{cha:jwt}
 \sloppy
 
-Bei der in diesem Projekt genutzten Bibliotek "PHP JWT" handelt es sich um eine objektorientierte \ac{PHP}-Klasse von \mbox{\url{firebase.com}} zur Generierung von \acl{JWT}.\\
-
+Bei der in diesem Projekt genutzten Bibliotek \glqq PHP JWT\grqq\ handelt es sich um eine objektorientierte \ac{PHP}-Klasse von \mbox{\url{firebase.com}} zur Generierung von \acl{JWT}.
 \fussy
-TODO: ABBILDUNGEN EINFÜGEN!!!!!!!!!\\
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=1.0]{Bilder/jwt_encode.png}}
+	\caption{Generierung eines \acs{JWT}}
+	\label{fig:jwt_encode}
+\end{figure}
 
-Abbildung TODO: REFERENZ zeigt die Generierung eines \ac{JWT}. \$token beschreibt dabei das \ac{JSON}-Objekt und enthält den Inhalt. \$key beschreibt den Schlüssel, der nur dem Server bekannt ist, anhand dessen der Inhalt signiert wird, dadurch wird sichergestellt, dass der \ac{JWT} bei einer weiteren Anfrage an den Server nicht durch den Client manipuliert wurde.
+Abbildung \ref{fig:jwt_encode} zeigt die Generierung eines \ac{JWT}. \$token beschreibt dabei das \ac{JSON}-Objekt und enthält den Inhalt. SMAR\_JWT\_SSK ist eine in der Konfigurationsdatei festgelegte Konstante und beschreibt den Secret Server Key (geheimer Schlüssel), der nur dem Server bekannt ist, anhand dessen der Inhalt signiert wird. Dadurch wird sichergestellt, dass der \ac{JWT} bei einer weiteren Anfrage an den Server nicht durch den Client manipuliert wurde.\\
 
-Die Dekodierung eines solchen \acl{JWT} wird in Abbildung TODO: REFERENZ beschrieben. Dabei muss \$key identisch zu dem Schlüssel sein, der zur Generierung des \ac{JWT} benutzt wurde. Sind die Schlüssel nicht identisch, wird der Token nicht dekodiert und die Funktion liefert ein leeres Ergebnis zurück.\\
+Die Dekodierung eines solchen \acl{JWT} wird in Abbildung \ref{fig:jwt_decode} beschrieben. Dabei muss SMAR\_JWT\_SSK (Secret Server Key) identisch zu dem Schlüssel sein, der zur Generierung des \ac{JWT} benutzt wurde. Sind die Schlüssel nicht identisch, wird der Token nicht dekodiert und die Funktion liefert ein leeres Ergebnis zurück.
+
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=1.0]{Bilder/jwt_decode.png}}
+	\caption{Dekodieren eines \acs{JWT}}
+	\label{fig:jwt_decode}
+\end{figure}
 
 Ein \ac{JSON} Web Token setzt sich aus folgenden drei Abschnitten zusammen:\footnote{\citep[S. 289f.]{book_jwt}}
 \begin{enumerate}
@@ -30,7 +41,7 @@ Der \acs{JWT}-Header besteht ebenfalls aus zwei Name/Wert-Paaren und sieht in di
 	\caption{\acs{JWT}-Header}
 	\label{fig:jwt_header}
 \end{figure}
-Der Header beschreibt den Typ (JWT) und den verwendeten Algorithmus ("alg":"HS256") zur Signierung. In \ac{SMAR} wurde der HS256-Algorithmus zur Signierung des Claims-Set verwendet. Das Claims-Set wurde somit mit einem privaten Schlüssel und SHA-256 zu einem Hash-Wert errechnet (dies ist der dritte Teil des \acs{JWT}). Die Signierung kann aufgrund des symmetrischen Signierungsalgorithmus außerdem nur mit dem selben privaten Schlüssel überprüft werden.\\
+Der Header beschreibt den Typ (JWT) und den verwendeten Algorithmus \shorthandoff{"} ("alg":"HS256") \shorthandon{"} zur Signierung. In \ac{SMAR} wurde der HS256-Algorithmus zur Signierung des Claims-Set verwendet. Das Claims-Set wurde somit mit einem privaten Schlüssel und SHA-256 zu einem Hash-Wert errechnet (dies ist der dritte Teil des \acs{JWT}). Die Signierung kann aufgrund des symmetrischen Signierungsalgorithmus außerdem nur mit dem selben privaten Schlüssel überprüft werden.\\
 Ein \acl{JWT} stellt somit die Identität der Nachricht \bzw des \ac{JSON}-Objekt sicher und verhindert die unbemerkte Manipulation.\\
 
 Durch den Einsatz von PHP JWT wird in \ac{SMAR} die korrekt authentifizierte Kommunikation mit der REST API - sowohl von der App, als auch von der Web Administration - sichergestellt.
