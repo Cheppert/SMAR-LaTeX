@@ -32,6 +32,20 @@
   {{CAS(a)}{}{}{}{}} {} {} \bibAnnoteFile {cas}
 
 \backrefparscanfalse
+\bibitem[{PHP-Group\jbdy {2015}}%
+         {}%
+         {{0}{}{}{2015}{}{}{}{}%
+          {2015}}%
+         {{PHP - mt\_rand()}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{mt_rand}
+ \jburldef {mt_rand}{http://php.net/manual/de/function.mt-rand.php}%
+ \jbbibargs {\bibnf {PHP-Group} {} {} {} {}} { PHP-Group} {au} {sexless}
+  {\bibtfont {PHP - mt\_rand()}\bibatsep {} 2015 \jburluse {mt_rand}\bibbudcsep
+  {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem {{PHP-Group}{}{}{}{}}
+  {} {} \bibAnnoteFile {mt_rand}
+
+\backrefparscanfalse
 \bibitem[{Steyer\jbbtasep Softic\jbdy {2015}}%
          {}%
          {{0}{}{book}{2015}{}{}{}{}%

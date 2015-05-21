@@ -1,5 +1,5 @@
-\BOOKMARK [0][-]{section*.10}{Acronym}{}% 1
-\BOOKMARK [0][-]{chapter*.11}{Abbildungsverzeichnis}{}% 2
+\BOOKMARK [0][-]{section*.8}{Acronym}{}% 1
+\BOOKMARK [0][-]{chapter*.9}{Abbildungsverzeichnis}{}% 2
 \BOOKMARK [0][-]{chapter.1}{Bedarfsanalyse}{}% 3
 \BOOKMARK [1][-]{section.1.1}{Warenannahme}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{Waren einr\344umen}{chapter.1}% 5
@@ -36,18 +36,19 @@
 \BOOKMARK [0][-]{chapter.8}{Rechteverwaltung - Web}{}% 36
 \BOOKMARK [1][-]{section.8.1}{Authentifizierung \(AuthN\)}{chapter.8}% 37
 \BOOKMARK [1][-]{section.8.2}{Autorisierung \(AuthZ\)}{chapter.8}% 38
-\BOOKMARK [0][-]{chapter.9}{implementierung device}{}% 39
-\BOOKMARK [1][-]{section.9.1}{Projektdefinition}{chapter.9}% 40
-\BOOKMARK [1][-]{section.9.2}{Aufbau der Arbeit}{chapter.9}% 41
-\BOOKMARK [2][-]{subsection.9.2.1}{bla}{section.9.2}% 42
-\BOOKMARK [3][-]{subsubsection.9.2.1.1}{blabla}{subsection.9.2.1}% 43
-\BOOKMARK [0][-]{chapter.10}{Rechteverwaltung - App auf Brille}{}% 44
-\BOOKMARK [1][-]{section.10.1}{Authentifizierung \(AuthN\)}{chapter.10}% 45
-\BOOKMARK [2][-]{subsection.10.1.1}{AuthN gegen\374ber der Brille}{section.10.1}% 46
-\BOOKMARK [2][-]{subsection.10.1.2}{AuthN gegen\374ber dem Server}{section.10.1}% 47
-\BOOKMARK [1][-]{section.10.2}{Autorisierung \(AuthZ\)}{chapter.10}% 48
-\BOOKMARK [0][-]{chapter.11}{Hinweise}{}% 49
-\BOOKMARK [1][-]{section.11.1}{Fazit}{chapter.11}% 50
-\BOOKMARK [1][-]{section.11.2}{Ausblick}{chapter.11}% 51
-\BOOKMARK [0][-]{chapter*.25}{Literaturverzeichnis}{}% 52
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 53
+\BOOKMARK [1][-]{section.8.3}{Benutzerverwaltung}{chapter.8}% 39
+\BOOKMARK [0][-]{chapter.9}{implementierung device}{}% 40
+\BOOKMARK [1][-]{section.9.1}{Projektdefinition}{chapter.9}% 41
+\BOOKMARK [1][-]{section.9.2}{Aufbau der Arbeit}{chapter.9}% 42
+\BOOKMARK [2][-]{subsection.9.2.1}{bla}{section.9.2}% 43
+\BOOKMARK [3][-]{subsubsection.9.2.1.1}{blabla}{subsection.9.2.1}% 44
+\BOOKMARK [0][-]{chapter.10}{Rechteverwaltung - App auf Brille}{}% 45
+\BOOKMARK [1][-]{section.10.1}{Authentifizierung \(AuthN\)}{chapter.10}% 46
+\BOOKMARK [2][-]{subsection.10.1.1}{AuthN gegen\374ber der Brille}{section.10.1}% 47
+\BOOKMARK [2][-]{subsection.10.1.2}{AuthN gegen\374ber dem Server}{section.10.1}% 48
+\BOOKMARK [1][-]{section.10.2}{Autorisierung \(AuthZ\)}{chapter.10}% 49
+\BOOKMARK [0][-]{chapter.11}{Hinweise}{}% 50
+\BOOKMARK [1][-]{section.11.1}{Fazit}{chapter.11}% 51
+\BOOKMARK [1][-]{section.11.2}{Ausblick}{chapter.11}% 52
+\BOOKMARK [0][-]{chapter*.26}{Literaturverzeichnis}{}% 53
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 54

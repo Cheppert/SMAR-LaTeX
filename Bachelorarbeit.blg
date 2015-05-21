@@ -3,8 +3,13 @@ A level-1 auxiliary file: Inhalt/titelseite.aux
 A level-1 auxiliary file: Inhalt/erklaerung.aux
 A level-1 auxiliary file: Inhalt/abstract.aux
 A level-1 auxiliary file: Inhalt/Kapitel/bedarfsanalyse.aux
+A level-1 auxiliary file: Inhalt/Kapitel/anforderungsanalyse.aux
+A level-1 auxiliary file: Inhalt/Kapitel/architektur0.aux
 A level-1 auxiliary file: Inhalt/Kapitel/architektur.aux
 A level-1 auxiliary file: Inhalt/Kapitel/jwt.aux
+A level-1 auxiliary file: Inhalt/Kapitel/implementierung_web.aux
+A level-1 auxiliary file: Inhalt/Kapitel/rechteverwaltung_web.aux
+A level-1 auxiliary file: Inhalt/Kapitel/implementierung_device.aux
 A level-1 auxiliary file: Inhalt/Kapitel/authentifizierung.aux
 A level-1 auxiliary file: Inhalt/Kapitel/zusammenfassung.aux
 The style file: jurabib.bst
@@ -12,5 +17,8 @@ A level-1 auxiliary file: Inhalt/anhang.aux
 Database file #1: Inhalt/bib.bib
 Warning--entry type for "cas" isn't style-file defined
 --line 33 of file Inhalt/bib.bib
+Warning--entry type for "mt_rand" isn't style-file defined
+--line 51 of file Inhalt/bib.bib
 Warning--Neither address nor year in cas
-(There were 2 warnings)
+Warning--No address in mt_rand
+(There were 4 warnings)

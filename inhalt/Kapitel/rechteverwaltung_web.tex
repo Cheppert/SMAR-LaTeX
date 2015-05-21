@@ -23,18 +23,21 @@ Bei einem erfolgreichen Login werden anschließend folgende Daten in einer neu e
 	\item Zeit seit dem letzten Seitenaufruf (Datum + Uhrzeit)
 	\item ein gültiger \ac{JWT} zur Authentifizierung gegenüber der \ac{REST} \ac{API}\footnote{Siehe Kapitel \ref{cha:jwt} \nameref{cha:jwt}}
 \end{itemize}
-Der \ac{JWT} wird im Rahmen der der Session-Erstellung generiert.\\
+Der \ac{JWT} wird im Rahmen der Session-Erstellung generiert.\\
 Nach Generierung der Session wird nun die Startseite der Anwendung angezeigt.\\
 Sollte der Login-Vorgang aufgrund einer ungültigen Benutzername/Passwort-Kombination so wird die Login-Seite mit einer entsprechenden Fehlermeldung erneut angezeigt.\\
 
-Das Hash-Verfahren für das Passwort, so wie ein individueller Salt-Wert pro Benutzer stellen eine Authentifizierung nach aktuellem Standard mit hoher Sicherheit dar. Auch wenn einem Angreifer das Auslesen der Benutzerdaten aus der Datenbank gelingt, kann er das Passwort eines Benutzers und somit den Zugriff mit einer vorgefertigten Rainbowtabelle nicht erlangen. Er muss eine große, für jeden Benutzer individuelle Rainbowtabelle anlegen, die bei einer Passwortlänge von mindestens 64 Zeichen (Salt-Wert-Länge) bei mindestens 52 möglichen Zeichen (A-Z und a-z) mehrere hundert Terabyte groß ist.\footnote{TODO: Rechnung}\\
+Das Hash-Verfahren für das Passwort, so wie ein individueller Salt-Wert pro Benutzer stellen eine Authentifizierung nach aktuellem Standard mit hoher Sicherheit dar. Auch wenn einem Angreifer das Auslesen der Benutzerdaten aus der Datenbank gelingt, kann er das Passwort eines Benutzers und somit den Zugriff mit einer vorgefertigten Rainbowtabelle nicht erlangen. Er muss eine große, für jeden Benutzer individuelle Rainbowtabelle anlegen, die bei einer Passwortlänge von 6 bis 9 Zeichen (in \ac{SMAR} Länger!) bei mindestens 62 möglichen Zeichen (A-Z,a-z und 0-9) plus 64 Byte (Salt-Wert-Länge) bereits bis zu 1000 Petabyte groß ist.\footnote{$\sum_{n=6}^{9} 62^{n}*(n+64)=1004$ Petabyte (keine Komprimierung)}\\
 
-TODO:
+Werden nach einem erfolgreichen Login weitere Unterseiten aufgerufen oder Anfragen über direkte Links an den Server gestellt, so wird vor Ausführung des aufgerufenen Skripts ein anderes Skript eingefügt und ausgeführt, dass die Session kontrolliert. Dazu wird zunächst überprüft, ob eine Session mit Inhalt existiert. Ist dies nicht der Fall wird man, wie oben beschrieben, auf die Login-Seite weitergeleitet. Ist die Session aktiv werden zunächst die in der Session gespeicherten Daten (wie \zB der Benutzername) mit der Datenbank abgeglichen. Dadurch wird sichergestellt, dass es sich um eine gültige Session handelt und der Benutzer in der Datenbank existiert. Anschließend wird die Session auf einen möglichen Timeout untersucht. Dazu wird die aktuelle Zeit mit der letzten Aktivität und der Loginzeit, die beide in den Session-Daten abgespeichert sind, verglichen. Ein Timeout liegt vor, wenn:
 \begin{itemize}
-	\item Session-Überprüfung/Aufrufen weiterer Seiten bei Anmeldung
-	\item \ac{REST} \ac{API}
-	\item Benutzerverwaltung erklären
+	\item Die letzte Aktivität (also der letzte Mausklick auf der Administrationsoberfläche) länger 12 Minuten her ist.
+	\item Der Benutzer bereits länger als 24 Stunden angemeldet ist.
 \end{itemize}
+Bei einem Timeout wird der Benutzer ebenfalls zurück auf die Login-Seite, mit einer Timeout-Fehlermeldung, weitergeleitet. Dies stellt sicher, dass ein unbefugter Benutzer keinen Zugriff aufgrund eines für längere Zeit unbeaufsichtigten Computers bekommt. Außerdem wird sichergestellt, dass ein Benutzer nicht über mehrere Monate angemeldet bleiben kann und somit womöglich Rechte behält, die er laut Datenbank nicht mehr besitzt. Die Rechte werden, um die Performanz gewährleisten zu können, nicht bei jedem Aufruf mit der Datenbank abgeglichen.\\
+Dieses Skript zur Session-Überprüfung wird auf jeder Unterseite - zusammen mit der Konfigurationsdatei - neu geladen und ausgeführt. Ein unberechtigter Benutzer hat somit keine Möglichkeit eine Aktion - auch nicht über direkte Links - ohne \acl{AuthN} auszuführen.\\
+
+Die \ac{REST} \ac{API} verhält sich dem Skript zur Session-Überprüfung ähnlich. Bevor eine Anfrage von \ac{REST} bearbeitet wird, wird eine Funktion ausgeführt, die den \ac{JWT} auf Gültigkeit überprüft. Dieser wird dazu zunächst dekodiert\footnote{Siehe Kapitel \ref{cha:jwt} \nameref{cha:jwt}} und anschließend werden die im Token gespeicherten Daten mit der Datenbank abgeglichen. Nur bei einem erfolgreichen Abgleich wird die Anfrage bearbeitet.
 
 \section{\acf{AuthZ}}
 Im Gegensatz zu den Benutzern der \ac{VR}-Geräte, die entweder durch ihre Aufgabe volle Berechtigung auf den \ac{AR}-Geräten oder keine Berechtigung benötigen und es somit keine verschiedene Berechtigungsstufen benötigt, gibt es in der Web Administration verschiedenste Benutzern mit unterschiedlichen Berechtigungen im Unternehmen.\\
@@ -68,4 +71,35 @@ Wie im vorherigen Absatz beschrieben, besitzen höhere Berechtigungsstufen autom
 
 Berechtigungsstufe 0 gibt dem Benutzer keine Berechtigung die Anwendung zu benutzen, der Anmeldebildschirm wird nicht auf die Startseite weitergeleitet, sondern gibt eine Fehlermeldung \glqq Insufficient Permissions\grqq\footnote{zu Deutsch: \glqq mangelnde Berechtigung\grqq} zurück. Dies kann erforderlich sein, wenn einem Mitarbeiter gekündigt wurde, er aber aufgrund von \zB offenen Gehaltszahlungen noch nicht aus dem System gelöscht werden darf. Berechtigungsstufe 10 gibt Zugriff auf die Anwendung und auf die Basisfunktionalität, der Benutzer bekommt allerdings noch keine Schreibberechtigung. Dies ist für Mitarbeiter sinnvoll, die mit der Überwachung des Warenbestands beauftragt wurden, allerdings keine Berechtigung haben sollen, diesen zu verändern. Die darauffolgende Stufe 20 gibt dem Benutzer zusätzlich die Berechtigung auf die Produktverwaltung. Der Benutzer ist daher berechtigt Produkte zu verändern/hinzuzufügen oder zu löschen. Die Regalverwaltung ist hier noch nicht inbegriffen und wird erst in der Stufe 40 hinzugefügt. Dem Benutzer ist es nun erlaubt Regale, Regalstandorte und die Anordnung der Produkte innerhalb des Regales zu verändern. Darauffolgende Berechtigungsstufen 50, 60 und 70 dienen der Verwaltung und sind für die eigentliche Aufgabenerfüllung nicht mehr notwendig. Stufe 50 fügt die Berechtigung zur Geräteverwaltung hinzu, das heißt der Benutzer darf nun \ac{AR}-Geräte, wie \zB die Smartglass hinzufügen oder löschen. Stufe 60 fügt eine nach dem Gesetz sensible Berechtigung hinzu, nämlich den Lese- und Schreibzugriff auf personenbezogene Daten. Der Benutzer ist nun berechtigt andere Benutzer hinzuzufügen, zu löschen oder zu verändern (wie \zB Berechtigungen verändern). Das Ändern des Passworts des eigenen, angemeldeten Benutzers ist jedoch bereits ab Berechtigungsstufen größer als 0 verfügbar. Die letzte Stufe 70 gewährt volle Berechtigungen auf alle Komponenten der Web-Administration. Dies ist für Systemadministratoren und Filialleiter geeignet, in diesen Fällen muss ein ständiger Zugriff auf die gesamte Anwendung garantiert sein.\\
 
-Die oben genannten Berechtigungsstufen werden in der Datenbank in der für die Benutzer zuständigen Tabelle (user\footnote{Siehe Kapitel \ref{sec:architektur_datenbank} \nameref{sec:architektur_datenbank}}) abgespeichert. Die Tabelle enthält die Spalte role\_web. In dieser Spalte wird für jeden Benutzer die entsprechende Berechtigungsstufe als zweistellige Nummer gespeichert. Greift der Benutzer nun auf die Anwendung zu, wird während der Anmeldung zunächst überprüft, ob die Berechtigung ungleich 0 (keine Berechtigung) ist und anschließend die Berechtigung in der Session gespeichert. Ruft man eine Komponente/eine Funktion innerhalb der Anwendung auf, so wird überprüft, ob die Berechtigungsstufe größer oder gleich (>=) der erforderlichen Nummer ist. Ist die Nummer größer oder gleich wird der Zugang gewährt und die Funktion aufgerufen, ansonsten wird die Anfrage mit der Fehlermeldung \glqq Insufficient Permissions\grqq\footnote{\glqq mangelnde Berechtigung\grqq} abgebrochen.\\
+Die oben genannten Berechtigungsstufen werden in der Datenbank in der für die Benutzer zuständigen Tabelle (user\footnote{Siehe Kapitel \ref{sec:architektur_datenbank} \nameref{sec:architektur_datenbank}}) abgespeichert. Die Tabelle enthält die Spalte role\_web. In dieser Spalte wird für jeden Benutzer die entsprechende Berechtigungsstufe als zweistellige Nummer gespeichert. Greift der Benutzer nun auf die Anwendung zu, wird während der Anmeldung zunächst überprüft, ob die Berechtigung ungleich 0 (keine Berechtigung) ist und anschließend die Berechtigung in der Session gespeichert. Ruft man eine Komponente/eine Funktion innerhalb der Anwendung auf, so wird überprüft, ob die Berechtigungsstufe größer oder gleich (>=) der erforderlichen Nummer ist. Ist die Nummer größer oder gleich wird der Zugang gewährt und die Funktion aufgerufen, ansonsten wird die Anfrage mit der Fehlermeldung \glqq Insufficient Permissions\grqq\footnote{\glqq mangelnde Berechtigung\grqq} abgebrochen.
+
+\section{Benutzerverwaltung}
+Die Benutzerverwaltung ist ein Teil der \ac{SMAR} Web Administration und beschäftigt sich mit dem Verwalten der Benutzer. Die Benutzerverwaltung ist somit ein essentieller Teil für die Rechteverwaltung der Smartglass und der Web Administration.\\
+
+Die Benutzerverwaltung besteht aus drei Unterseiten:
+\begin{itemize}
+	\item Passwörter ändern
+	\item Benutzer editieren
+	\item Neuen Benutzer anlegen
+\end{itemize}
+Wie im Kapitel Autorisierung beschrieben, ist die Benutzerverwaltung mit Ausnahme der \glqq Passwort ändern\grqq -Funktion nur von Benutzern mit einer Berechtigungsstufe von mindestens 60 zugänglich. Benutzer mit einer geringeren Berechtigungsstufe können ausschließlich ihre eigenen Passwörter ändern.\\
+
+Auf dieser Seite können zwei Passwörter verwaltet werden. Das Passwort für die Web Administration und das Passwort für die Smartglass, welches in Form eines QR-Codes dargestellt wird.\\
+
+Ändert ein Benutzer das Passwort für die Web Administration, wird durch die Anwendung zuerst ein neuer Salt generiert, dieser setzt sich aus folgenden drei Abschnitten zusammen:
+\begin{itemize}
+	\item einem Teil des Benutzernamens
+	\item der aktuellen Zeit in ms (Beginn ab 01.01.1970 00:00 Uhr)
+	\item einem Teil des Nachnamens
+\end{itemize}
+Dem neuen Passwort wird der mit dem SHA256-Verfahren gehashte Salt angehängt und das Passwort wird anschließend ebenfalls gehasht und in der Datenbank abgelegt.\\
+Möchte ein Benutzer den Zugang zu der Brille ändern oder wiederherstellen hat er er die Möglichkeit sich einen neuen QR-Code generieren lassen, den aktuell gültigen QR-Code ausdrucken oder einen eigenen QR-Code zu aktivieren. Der neue Code, der wieder mit dem SHA256-Verfahren gehasht wird und somit aus 64 Zeichen besteht, wird durch die Anwendung aus folgenden Daten des Benutzers zusammengesetzt:
+\begin{itemize}
+	\item Aktueller Zeit
+	\item Aufgeteiltem Salt des Benutzers
+	\item Benutzername
+	\item Einer Zufallszahl zwischen 0 und $2^{32}$ (32 Bit System) \bzw $2^{64}$ (64 Bit System)\footnote{{\citep{mt_rand}}}
+\end{itemize}
+Dieser Code \bzw der durch den Benutzer eingegebene String wird in der Datenbank gespeichert. Anschließend wird auf eine freie PHP-Library namens \glqq phpqrcode\grqq , die auf \url{http://phpqrcode.sourceforge.net/} veröffentlicht ist, zurückgegriffen. Diese interpretiert den String aus der Datenbank und wandelt ihn in einen QR-Code um. Die Library ist in \ac{SMAR} dabei so konfiguriert, dass sie den QR-Code sowohl als png und jpg-Datei zurückgibt und eine für die Kamera der Smartglass akzeptable Größe, Qualität und Genauigkeit hat.\\
+
+Die anderen beiden Unterseiten bieten, für Benutzer mit einer Berechtigungsstufe größer als 60, das Editieren und Anlegen neuer Benutzer an. Im Gegensatz zu einer Standard Benutzerverwaltung werden hier jedoch keine E-Mail-Adressen, sondern Firmen interne Daten, wie \zB die Personalnummern und vor Allem die Berechtigungsstufen abgefragt. Darüber hinaus ist sie Benutzerverwaltungen, die man von bekannten \ac{CMS} und Web Administrationen kennt, ähnlich.
