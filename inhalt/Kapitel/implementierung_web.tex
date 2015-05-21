@@ -1,32 +1,39 @@
-\chapter{implementierung web}
+\chapter{Implementierung der Webadministration}
 \label{cha:impl_web}
 
+Die Web Administration stellt die zentrale Kontrolleinheit des gesamten Projekts dar. Über die Web Administration werden sämtliche Einträge der Datenbank verwaltet, dies schließt neben der Benutzer- und Geräteverwaltung ebenfalls die Verwaltung aller Regale und Produkte ein.
 
 
-\section{Projektdefinition}
-Kapitel \ref{cha:intro}
+\section{Technologische Grundlagen}
+
+Die Administrationsoberfläche ist als Webapplikation und im Speziellen als Single-Page-Applikation konzipiert, d.h. sie besteht grundlegend aus einer einzigen Webseite, deren Layout (wie für Webseiten üblich) auf \ac{HTML} und \ac{CSS} aufgebaut ist. Die einzelnen Ansichten (Views) der Anwendung sowie jegliche dynamische Interaktionsprozesse werden über JavaScript (\acs{JS}) als clientseitige Scriptsprache gesteuert. Dabei werden auch Daten oder Views im Hintergrund asnychron über \ac{AJAX} nachgeladen. Durch dieses Grundkonzept werden viele Ladevorgänge der kompletten Webseite vermieden und nur die Daten nachgeladen, die im Einzelnen benötigt werden -- dies sorgt für eine bessere Performance der Anwendung und somit eine bessere User Experience.
+
+Wie bereits in der Architektur angedeutet, läuft die Webadministration serverseitig mit der Scriptsprache \ac{PHP}. Hierüber werden Inhalte und Layoutkomponenten vorgeneriert und abhängig von den Parametern der clientseitigen Anfragen ausgeliefert.
+
+Dennoch lassen sich Teile der Anwendung ohne Einsatz von JavaScript nur sehr aufwändig umsetzen; als Beispiel dafür sei hier der Shelf Designer genannt, der im Folgenden noch näher beschrieben wird.
+
 
 \section{Aufbau der Arbeit}
 \subsection{bla}
 \subsubsection{blabla}
-\textbf{bla}\\
-Hochkommata: \glqq asdas\grqq~~ sdasd\\
 
-Neue Zeile: nur Backslash Backslash\\
-sadas\\
+wie bereits in architektur angedeutet, Serverseitige Scriptsprache PHP (Implementierung)
 
-Absatz\\
+kann theoretisch auf jedem gerät im netzwerk bereitsgestellt,m da nur anbindung an DB nötig - sinn aber, um geräte zu spraen, auf zentralen server
+netzwerk entsprehcende größe: performancegründen eigener server
+
+Slim Framework (Implementierung)
+
+%TODO: Erläutern, warum Berechnung der Kapazität abgelehnt wird
+
+
+
 
 Aufzählung:
 \begin{itemize}
 	\item basd
 	\item ...
 \end{itemize}
-
-\textit{\textbf{yxcyxcyxc}}
-\underline{sdfsdf}
-$\rightarrow$
-
 
 
 
