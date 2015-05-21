@@ -1,56 +1,58 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.18)  20 MAY 2015 10:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.5.18)  20 MAY 2015 14:24
 entering extended mode
 **Bachelorarbeit.tex
-
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.tex
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrreprt.cls"
-Document Class: scrreprt 2012/07/29 v3.11b KOMA-Script document class (report)
+Document Class: scrreprt 2015/02/07 v3.16 KOMA-Script document class (report)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrkbase.sty"
-Package: scrkbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-dependent 
-basics and keyval usage)
+Package: scrkbase 2015/02/07 v3.16 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrbase.sty"
-Package: scrbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-independent
- basics and keyval usage)
+Package: scrbase 2015/02/07 v3.16 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrlfile.sty"
-Package: scrlfile 2012/06/15 v3.12 KOMA-Script package (loading files)
+Package: scrlfile 2015/02/07 v3.16 KOMA-Script package (loading files)
 
-Package scrlfile, 2012/06/15 v3.12 KOMA-Script package (loading files)
+Package scrlfile, 2015/02/07 v3.16 KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
 ))) ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\tocbasic.sty"
-Package: tocbasic 2012/04/04 v3.10b KOMA-Script package (handling toc-files)
+Package: tocbasic 2015/02/07 v3.16 KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 117.
+(tocbasic)             for `toc' on input line 118.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 118.
+(tocbasic)             for `lof' on input line 119.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 119.
-Package scrreprt Info: You've used obsolete option `12pt'.
-(scrreprt)             \KOMAExecuteOptions{fontsize=12pt} will be
-(scrreprt)             used instead.
-(scrreprt)             You may simply replace `12pt'
-(scrreprt)             by `fontsize=12pt'.
+(tocbasic)             for `lot' on input line 120.
+Package tocbasic Info: defining new hook before heading of `' on input line 118
+0.
+Package scrreprt Info: You've used standard option `12pt'.
+(scrreprt)             This is correct!
+(scrreprt)             Internally I'm using `fontsize=12pt'.
+(scrreprt)             If you'd like to set the option with \KOMAoptions,
+(scrreprt)             you'd have to use `fontsize=12pt' there
+(scrreprt)             instead of `12pt', too.
 Class scrreprt Info: You've used standard option `oneside'.
 (scrreprt)           This is correct!
 (scrreprt)           Internally I'm using `twoside=false'.
@@ -60,32 +62,32 @@ Class scrreprt Info: You've used standard option `oneside'.
 
 
 Class scrreprt Warning: You've used obsolete option `liststotoc'.
-(scrreprt)              Usage of this option indicates an old document and
-(scrreprt)              changes compatibility level using
+(scrreprt)              Usage of this option indicates an old document
+(scrreprt)              and changes compatibility level using
 (scrreprt)              `listof=totoc,version=first'.
-(scrreprt)              If you don't want this, you should simply replace
-(scrreprt)              usage of option `liststotoc' by `listof=totoc'.
+(scrreprt)              If you don't want this, you should simply
+(scrreprt)              replace option `liststotoc' by `listof=totoc'.
 
 Class scrreprt Info: Switching compatibility level to `first'.
 
 Class scrreprt Warning: You've used obsolete option `bibtotoc'.
-(scrreprt)              Usage of this option indicates an old document and
-(scrreprt)              changes compatibility level using
+(scrreprt)              Usage of this option indicates an old document
+(scrreprt)              and changes compatibility level using
 (scrreprt)              `bibliography=totoc,version=first'.
-(scrreprt)              If you don't want this, you should simply replace
-(scrreprt)              usage of option `bibtotoc' by `bibliography=totoc'.
+(scrreprt)              If you don't want this, you should simply
+(scrreprt)              replace option `bibtotoc' by `bibliography=totoc'.
 
 Class scrreprt Info: Switching compatibility level to `first'.
 Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 1367.
+ine 1712.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrsize12pt.clo"
-File: scrsize12pt.clo 2012/07/29 v3.11b KOMA-Script font size class option (12p
-t)
+File: scrsize12pt.clo 2015/02/07 v3.16 KOMA-Script font size class option (12pt
+)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\typearea.sty"
-Package: typearea 2012/07/29 v3.11b KOMA-Script package (type area)
+Package: typearea 2015/02/07 v3.16 KOMA-Script package (type area)
 
-Package typearea, 2012/07/29 v3.11b KOMA-Script package (type area)
+Package typearea, 2015/02/07 v3.16 KOMA-Script package (type area)
                   Copyright (C) Frank Neukam, 1992-1994
                   Copyright (C) Markus Kohm, 1994-
 
@@ -106,6 +108,7 @@ Package typearea Info: You've used standard option `oneside'.
 \ta@hblk=\skip42
 \ta@vblk=\skip43
 \ta@temp=\skip44
+\footheight=\skip45
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 12
 (typearea)             BCOR = 28.45274pt
@@ -122,7 +125,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1213.
+(typearea)              on input line 1342.
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -131,17 +134,17 @@ Package typearea Info: These are the values describing the layout:
 \c@subsubsection=\count84
 \c@paragraph=\count85
 \c@subparagraph=\count86
-\abovecaptionskip=\skip45
-\belowcaptionskip=\skip46
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
 \c@pti@nb@sid@b@x=\box26
 \c@figure=\count87
 \c@table=\count88
 \bibindent=\dimen102
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
-Package: ucs 2004/10/17 UCS: Unicode input support
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
-File: uni-global.def 2012/08/28 UCS: Unicode global data
+File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
 \uc@secondtry=\count89
 \uc@combtoks=\toks15
@@ -317,15 +320,15 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 \lst@maxwidth=\dimen109
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count98
 \lst@skipnumbers=\count99
 \lst@framebox=\box28
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
-File: listings.cfg 2007/02/22 1.4 listings configuration
+File: listings.cfg 2014/09/06 1.5e listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -344,16 +347,24 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
+
+Class scrreprt Warning: Usage of package `fancyhdr' together
+(scrreprt)              with a KOMA-Script class is not recommended.
+(scrreprt)              I'd suggest to use 
+(scrreprt)              package `scrlayer-scrpage'.
+(scrreprt)              Nevertheless, using requested
+(scrreprt)              package `fancyhdr' on input line 25.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
-\fancy@headwidth=\skip47
-\f@ncyO@elh=\skip48
-\f@ncyO@erh=\skip49
-\f@ncyO@olh=\skip50
-\f@ncyO@orh=\skip51
-\f@ncyO@elf=\skip52
-\f@ncyO@erf=\skip53
-\f@ncyO@olf=\skip54
-\f@ncyO@orf=\skip55
+\fancy@headwidth=\skip48
+\f@ncyO@elh=\skip49
+\f@ncyO@erh=\skip50
+\f@ncyO@olh=\skip51
+\f@ncyO@orh=\skip52
+\f@ncyO@elf=\skip53
+\f@ncyO@erf=\skip54
+\f@ncyO@olf=\skip55
+\f@ncyO@orf=\skip56
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jurabib\jurabib.sty"
 Package: jurabib 2007/03/17 v0.61beta Extended Citations
@@ -367,35 +378,34 @@ Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count101
 \calc@Adimen=\dimen110
 \calc@Bdimen=\dimen111
-\calc@Askip=\skip56
-\calc@Bskip=\skip57
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count102
-\calc@Cskip=\skip58
+\calc@Cskip=\skip59
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen112
 \extrarowheight=\dimen113
 \NC@list=\toks21
-\extratabsurround=\skip59
-\backup@length=\skip60
+\extratabsurround=\skip60
+\backup@length=\skip61
 )
 \c@ibidem@author=\count103
 \c@multiple@author=\count104
 LaTeX Info: Redefining \jbarchnameformat on input line 1257.
-\jb@subarchitemwidth=\skip61
-\jb@subarchentrywidth=\skip62
+\jb@subarchitemwidth=\skip62
+\jb@subarchentrywidth=\skip63
 LaTeX Info: Redefining \jbapifont on input line 1529.
 \jb@urlfile=\write3
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.url
-)
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.url)
 \jb@tempfile=\read1
 \c@jbbibcnt=\count105
 \c@jbbibcnta=\count106
@@ -404,13 +414,14 @@ LaTeX Info: Redefining \jbapifont on input line 1529.
 \c@citefull=\count109
 \c@opcit=\count110
 \c@jb@cites@in@footnote=\count111
-\jbbibhang=\skip63
-\bibnumberwidth=\skip64
-\jb@biblaw@entry@width=\skip65
-\jb@biblaw@item@width=\skip66
+\jbbibhang=\skip64
+\bibnumberwidth=\skip65
+\jb@biblaw@entry@width=\skip66
+\jb@biblaw@item@width=\skip67
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 3875
 .
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ppl.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 387
@@ -438,11 +449,11 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 387
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 LaTeX Info: Redefining \cite on input line 4187.
-\jb@length@i=\skip67
-\jb@length@ii=\skip68
-\jb@length@iii=\skip69
+\jb@length@i=\skip68
+\jb@length@ii=\skip69
+\jb@length@iii=\skip70
 \jb@temptoks=\toks22
-\jbedwidth=\skip70
+\jbedwidth=\skip71
 \jb@ta=\toks23
 \jb@tb=\toks24
 
@@ -459,10 +470,10 @@ Package: bibgerm 2000/08/18 v0.1 Support for mixed language bibliographies
 ** Modified for LaTeX 2e and german.sty 2.5b by A. Scherer 1 Nov 1995 **
 ** Modified for ngerman.sty and babel.sty by H. Harders 21 August 2000 **)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\acronym\acronym.sty"
-Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bigfoot\suffix.sty"
-Package: suffix 2006/07/15 1.5 Variant command support
+Package: suffix 2006/07/15 1.5a Variant command support
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
@@ -470,7 +481,7 @@ Package: suffix 2006/07/15 1.5 Variant command support
 \integerpart=\count112
 \decimalpart=\count113
 )
-Package: xstring 2013/2/28  v1.7a  String manipulations (C Tellechea)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 \AC@clearlist=\toks25
 )
@@ -582,7 +593,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip71
+\Hy@SectionHShift=\skip72
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -595,28 +606,17 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
-
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
-x)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
-)
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.aux
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/titelseite.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/erklaerung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/abstract.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/bedarfsanalyse.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/architektur.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/jwt.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/rechteverwaltung_web.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/authentifizierung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/zusammenfassung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/anhang.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
 LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
@@ -632,7 +632,8 @@ LaTeX Font Info:    ... okay on input line 112.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 112.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 112.
@@ -685,18 +686,17 @@ LaTeX Info: Redefining \ref on input line 112.
 LaTeX Info: Redefining \pageref on input line 112.
 LaTeX Info: Redefining \nameref on input line 112.
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
-)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.out
-)
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.out)
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 116.
 
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-tex <Bilder/logo_dhbw_ma.jpg, id=115, 133.2177pt x 66.2475pt>
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/titelseite.tex
+<Bilder/logo_dhbw_ma.jpg, id=123, 133.2177pt x 66.2475pt>
 File: Bilder/logo_dhbw_ma.jpg Graphic file (type jpg)
 
 <use Bilder/logo_dhbw_ma.jpg>
@@ -716,15 +716,14 @@ LaTeX Font Warning: Font shape `T1/cmss/bx/sc' undefined
 (Font)              using `T1/cmss/bx/n' instead on input line 18.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
-File: uni-0.def 2012/08/28 UCS: Unicode data U+0000..U+00FF
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ) [1
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/IBM_ADMIN/Docume
-nts/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/logo_dhbw_ma.jpg>])
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-tex
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Stephan/git/SMAR
+-LaTeX/Bilder/logo_dhbw_ma.jpg>]) (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/erkla
+erung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
  []
@@ -742,73 +741,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
 
 
-]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.te
-x) [2
+] (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/abstract.tex) [2
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.toc
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.toc
+Package acronym Info: Label `acro:REST' newly defined as it shall be overridden
+
+although it is yet undefined on input line 16.
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 16.
+
+Overfull \hbox (7.6538pt too wide) in paragraph at lines 16--16
+ [][] [][][][][]\T1/cmss/m/n/12 Representational State Trans-fer ([])[] [][][]A
+pplication Pro- 
+ []
+
 Package acronym Info: Label `acro:PHP' newly defined as it shall be overridden
-although it is yet undefined on input line 17.
-Package acronym Info: Label `acro:JWT' newly defined as it shall be overridden
-although it is yet undefined on input line 17.
-Package acronym Info: Label `acro:AuthN' newly defined as it shall be overridde
-n
 although it is yet undefined on input line 19.
-Package acronym Info: Label `acro:AuthZ' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 20.
+Package acronym Info: Label `acro:JWT' newly defined as it shall be overridden
+although it is yet undefined on input line 19.
 [3
 
 
-])
-\tf@toc=\write6
- [4]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/acronym.tex
-) [5]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.lof
+]
+Package acronym Info: Label `acro:AuthN' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 21.
+Package acronym Info: Label `acro:AuthZ' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 22.
 )
+\tf@toc=\write6
+ [4] (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/acronym.tex) [5]
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.lof)
 \tf@lof=\write7
  [6
 
-] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+]
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2004/09/05 1.3 listings language file
+File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2004/09/05 1.3 listings language file
+File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2004/09/05 1.3 listings language file
+File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2004/09/05 1.3 listings language file
+File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
-File: lstlang2.sty 2004/09/05 1.3 listings language file
+File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.tex
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/bedarfsanalyse.tex
 Kapitel 1.
 
 Class scrreprt Warning: \float@addtolists detected!
-(scrreprt)              You should use the features of package `tocbasic'
-(scrreprt)              instead of \float@addtolists.
-(scrreprt)              Support for \float@addtolists may be removed from
-(scrreprt)              `scrreprt' soon .
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface .
 
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 12.
@@ -842,98 +856,110 @@ l.186 \include{Inhalt/Kapitel/bedarfsanalyse}
 
 
 ] [2]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.tex
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/architektur.tex
 Kapitel 2.
+Package acronym Info: Label `acro:WLAN' newly defined as it shall be overridden
 
-<Bilder/Abbildungen/architektur_serverclient.png, id=232, 701.62125pt x 532.991
+although it is yet undefined on input line 22.
+[3
+
+
+
+]
+<Bilder/Abbildungen/architektur_serverclient.png, id=259, 701.62125pt x 532.991
 26pt>
 File: Bilder/Abbildungen/architektur_serverclient.png Graphic file (type png)
  <use Bilder/Abbildungen/architektur_serverclient.png>
 Package pdftex.def Info: Bilder/Abbildungen/architektur_serverclient.png used o
-n input line 14.
+n input line 28.
 (pdftex.def)             Requested size: 426.7914pt x 324.22145pt.
- [3
-
-
-
-] [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-1}) has been already used, duplicate ignored
+ [4] [5pdfTeX warning (ext4): destination with the same identifier (name{figure
+.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.33 
-      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
-dungen/architektur_serverclient.png>]
-<Bilder/Abbildungen/architektur_datenbankschema.png, id=241, 1050.92625pt x 652
+l.38 
+      <C:/Users/Stephan/git/SMAR-LaTeX/Bilder/Abbildungen/architektur_servercli
+ent.png>]
+Package acronym Info: Label `acro:DBMS' newly defined as it shall be overridden
+
+although it is yet undefined on input line 42.
+Package acronym Info: Label `acro:SQL' newly defined as it shall be overridden
+although it is yet undefined on input line 42.
+ [6] [7]
+<Bilder/Abbildungen/architektur_datenbankschema.png, id=288, 1050.92625pt x 652
 .68843pt>
 File: Bilder/Abbildungen/architektur_datenbankschema.png Graphic file (type png
 )
  <use Bilder/Abbildungen/architektur_datenbankschema.png>
 Package pdftex.def Info: Bilder/Abbildungen/architektur_datenbankschema.png use
-d on input line 36.
+d on input line 65.
 (pdftex.def)             Requested size: 426.7914pt x 265.06439pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--37
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
 [][]\T1/ppl/m/n/12 Tabellendefinitionen der Da-ten-bank (Screens-hot aus
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
-
- []
-
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.44 
-      <C:/Users/IBM_ADMIN/Documents/Studienarbeit_LaTeX/SMAR-LaTeX/Bilder/Abbil
-dungen/architektur_datenbankschema.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+l.71 
+      <C:/Users/Stephan/git/SMAR-LaTeX/Bilder/Abbildungen/architektur_datenbank
+schema.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+Package acronym Info: Label `acro:SVG' newly defined as it shall be overridden
+although it is yet undefined on input line 82.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
-
-[8]) [9]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.tex
+[11]
 Kapitel 3.
+) [12
+
+] (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/jwt.tex
+Kapitel 4.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 5.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -967,7 +993,7 @@ Overfull \hbox (5.59946pt too wide) in paragraph at lines 17--18
 (Claims-Set),
  []
 
-[10
+[13
 
 
 
@@ -976,7 +1002,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-<Bilder/jwt_header.jpg, id=290, 96.36pt x 82.80937pt>
+<Bilder/jwt_header.jpg, id=339, 96.36pt x 82.80937pt>
 File: Bilder/jwt_header.jpg Graphic file (type jpg)
 
 <use Bilder/jwt_header.jpg>
@@ -996,17 +1022,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
-) [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3
+) [14pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.192 \include{Inhalt/Kapitel/jwt}
-                                   <C:/Users/IBM_ADMIN/Documents/Studienarbeit_
-LaTeX/SMAR-LaTeX/Bilder/jwt_header.jpg>] [12]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.tex
-Kapitel 4.
+                                   <C:/Users/Stephan/git/SMAR-LaTeX/Bilder/jwt_
+header.jpg>] [15]
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/rechteverwaltung_web.tex
+Kapitel 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
@@ -1017,7 +1042,7 @@ although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:BDSG' newly defined as it shall be overridden
 
 although it is yet undefined on input line 14.
-[13
+[16
 
 
 
@@ -1026,10 +1051,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-) [14]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.tex
-Kapitel 5.
+) [17] (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/authentifizierung.tex
+Kapitel 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
@@ -1040,23 +1063,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-[15
+[18
 
 
 
 ]
 
-LaTeX Warning: Reference `cha:brille' on page 16 undefined on input line 23.
+LaTeX Warning: Reference `cha:brille' on page 19 undefined on input line 23.
 
 
-LaTeX Warning: Reference `cha:brille' on page 16 undefined on input line 23.
+LaTeX Warning: Reference `cha:brille' on page 19 undefined on input line 23.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-[16]
+[19]
 Overfull \hbox (6.83617pt too wide) in paragraph at lines 38--42
 \T1/ppl/m/n/12 Die Ein-ga-be des Be-nut-zer-na-mens über ein Sprach-kom-man-do 
 ge-stal-tet sich schwie-
@@ -1067,7 +1090,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 
  []
 
-[17]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 43--46
 
  []
@@ -1082,7 +1105,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[18]
+[21]
 Package acronym Info: Label `acro:WEP' newly defined as it shall be overridden
 although it is yet undefined on input line 59.
 
@@ -1095,13 +1118,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[19]
+[22]
 Package acronym Info: Label `acro:MAC' newly defined as it shall be overridden
 although it is yet undefined on input line 64.
 
 Overfull \hbox (11.87607pt too wide) in paragraph at lines 64--65
-[]\T1/ppl/m/n/12 Die App liest da-zu beim Star-ten der An-wen-dung die [][][] M
-edia-Access-Control ([])[]-
+[]\T1/ppl/m/n/12 Die App liest da-zu beim Star-ten der An-wen-dung die [][][]Me
+dia-Access-Control ([])[]-
  []
 
 
@@ -1109,7 +1132,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[20]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
@@ -1130,10 +1153,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
-) [21]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.tex
-Kapitel 6.
+) [24] (C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/zusammenfassung.tex
+Kapitel 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
@@ -1160,24 +1181,23 @@ File: Bilder/logo_dhbw_ma.jpg Graphic file (type jpg)
 <use Bilder/logo_dhbw_ma.jpg>
 Package pdftex.def Info: Bilder/logo_dhbw_ma.jpg used on input line 13.
 (pdftex.def)             Requested size: 286.13396pt x 142.26378pt.
-) [22
+) [25
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.195 \include{Inhalt/Kapitel/zusammenfassung}
-                                              ] [23]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.bbl
-) [1
+                                              ] [26]
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.bbl) [1
 
 
 
 ]
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.tex
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/anhang.tex
 Anhang A.
 )pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
  been already used, duplicate ignored
@@ -1192,49 +1212,47 @@ l.214 \include{Inhalt/anhang}
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
 
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Bachelorarbeit.aux
-
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/titelseite.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/erklaerung.
-aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/abstract.au
-x)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/bed
-arfsanalyse.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/arc
-hitektur.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/jwt
-.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/rec
-hteverwaltung_web.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/aut
-hentifizierung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/Kapitel/zus
-ammenfassung.aux)
-(C:\Users\IBM_ADMIN\Documents\Studienarbeit_LaTeX\SMAR-LaTeX\Inhalt/anhang.aux)
-)
+(C:\Users\Stephan\git\SMAR-LaTeX\Bachelorarbeit.aux
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/titelseite.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/erklaerung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/abstract.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/bedarfsanalyse.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/architektur.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/jwt.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/rechteverwaltung_web.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/authentifizierung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/Kapitel/zusammenfassung.aux)
+(C:\Users\Stephan\git\SMAR-LaTeX\Inhalt/anhang.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
-Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: A89FE7DC054C85A933EBDBEFC572C461;1760.
 
+
+Package rerunfilecheck Warning: File `Bachelorarbeit.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Bachelorarbeit.out':
+(rerunfilecheck)             Before: BCC534F9B88FDC7F550E4A6C8CD5A30B;1920
+(rerunfilecheck)             After:  7FDD6066C54FE3E86E5AB2CF8C3D2600;1972.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
  ) 
 Here is how much of TeX's memory you used:
- 13182 strings out of 493921
- 200928 string characters out of 3147270
- 341905 words of memory out of 3000000
- 16069 multiletter control sequences out of 15000+200000
+ 13560 strings out of 493921
+ 206164 string characters out of 3147276
+ 375594 words of memory out of 3000000
+ 16424 multiletter control sequences out of 15000+200000
  37240 words of font info for 76 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 44i,12n,67p,1005b,828s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,12n,67p,1005b,833s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1253,22 +1271,42 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}{C:/Progr
-am Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/cm-super/sfcc1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/cm-super/sfss1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-su
-per/sfsx1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1
-440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx1728.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx2074.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfsx2488.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/cm-super/sftt1200.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/u
-plr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Bachelorarbeit.pdf (32 pages, 506179 bytes).
+pdfTeX warning (dest): name{figure.6.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.3.1} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.5.1.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
+, replaced by a fixed one
+
+ <C:\Users\Stephan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ectt1200.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc} <C:\U
+sers\Stephan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx14
+40.pk> <C:\Users\Stephan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi600\eccc1200.pk> <C:\Users\Stephan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecsx1200.pk> <C:\Users\Stephan\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <C:\Users\Stephan\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2074.pk> <C:\Users\Stephan\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1728.pk> <C:\Users\St
+ephan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx2488.pk><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palat
+ino/uplri8a.pfb>
+Output written on Bachelorarbeit.pdf (35 pages, 483334 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
