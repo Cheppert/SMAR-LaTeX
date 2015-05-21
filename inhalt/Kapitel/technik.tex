@@ -1,0 +1,26 @@
+\chapter{Technik}
+\label{cha:technik}
+Das folgende Kapitel beschäftigt sich mit der bei diesem Projekt einzusetzenden Technik. Dabei werden verschiedene Gerätetypen dargestellt und miteinander verglichen. Beim Vergleich der Gerätetypen wird nur die Hardware verglichen, die Software wird später definiert und im Rahmen dieses Projektes entwickelt.\\
+
+Beim Vergleich der Hardware wird insbesondere auf die definierten Ziele\footnote{Siehe Kapitel \ref{sec:zieldefinition} \nameref{sec:zieldefinition}} eingegangen, die mit Hilfe dieses Projektes in Verbindung mit der hier ausgewählten Hardware erreicht werden sollen. Außerdem wird auf
+
+\section{Vuzix M100}
+\label{sec:vuzix}
+Eine Betrachtung der verschiedenen Möglichkeiten zeigt, wie bereits beschrieben, dass eine Datenbrille besondere Vorteile aufweist. Für die Betrachtung und Bedienung des Gerätes ist keine freie Hand nötig, sodass das Einräumen in ein Regal nicht behindert wird.\\
+
+Für das in dieser Studienarbeit behandelte Projekt \glqq Shelf-Management mit Hilfe von augmented Reality\grqq\ stand die \glqq Vuzix M100 Smart Glasses\grqq\ Datenbrille zur Verfügung.
+
+\subsection{Technische Daten}
+Die Datenbrille von Vuzix ist mit einem 1 GB großen LPDDR2 400 MHz Arbeitsspeicher und einem OMAP4430 Prozessor ausgestattet, der Dual-Core Prozessor basiert auf der ARM-Architektur und taktet mit bis zu 1 GHz.\footnote{\citep{omap4430}} Die 4 Gigabyte Flash-Speicher können durch den Micro-SD Kartenslot erweitert werden, der eine Kartengröße bis 32 GB unterstützt. Betrieben wird dieses System mit Android Ice Cream Sandwich (Version 4.0).\footnote{\citep{vuzixm100}}\\
+
+Das Display hat eine Auflösung von 432*240 Pixel (Breite*Höhe) bei einem Breitbild-Seitenverhältnis von 16:9.\footnote{\citep{wqvga}} Außerdem bietet es eine Farbtiefe von 24 bit. Durch die Wölbung des Displays um 15 Grad, wirkt das Display der getragenen Brille – laut Hersteller - wie ein Monitor mit einer Bilddiagonale von 4 Zoll.\footnote{circa 10 cm}\\
+
+Die 5 Megapixel Kamera nimmt Bilder und Videos ebenfalls im 16:9 Seitenverhältnis auf. Videos werden in Full-HD Auflösung aufgenommen (1920*1080 Pixel). Allerdings besitzt die Kamera weder einen Blitz noch ein LED-Licht zur Verbesserung von schlechten Lichtverhältnissen.\\
+
+Das Gerät kann über verschiedenste Wege bedient werden. Auf der Seite befinden sich 4 Kontrollknöpfe, die zum Ein- und Ausschalten, sowie für das Bewegen durch und Selektieren im Menü benutzt werden können. Das Mikrofon ermöglicht die Kontrolle per Sprache, entsprechende \glqq Nuance Voice Control\grqq -Software wird über das Betriebssystem geliefert. Das \glqq Noise Cancelling Microphone\grqq\ nimmt Umgebungsgeräusche auf und filtert sie aus dem Eingang des Spracherkennungs-Mikrofon raus. Dadurch ist die Stimme auch in lauten Umgebungen deutlicher und die Spracherkennung/-kontrolle funktioniert auch dann. Außerdem ist es möglich das Gerät über Gesten (wie z.B. Nicken, Kopf nach links/rechts schwenken) durch die eingebaute \glqq 3 DOF Gesture Engine\grqq\ zu steuern.\footnote{\citep{vuzixm100}}\\
+
+Die Verbindung zwischen der Vuzix M100 Datenbrille und anderen Geräten, Netzwerken kann drahtlos über WLAN im Standard 802.11b/g/n oder über Bluetooth 4.0 hergestellt werden. Drahtgebunden kann das Gerät über USB verbunden werden. USB ist ebenfalls die Schnittstelle über die neue Softwareupdates eingespielt werden können und das Gerät aufgeladen werden kann.\footnote{\citep{vuzixm100}}\\
+Im WLAN erreicht das Gerät Datenübertragungsraten von maximal 150Mbit/s, dies entspricht dem IEEE802.11n Standard auf dem 2.4GHz Frequenzband.\footnote{\citep{uebertragungsgeschwindigkeit}} Dies reicht für das Aufrufen von Webseiten, Übertragen von Bildern mit einer Auflösung von 432*240 Pixel (Breite*Höhe), sowie für das Übertragen weiterer Informationsdaten zur Bestimmung der Position einer Ware binnen weniger Sekunden aus.\\
+Da Bluetooth 4.0 eine maximale Reichweite von maximal 100 Metern erreichen kann (und das auch nur theoretisch, gängig sind Reichweiten von ca. 10 - 50 Metern)\footnote{\citep{bluetooth}} und eine Übertragungsrate von nur ca. 1-2 Mbit/s erreicht, eignet es sich nicht zur Datenübertragung von Regalbildern oder komplexen Positionsbeschreibungen und Datenbankabfragen nach einem Produkt. Bluetooth eignet sich hingegen gut für die Verbindung zu Host-Systemen zur externen Steuerung der Datenbrille\footnote{Voraussetzung ist ein Android-Handy mit entsprechender App} und zur Anbindung externer Geräte, wie z.B. einem Bluetooth Barcode-Scanner.
+
+\subsection{Bewertung}

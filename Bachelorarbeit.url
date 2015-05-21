@@ -1,3 +1,8 @@
 %%% jurabib url repository
 \expandafter\urldef\csname jburl@cas\endcsname\url{http://www.childrensaidsociety.org/about}
+\expandafter\urldef\csname jburl@vuzixm100\endcsname\url{www.vuzix.com/wp-content/uploads/2013/12/M100_Smart_Glasses_eBrochure_rev9-2013.12.02_lores.pdf}
+\expandafter\urldef\csname jburl@uebertragungsgeschwindigkeit\endcsname\url{http://www.elektronik-kompendium.de/sites/net/1102071.htm}
+\expandafter\urldef\csname jburl@bluetooth\endcsname\url{http://www.golem.de/1004/74635.html}
+\expandafter\urldef\csname jburl@omap4430\endcsname\url{http://www.ti.com/product/omap4430}
 \expandafter\urldef\csname jburl@mt_rand\endcsname\url{http://php.net/manual/de/function.mt-rand.php}
+\expandafter\urldef\csname jburl@wqvga\endcsname\url{http://en.wikipedia.org/wiki/Graphics_display_resolution#WQVGA_.28400x240.29}

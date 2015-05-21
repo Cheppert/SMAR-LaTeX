@@ -3,20 +3,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Netzwerkkomponentendiagramm}}{16}{figure.3.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{22}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{25}{figure.4.2}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Netzwerkkomponentendiagramm}}{20}{figure.4.1}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Generierung eines \acs {JWT}}}{30}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{31}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \acs {JWT}-Header}}{31}{figure.6.3}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{26}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{29}{figure.5.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{40}{figure.8.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Generierung eines \acs {JWT}}}{34}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{35}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \acs {JWT}-Header}}{35}{figure.7.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{44}{figure.9.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{54}{figure.11.1}
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{58}{figure.12.1}
 \addvspace {10\p@ }
