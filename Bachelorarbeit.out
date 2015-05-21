@@ -32,31 +32,30 @@
 \BOOKMARK [3][-]{subsubsection.6.1.2.3}{REST API}{subsection.6.1.2}% 32
 \BOOKMARK [2][-]{subsection.6.1.3}{Clients}{section.6.1}% 33
 \BOOKMARK [1][-]{section.6.2}{Datenbank-Architektur}{chapter.6}% 34
-\BOOKMARK [0][-]{chapter.7}{Implementierung}{}% 35
-\BOOKMARK [0][-]{chapter.8}{PHP JWT}{}% 36
-\BOOKMARK [0][-]{chapter.9}{implementierung web}{}% 37
-\BOOKMARK [1][-]{section.9.1}{Projektdefinition}{chapter.9}% 38
-\BOOKMARK [1][-]{section.9.2}{Aufbau der Arbeit}{chapter.9}% 39
-\BOOKMARK [2][-]{subsection.9.2.1}{bla}{section.9.2}% 40
-\BOOKMARK [3][-]{subsubsection.9.2.1.1}{blabla}{subsection.9.2.1}% 41
-\BOOKMARK [0][-]{chapter.10}{Rechteverwaltung - Web}{}% 42
-\BOOKMARK [1][-]{section.10.1}{Authentifizierung \(AuthN\)}{chapter.10}% 43
-\BOOKMARK [1][-]{section.10.2}{Autorisierung \(AuthZ\)}{chapter.10}% 44
-\BOOKMARK [1][-]{section.10.3}{Benutzerverwaltung}{chapter.10}% 45
-\BOOKMARK [0][-]{chapter.11}{Implementierung Device}{}% 46
-\BOOKMARK [1][-]{section.11.1}{Produkt finden}{chapter.11}% 47
-\BOOKMARK [1][-]{section.11.2}{Produkt einr\344umen}{chapter.11}% 48
-\BOOKMARK [1][-]{section.11.3}{Projektdefinition}{chapter.11}% 49
-\BOOKMARK [1][-]{section.11.4}{Aufbau der Arbeit}{chapter.11}% 50
-\BOOKMARK [2][-]{subsection.11.4.1}{bla}{section.11.4}% 51
-\BOOKMARK [3][-]{subsubsection.11.4.1.1}{blabla}{subsection.11.4.1}% 52
-\BOOKMARK [0][-]{chapter.12}{Rechteverwaltung - App auf Brille}{}% 53
-\BOOKMARK [1][-]{section.12.1}{Authentifizierung \(AuthN\)}{chapter.12}% 54
-\BOOKMARK [2][-]{subsection.12.1.1}{AuthN gegen\374ber der Brille}{section.12.1}% 55
-\BOOKMARK [2][-]{subsection.12.1.2}{AuthN gegen\374ber dem Server}{section.12.1}% 56
-\BOOKMARK [1][-]{section.12.2}{Autorisierung \(AuthZ\)}{chapter.12}% 57
-\BOOKMARK [0][-]{chapter.13}{Hinweise}{}% 58
-\BOOKMARK [1][-]{section.13.1}{Fazit}{chapter.13}% 59
-\BOOKMARK [1][-]{section.13.2}{Ausblick}{chapter.13}% 60
-\BOOKMARK [0][-]{chapter*.33}{Literaturverzeichnis}{}% 61
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 62
+\BOOKMARK [0][-]{chapter.7}{PHP JWT}{}% 35
+\BOOKMARK [0][-]{chapter.8}{Implementierung der Webadministration}{}% 36
+\BOOKMARK [1][-]{section.8.1}{Technologische Grundlagen}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.2}{Aufbau der Arbeit}{chapter.8}% 38
+\BOOKMARK [2][-]{subsection.8.2.1}{bla}{section.8.2}% 39
+\BOOKMARK [3][-]{subsubsection.8.2.1.1}{blabla}{subsection.8.2.1}% 40
+\BOOKMARK [0][-]{chapter.9}{Rechteverwaltung - Web}{}% 41
+\BOOKMARK [1][-]{section.9.1}{Authentifizierung \(AuthN\)}{chapter.9}% 42
+\BOOKMARK [1][-]{section.9.2}{Autorisierung \(AuthZ\)}{chapter.9}% 43
+\BOOKMARK [1][-]{section.9.3}{Benutzerverwaltung}{chapter.9}% 44
+\BOOKMARK [0][-]{chapter.10}{Implementierung Device}{}% 45
+\BOOKMARK [1][-]{section.10.1}{Produkt finden}{chapter.10}% 46
+\BOOKMARK [1][-]{section.10.2}{Produkt einr\344umen}{chapter.10}% 47
+\BOOKMARK [1][-]{section.10.3}{Projektdefinition}{chapter.10}% 48
+\BOOKMARK [1][-]{section.10.4}{Aufbau der Arbeit}{chapter.10}% 49
+\BOOKMARK [2][-]{subsection.10.4.1}{bla}{section.10.4}% 50
+\BOOKMARK [3][-]{subsubsection.10.4.1.1}{blabla}{subsection.10.4.1}% 51
+\BOOKMARK [0][-]{chapter.11}{Rechteverwaltung - App auf Brille}{}% 52
+\BOOKMARK [1][-]{section.11.1}{Authentifizierung \(AuthN\)}{chapter.11}% 53
+\BOOKMARK [2][-]{subsection.11.1.1}{AuthN gegen\374ber der Brille}{section.11.1}% 54
+\BOOKMARK [2][-]{subsection.11.1.2}{AuthN gegen\374ber dem Server}{section.11.1}% 55
+\BOOKMARK [1][-]{section.11.2}{Autorisierung \(AuthZ\)}{chapter.11}% 56
+\BOOKMARK [0][-]{chapter.12}{Hinweise}{}% 57
+\BOOKMARK [1][-]{section.12.1}{Fazit}{chapter.12}% 58
+\BOOKMARK [1][-]{section.12.2}{Ausblick}{chapter.12}% 59
+\BOOKMARK [0][-]{chapter*.35}{Literaturverzeichnis}{}% 60
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 61

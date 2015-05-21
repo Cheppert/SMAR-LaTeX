@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \select@language {ngerman}
-\contentsline {chapter}{Acronym}{VI}{section*.8}
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VII}{chapter*.9}
+\contentsline {chapter}{Acronym}{VII}{section*.8}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VIII}{chapter*.9}
 \contentsline {chapter}{\numberline {1}Vorwort}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Bedarfsanalyse}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Warenannahme}{3}{section.2.1}
@@ -34,31 +34,30 @@
 \contentsline {subsubsection}{\numberline {6.1.2.3}\ac {REST} \ac {API}}{30}{subsubsection.6.1.2.3}
 \contentsline {subsection}{\numberline {6.1.3}Clients}{31}{subsection.6.1.3}
 \contentsline {section}{\numberline {6.2}Datenbank-Architektur}{31}{section.6.2}
-\contentsline {chapter}{\numberline {7}Implementierung}{36}{chapter.7}
-\contentsline {chapter}{\numberline {8}\acs {PHP} \acs {JWT}}{37}{chapter.8}
-\contentsline {chapter}{\numberline {9}implementierung web}{40}{chapter.9}
-\contentsline {section}{\numberline {9.1}Projektdefinition}{40}{section.9.1}
-\contentsline {section}{\numberline {9.2}Aufbau der Arbeit}{40}{section.9.2}
-\contentsline {subsection}{\numberline {9.2.1}bla}{40}{subsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.1.1}blabla}{40}{subsubsection.9.2.1.1}
-\contentsline {chapter}{\numberline {10}Rechteverwaltung - Web}{42}{chapter.10}
-\contentsline {section}{\numberline {10.1}\acf {AuthN}}{42}{section.10.1}
-\contentsline {section}{\numberline {10.2}\acf {AuthZ}}{46}{section.10.2}
-\contentsline {section}{\numberline {10.3}Benutzerverwaltung}{49}{section.10.3}
-\contentsline {chapter}{\numberline {11}Implementierung Device}{52}{chapter.11}
-\contentsline {section}{\numberline {11.1}Produkt finden}{52}{section.11.1}
-\contentsline {section}{\numberline {11.2}Produkt einr\IeC {\"a}umen}{55}{section.11.2}
-\contentsline {section}{\numberline {11.3}Projektdefinition}{57}{section.11.3}
-\contentsline {section}{\numberline {11.4}Aufbau der Arbeit}{57}{section.11.4}
-\contentsline {subsection}{\numberline {11.4.1}bla}{57}{subsection.11.4.1}
-\contentsline {subsubsection}{\numberline {11.4.1.1}blabla}{57}{subsubsection.11.4.1.1}
-\contentsline {chapter}{\numberline {12}Rechteverwaltung - App auf Brille}{58}{chapter.12}
-\contentsline {section}{\numberline {12.1}\acf {AuthN}}{58}{section.12.1}
-\contentsline {subsection}{\numberline {12.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{58}{subsection.12.1.1}
-\contentsline {subsection}{\numberline {12.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{62}{subsection.12.1.2}
-\contentsline {section}{\numberline {12.2}\acf {AuthZ}}{63}{section.12.2}
-\contentsline {chapter}{\numberline {13}Hinweise}{65}{chapter.13}
-\contentsline {section}{\numberline {13.1}Fazit}{66}{section.13.1}
-\contentsline {section}{\numberline {13.2}Ausblick}{66}{section.13.2}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{i}{chapter*.33}
+\contentsline {chapter}{\numberline {7}\acs {PHP} \acs {JWT}}{36}{chapter.7}
+\contentsline {chapter}{\numberline {8}Implementierung der Webadministration}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Technologische Grundlagen}{39}{section.8.1}
+\contentsline {section}{\numberline {8.2}Aufbau der Arbeit}{40}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}bla}{40}{subsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.1.1}blabla}{40}{subsubsection.8.2.1.1}
+\contentsline {chapter}{\numberline {9}Rechteverwaltung - Web}{41}{chapter.9}
+\contentsline {section}{\numberline {9.1}\acf {AuthN}}{41}{section.9.1}
+\contentsline {section}{\numberline {9.2}\acf {AuthZ}}{45}{section.9.2}
+\contentsline {section}{\numberline {9.3}Benutzerverwaltung}{48}{section.9.3}
+\contentsline {chapter}{\numberline {10}Implementierung Device}{51}{chapter.10}
+\contentsline {section}{\numberline {10.1}Produkt finden}{51}{section.10.1}
+\contentsline {section}{\numberline {10.2}Produkt einr\IeC {\"a}umen}{54}{section.10.2}
+\contentsline {section}{\numberline {10.3}Projektdefinition}{56}{section.10.3}
+\contentsline {section}{\numberline {10.4}Aufbau der Arbeit}{56}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}bla}{56}{subsection.10.4.1}
+\contentsline {subsubsection}{\numberline {10.4.1.1}blabla}{56}{subsubsection.10.4.1.1}
+\contentsline {chapter}{\numberline {11}Rechteverwaltung - App auf Brille}{57}{chapter.11}
+\contentsline {section}{\numberline {11.1}\acf {AuthN}}{57}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{57}{subsection.11.1.1}
+\contentsline {subsection}{\numberline {11.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{61}{subsection.11.1.2}
+\contentsline {section}{\numberline {11.2}\acf {AuthZ}}{62}{section.11.2}
+\contentsline {chapter}{\numberline {12}Hinweise}{64}{chapter.12}
+\contentsline {section}{\numberline {12.1}Fazit}{65}{section.12.1}
+\contentsline {section}{\numberline {12.2}Ausblick}{65}{section.12.2}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{i}{chapter*.35}
 \contentsline {chapter}{\numberline {A}Anhang}{I}{appendix.A}

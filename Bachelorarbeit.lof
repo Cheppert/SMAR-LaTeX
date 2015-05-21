@@ -10,17 +10,16 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Schematische Darstellung der Server-Client-Architektur}}{29}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Tabellendefinitionen der Datenbank (Screenshot aus phpMyAdmin)}}{32}{figure.6.2}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Generierung eines \acs {JWT}}}{37}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{38}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces \acs {JWT}-Header}}{38}{figure.8.3}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{47}{figure.10.1}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Sequenzdiagramm Produkt finden}}{53}{figure.11.1}
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Sequenzdiagramm Produkt einr\IeC {\"a}umen}}{55}{figure.11.2}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Generierung eines \acs {JWT}}}{36}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Dekodieren eines \acs {JWT}}}{37}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \acs {JWT}-Header}}{37}{figure.7.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{66}{figure.13.1}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Berechtigungsstufen in der Web-Administration}}{46}{figure.9.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Sequenzdiagramm Produkt finden}}{52}{figure.10.1}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Sequenzdiagramm Produkt einr\IeC {\"a}umen}}{54}{figure.10.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Example of a figure \citep [page 32]{cas}}}{65}{figure.12.1}
 \addvspace {10\p@ }
