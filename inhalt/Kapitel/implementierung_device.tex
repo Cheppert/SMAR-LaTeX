@@ -1,8 +1,56 @@
 \chapter{implementierung device}
 \label{cha:impl_device}
+\section{Produkt finden}
+\label{sec:produkt_finden}
+Dieser Abschnitt beschreibt, wie ein Mitarbeiter mithilfe der Smartglass einen Produktplatz finden kann. Dies wird mithilfe eines Sequenzdiagramms durchgeführt. Die Voraussetzung für diesen Prozess ist, dass der Anwender den Menüpunkt „Produkt finden“ im Hauptmenü ausgewählt hat. 
+\\
+Wie die folgende Grafik zeigt, gibt es drei Aktoren, die miteinander kommunizieren, den Mitarbeiter, die Smartglass und die Datenbank. 
+\\
+\begin{figure}
 
+\end{figure}
+\\
+Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan Modus springt (scan_product()). Dabei hat der Mitarbeiter die Intention, dass die Smartglass ihm dabei Hilft den Regalplatz zu finden.
+\\
+Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Code (get_code()). Dies geschieht mit der ZingLibrary (für Details siehe Kapitel). Nachdem die Smartglass den Code errechnet hat, verschickt sie diesen Code an den Datenbankserver, der sich im gleichen Netzwerk befindet, damit dieser mit Produktinformationen antwortet. Mithilfe des Codes sucht die Datenbank intern zuerst nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
+\\
+\begin{itemize}
+	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
+	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
+	\item Die aktuell ausgewählte Unit (Karton, Einzelstück).
+\end{itemize}
+Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angezeigt. 
+\\
+Mithilfe der Produktinformation, um welches Produkt es sich handelt, und der hinterlegten Karte aller Produktplätze generiert die Smartglass ein Bild – genauer eine SVG Grafik (generate_picture). Dieses Bild zeigt einen Ausschnitt des Regalplatzes und markiert den Bereich, in dem das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (send_shelf_picture()).
+\\
+Da in den meisten Fällen nach der Produktplatz suche, das jeweilige Produkt eingeräumt werden soll, fragt die Brille den Mitarbeiter, ob er dies tun möchte. 
+Bestätigt er, springt sozusagen der Instruction Pointer in den Prozess „Produkt einräumen“. Dort wird allerdings der Scan-Vorgang übersprungen und öffnet den Dialog mit schon getroffenen Produktinformationen. 
+\\
+Verneint der Nutzer, so springt die Smartglass zurück an den Anfang vom „Produkt finden“ Prozess. 
 
+\section{Produkt einräumen}
+Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses „Produkt einräumen“. Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion „Produkt einräumen“ ausgewählt hat. 
+\\
+\begin{figure}
 
+\end{figure}
+\\
+Ähnlich dem Prozess, Produkt finden, gibt es drei Aktoren, den Mitarbeiter, die Smartglass und die Datenbank, und startet, indem der Nutzer den „Produkt einräumen“-Prozess gestartet hat (scan_product()). Daraufhin startet die Smartglass den Barcodescanner und berechnet aus dem erfassten Bild einen Code (get_code()). Dieser Code wird an die Datenbank verschickt mit der Aufforderung produktspezifische Informationen anzugeben (get_productinformation()). Die Datenbank sucht diese Informationen raus und antwortet der Smartglass mit diesen (send_productinformation()). Bei diesen Informationen handelt es sich um folgende: 
+\begin{enumerate}
+	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
+	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
+	\item Die aktuell gescannte Unit (Karton, Einzelstück).
+\end{enumerate}
+Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. 
+\\
+Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt an dem der Prozess „Produkt finden“, in diesen Prozess springt.
+\\
+So muss der Mitarbeiter weniger mit der Smartglass interagieren. Er hat allerdings noch die Möglichkeit die Unit entsprechend anzupassen (ask_for_unit() und enter_unit()). Dabei hat der Mitarbeiter auch die Möglichkeit nicht nur die Unit anzugeben (ob Karton oder Einzelstück), sondern direkt die Möglichkeit eine Anzahl anzugeben (Bsp. 4 Kartons). Damit soll die mehrfache Interaktion vermieden werden. 
+\\
+Schließlich bestätigt der Mitarbeiter (enter_unit()) und die Smartglass leitet die neuen Informationen an die Datenbank weiter (update_stock()). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (update_stock()).
+\\
+Die Datenbank bestätigt dies (confirm_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
+\\
 \section{Projektdefinition}
 Kapitel \ref{cha:intro}
 
