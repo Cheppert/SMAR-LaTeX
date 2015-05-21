@@ -1,61 +1,33 @@
 \select@language {ngerman}
 \select@language {ngerman}
-\contentsline {chapter}{Acronym}{VI}{section*.8}
-\contentsline {chapter}{Abbildungsverzeichnis}{VII}{chapter*.9}
+\contentsline {chapter}{Acronym}{V}{section*.10}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VI}{chapter*.11}
 \contentsline {chapter}{\numberline {1}Bedarfsanalyse}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Warenannahme}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Waren einr\IeC {\"a}umen}{3}{section.1.2}
-\contentsline {section}{\numberline {1.3}Kundenservice}{5}{section.1.3}
-\contentsline {section}{\numberline {1.4}Zusammenfassung der Schwachstellen}{5}{section.1.4}
-\contentsline {section}{\numberline {1.5}Zieldefinition}{6}{section.1.5}
-\contentsline {chapter}{\numberline {2}Technik}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Ger\IeC {\"a}tetypen}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Vuzix M100}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Technische Daten}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Bewertung}{11}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Anforderungsanalyse}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}Ware einr\IeC {\"a}umen}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}Warenannahme}{15}{section.3.2}
-\contentsline {section}{\numberline {3.3}Kundenzufriedenheit}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}Nicht funktionale Anforderungen}{16}{section.3.4}
-\contentsline {chapter}{\numberline {4}Architektur}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Grunds\IeC {\"a}tzliche Entscheidungen}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Section}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Another Section}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}bla}{23}{subsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.1.1}blabla}{23}{subsubsection.4.3.1.1}
-\contentsline {chapter}{\numberline {5}Architektur der Software}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Server-Client-Architektur}{25}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Physischer Systemaufbau}{25}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Server}{27}{subsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Datenbankserver}{28}{subsubsection.5.1.2.1}
-\contentsline {subsubsection}{\numberline {5.1.2.2}Web-Interface}{28}{subsubsection.5.1.2.2}
-\contentsline {subsubsection}{\numberline {5.1.2.3}\ac {REST} \ac {API}}{28}{subsubsection.5.1.2.3}
-\contentsline {subsection}{\numberline {5.1.3}Clients}{29}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Datenbank-Architektur}{29}{section.5.2}
-\contentsline {chapter}{\numberline {6}Implementierung}{34}{chapter.6}
-\contentsline {chapter}{\numberline {7}\acs {PHP} \acs {JWT}}{35}{chapter.7}
-\contentsline {chapter}{\numberline {8}implementierung web}{38}{chapter.8}
-\contentsline {section}{\numberline {8.1}Projektdefinition}{38}{section.8.1}
-\contentsline {section}{\numberline {8.2}Aufbau der Arbeit}{38}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}bla}{38}{subsection.8.2.1}
-\contentsline {subsubsection}{\numberline {8.2.1.1}blabla}{38}{subsubsection.8.2.1.1}
-\contentsline {chapter}{\numberline {9}Rechteverwaltung - Web}{40}{chapter.9}
-\contentsline {section}{\numberline {9.1}\acf {AuthN}}{40}{section.9.1}
-\contentsline {section}{\numberline {9.2}\acf {AuthZ}}{44}{section.9.2}
-\contentsline {section}{\numberline {9.3}Benutzerverwaltung}{47}{section.9.3}
-\contentsline {chapter}{\numberline {10}implementierung device}{50}{chapter.10}
-\contentsline {section}{\numberline {10.1}Projektdefinition}{50}{section.10.1}
-\contentsline {section}{\numberline {10.2}Aufbau der Arbeit}{50}{section.10.2}
-\contentsline {subsection}{\numberline {10.2.1}bla}{50}{subsection.10.2.1}
-\contentsline {subsubsection}{\numberline {10.2.1.1}blabla}{50}{subsubsection.10.2.1.1}
-\contentsline {chapter}{\numberline {11}Rechteverwaltung - App auf Brille}{52}{chapter.11}
-\contentsline {section}{\numberline {11.1}\acf {AuthN}}{52}{section.11.1}
-\contentsline {subsection}{\numberline {11.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{52}{subsection.11.1.1}
-\contentsline {subsection}{\numberline {11.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{56}{subsection.11.1.2}
-\contentsline {section}{\numberline {11.2}\acf {AuthZ}}{57}{section.11.2}
-\contentsline {chapter}{\numberline {12}Hinweise}{59}{chapter.12}
-\contentsline {section}{\numberline {12.1}Fazit}{60}{section.12.1}
-\contentsline {section}{\numberline {12.2}Ausblick}{60}{section.12.2}
-\contentsline {chapter}{Literaturverzeichnis}{i}{chapter*.33}
+\contentsline {section}{\numberline {1.1}Section}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Another Section}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}bla}{1}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.1.1}blabla}{1}{subsubsection.1.2.1.1}
+\contentsline {chapter}{\numberline {2}Architektur der Software}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Server-Client-Architektur}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Physischer Systemaufbau}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Server}{5}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Datenbankserver}{6}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Web-Interface}{6}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}\ac {REST} \ac {API}}{6}{subsubsection.2.1.2.3}
+\contentsline {subsection}{\numberline {2.1.3}Clients}{7}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Datenbank-Architektur}{7}{section.2.2}
+\contentsline {chapter}{\numberline {3}Implementierung}{12}{chapter.3}
+\contentsline {chapter}{\numberline {4}\ac {PHP} \ac {JWT}}{13}{chapter.4}
+\contentsline {chapter}{\numberline {5}Rechteverwaltung - Web}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}\acf {AuthN}}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}\acf {AuthZ}}{16}{section.5.2}
+\contentsline {chapter}{\numberline {6}Rechteverwaltung - App auf Brille}{18}{chapter.6}
+\contentsline {section}{\numberline {6.1}\acf {AuthN}}{18}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}\acs {AuthN} gegen\IeC {\"u}ber der Brille}{18}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}\acs {AuthN} gegen\IeC {\"u}ber dem Server}{22}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}\acf {AuthZ}}{23}{section.6.2}
+\contentsline {chapter}{\numberline {7}Hinweise}{25}{chapter.7}
+\contentsline {section}{\numberline {7.1}Fazit}{26}{section.7.1}
+\contentsline {section}{\numberline {7.2}Ausblick}{26}{section.7.2}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{i}{chapter*.23}
 \contentsline {chapter}{\numberline {A}Anhang}{I}{appendix.A}
