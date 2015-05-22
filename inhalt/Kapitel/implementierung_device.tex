@@ -86,29 +86,6 @@ Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leite
 
 Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
 
-\subsection{Produkt einräumen}
-Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses „Produkt einräumen“. Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion „Produkt einräumen“ ausgewählt hat. 
-\begin{figure}[H]
-	\centering
-	{\includegraphics[scale=0.7]{Bilder/Abbildungen/SMAR_produkt_einraeumen_Sequenzdiagramm.png}}
-	\caption{Sequenzdiagramm Produkt einräumen}
-	\label{fig:jwt_encode}
-\end{figure}
-Ähnlich dem Prozess, Produkt finden, gibt es drei Aktoren, den Mitarbeiter, die Smartglass und die Datenbank, und startet, indem der Nutzer den \glqq Produkt einräumen\grqq -Prozess gestartet hat (scan\_product()). Daraufhin startet die Smartglass den Barcodescanner und berechnet aus dem erfassten Bild einen Code (get\_code()). Dieser Code wird an die Datenbank verschickt mit der Aufforderung produktspezifische Informationen anzugeben (get\_productinformation()). Die Datenbank sucht diese Informationen raus und antwortet der Smartglass mit diesen (send\_productinformation()). Bei diesen Informationen handelt es sich um folgende: 
-\begin{enumerate}
-	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
-	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
-	\item Die aktuell gescannte Unit (Karton, Einzelstück).
-\end{enumerate}
-Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. 
-
-Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt an dem der Prozess \glqq Produkt finden\grqq , in diesen Prozess springt.
-
-So muss der Mitarbeiter weniger mit der Smartglass interagieren. Er hat allerdings noch die Möglichkeit die Unit entsprechend anzupassen (ask\_for\_unit() und enter\_unit()). Dabei hat der Mitarbeiter auch die Möglichkeit nicht nur die Unit anzugeben (ob Karton oder Einzelstück), sondern direkt die Möglichkeit eine Anzahl anzugeben (\zB 4 Kartons). Damit soll die mehrfache Interaktion vermieden werden. 
-
-Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leitet die neuen Informationen an die Datenbank weiter (update\_stock()). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (update\_stock()).
-
-Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
 
 
 \subsection{Warenannahme}
