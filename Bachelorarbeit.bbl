@@ -28,7 +28,7 @@
  \jburldef {cas}{http://www.childrensaidsociety.org/about}%
  \jbbibargs {\bibnf {CAS(a)} {} {} {} {}} { CAS(a)} {au} {sexless} {\bibtfont
   {The Children's Aid Society - Overview}\bibatsep {}  \jburluse
-  {cas}\bibbudcsep {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {cas}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{CAS(a)}{}{}{}{}} {} {} \bibAnnoteFile {cas}
 
 \backrefparscanfalse
@@ -59,8 +59,40 @@
   {vuzixm100}{www.vuzix.com/wp-content/uploads/2013/12/M100_Smart_Glasses_eBrochure_rev9-2013.12.02_lores.pdf}%
  \jbbibargs {\bibnf {Corporation} {Vuzix} {V.} {} {}} {Vuzix Corporation} {au}
   {sexless} {\bibtfont {Vuzix Smart Glasses}\bibatsep {} 2013 \jburluse
-  {vuzixm100}\bibbudcsep {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {vuzixm100}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{Corporation}{Vuzix}{V.}{}{}} {} {} \bibAnnoteFile {vuzixm100}
+
+\backrefparscanfalse
+\bibitem[{Developer.Android.com\jbdy {2015}}%
+         {}%
+         {{1}{}{}{2015\el {a}}{}{}{}{}%
+          {2015\el {a}}}%
+         {{JSONObject}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{json}
+ \jburldef
+  {json}{http://developer.android.com/reference/org/json/JSONObject.html}%
+ \jbbibargs {\bibnf {Developer.Android.com} {} {} {} {}} {
+  Developer.Android.com} {au} {sexless} {\bibtfont {JSONObject}\bibatsep {}
+  2015\bibel {a} \jburluse {json}\bibbudcsep {}\urldatecomment 2015-05-20}
+  {\bibhowcited} \jbdoitem {{Developer.Android.com}{}{}{}{}} {} {}
+  \bibAnnoteFile {json}
+
+\backrefparscanfalse
+\bibitem[{Developer.Android.com\jbdy {2015}}%
+         {}%
+         {{1}{}{}{2015\el {b}}{}{}{}{}%
+          {2015\el {b}}}%
+         {{org.apache.http}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{http}
+ \jburldef
+  {http}{http://developer.android.com/reference/org/apache/http/package-summary.html}%
+ \jbbibargs {\bibnf {Developer.Android.com} {} {} {} {}} {
+  Developer.Android.com} {au} {sexless} {\bibtfont {org.apache.http}\bibatsep
+  {} 2015\bibel {b} \jburluse {http}\bibbudcsep {}\urldatecomment 2015-05-20}
+  {\bibhowcited} \jbdoitem {{Developer.Android.com}{}{}{}{}} {} {}
+  \bibAnnoteFile {http}
 
 \backrefparscanfalse
 \bibitem[{Elektronik-Kompendium.de\jbdy {2015}}%
@@ -75,7 +107,7 @@
  \jbbibargs {\bibnf {Elektronik-Kompendium.de} {} {} {} {}} {
   Elektronik-Kompendium.de} {au} {sexless} {\bibtfont {IEEE 802.11n / WLAN mit
   150 MBit/s}\bibatsep {} 2015 \jburluse
-  {uebertragungsgeschwindigkeit}\bibbudcsep {}\urldatecomment 2014-05-20}
+  {uebertragungsgeschwindigkeit}\bibbudcsep {}\urldatecomment 2015-05-20}
   {\bibhowcited} \jbdoitem {{Elektronik-Kompendium.de}{}{}{}{}} {} {}
   \bibAnnoteFile {uebertragungsgeschwindigkeit}
 
@@ -105,7 +137,7 @@
  \jburldef {omap4430}{http://www.ti.com/product/omap4430}%
  \jbbibargs {\bibnf {Instruments} {Texas} {T.} {} {}} {Texas Instruments} {au}
   {sexless} {\bibtfont {OMAP4430}\bibatsep {} 2013 \jburluse
-  {omap4430}\bibbudcsep {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {omap4430}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{Instruments}{Texas}{T.}{}{}} {} {} \bibAnnoteFile {omap4430}
 
 \backrefparscanfalse
@@ -119,7 +151,7 @@
  \jburldef {mt_rand}{http://php.net/manual/de/function.mt-rand.php}%
  \jbbibargs {\bibnf {PHP-Group} {} {} {} {}} { PHP-Group} {au} {sexless}
   {\bibtfont {PHP - mt\_rand()}\bibatsep {} 2015 \jburluse {mt_rand}\bibbudcsep
-  {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem {{PHP-Group}{}{}{}{}}
+  {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem {{PHP-Group}{}{}{}{}}
   {} {} \bibAnnoteFile {mt_rand}
 
 \backrefparscanfalse
@@ -151,7 +183,7 @@
   {wqvga}{http://en.wikipedia.org/wiki/Graphics_display_resolution#WQVGA_.28400x240.29}%
  \jbbibargs {\bibnf {Wikipedia} {} {} {} {}} { Wikipedia} {au} {sexless}
   {\bibtfont {Graphics display resolution}\bibatsep {} 2015 \jburluse
-  {wqvga}\bibbudcsep {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {wqvga}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{Wikipedia}{}{}{}{}} {} {} \bibAnnoteFile {wqvga}
 
 \end{thebibliography}

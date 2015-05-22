@@ -2,6 +2,8 @@
 \expandafter\urldef\csname jburl@cas\endcsname\url{http://www.childrensaidsociety.org/about}
 \expandafter\urldef\csname jburl@statista_smartphone\endcsname\url{http://de.statista.com/statistik/daten/studie/198959/umfrage/anzahl-der-smartphonenutzer-in-deutschland-seit-2010/}
 \expandafter\urldef\csname jburl@vuzixm100\endcsname\url{www.vuzix.com/wp-content/uploads/2013/12/M100_Smart_Glasses_eBrochure_rev9-2013.12.02_lores.pdf}
+\expandafter\urldef\csname jburl@json\endcsname\url{http://developer.android.com/reference/org/json/JSONObject.html}
+\expandafter\urldef\csname jburl@http\endcsname\url{http://developer.android.com/reference/org/apache/http/package-summary.html}
 \expandafter\urldef\csname jburl@uebertragungsgeschwindigkeit\endcsname\url{http://www.elektronik-kompendium.de/sites/net/1102071.htm}
 \expandafter\urldef\csname jburl@bluetooth\endcsname\url{http://www.golem.de/1004/74635.html}
 \expandafter\urldef\csname jburl@omap4430\endcsname\url{http://www.ti.com/product/omap4430}
