@@ -85,7 +85,74 @@ Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leite
 
 Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
 
+\subsection{Produkt einräumen}
+Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses „Produkt einräumen“. Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion „Produkt einräumen“ ausgewählt hat. 
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=0.7]{Bilder/Abbildungen/SMAR_produkt_einraeumen_Sequenzdiagramm.png}}
+	\caption{Sequenzdiagramm Produkt einräumen}
+	\label{fig:jwt_encode}
+\end{figure}
+Ähnlich dem Prozess, Produkt finden, gibt es drei Aktoren, den Mitarbeiter, die Smartglass und die Datenbank, und startet, indem der Nutzer den \glqq Produkt einräumen\grqq -Prozess gestartet hat (scan\_product()). Daraufhin startet die Smartglass den Barcodescanner und berechnet aus dem erfassten Bild einen Code (get\_code()). Dieser Code wird an die Datenbank verschickt mit der Aufforderung produktspezifische Informationen anzugeben (get\_productinformation()). Die Datenbank sucht diese Informationen raus und antwortet der Smartglass mit diesen (send\_productinformation()). Bei diesen Informationen handelt es sich um folgende: 
+\begin{enumerate}
+	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
+	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
+	\item Die aktuell gescannte Unit (Karton, Einzelstück).
+\end{enumerate}
+Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. 
 
+Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt an dem der Prozess \glqq Produkt finden\grqq , in diesen Prozess springt.
+
+So muss der Mitarbeiter weniger mit der Smartglass interagieren. Er hat allerdings noch die Möglichkeit die Unit entsprechend anzupassen (ask\_for\_unit() und enter\_unit()). Dabei hat der Mitarbeiter auch die Möglichkeit nicht nur die Unit anzugeben (ob Karton oder Einzelstück), sondern direkt die Möglichkeit eine Anzahl anzugeben (\zB 4 Kartons). Damit soll die mehrfache Interaktion vermieden werden. 
+
+Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leitet die neuen Informationen an die Datenbank weiter (update\_stock()). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (update\_stock()).
+
+Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
+
+
+\subsection{Warenannahme}
+Dieser Abschnitt beschreibt den Interaktionsprozess zwischen dem Mitarbeiter, der Smartglass und der Datenbank. Wie in den vorherigen Abschnitten wird ein Sequenzdiagramm zur Illustrierung verwendet. Voraussetzung für diesen Prozess ist, dass der Mitarbeiter den Prozess "Warenannahme" im Hauptmenü ausgewählt hat. 
+\\
+Ist dies geschehen öffnet die Smartglass den Scanmodus und erwartet vom Mitarbeiter, dass dieser den Lieferschein einscannt. Der Lieferschein ist deshalb wichtig, damit die folgenden Waren, die angenommen werden, der korrekten Lieferung zugeordnet werden können (scan\_delivery\_note()). 
+\\
+Wurde der Code eingescannt, wird intern der Code berechnet und ein Request an die Datenbank geschickt (get\_delivery\_information()). Dabei wird der gescannte Code mitgeschickt. Die Datenbank überprüft den Code und sucht die erwartenden Produkte und Mengen heraus (get\_delivery\_information()). Diese sendet die Datenbank als Response zurück an die Smartglass (send\_information()), welche diese dem Mitarbeiter anzeigt (show\_delivery\_information()).
+\\
+Wie in der Schleife zu sehen, wiederholt sich der folgende Vorgang solang bis entweder der Lieferschein abgearbeitet ist oder der Mitarbeiter diesen unterbricht. Bis dahin Scannt der Mitarbeiter jeden Artikel bzw. Karton (scan\_product()). Daraufhin berechnet die Smartglass den Code, verschickt diesen an die Datenbank, sodass diese den Lagerbestand entsprechend anpasst. Sofern die Datenbank aus dem Code das Produkt zugeordnet hat (get\_product()), wird der Wert entsprechend aktualisiert (update\_stock()). Anschließend werden Bestätigungen bis runter zum Mitarbeiter verschickt und angezeigt.
+\\
+Hat der Mitarbeiter den Lieferschein abgearbeitet, wird eine kurze Erfolgsmeldung angezeigt, damit der Mitarbeiter eine Rückmeldung bekommt (success\_delivery\_scan()).
+
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=1.0]{Bilder/Abbildungen/SMAR_warenannahme_Sequenzdiagramm.png}}
+	\caption{Sequenzdiagramm Produkt einräumen}
+	\label{fig:sequenz_warenannnahme}
+\end{figure}
+
+\section{HTTP Nutzung}
+\label{sec:httpnutzung}
+Dieser Abschnitt befasst sich nicht mit einem konkreten Prozess, sondern erklärt das allgemeine vorgehen und die Akteure bei einem der vielen REST API Aufrufe. Voraussetzungen für eine einwandfrei Nutzung der REST API sind zwei Pakete auf der Smartglass notwendig. Diese sind standardmäßig ausgeliefert und müssen somit nicht manuell nachinstalliert werden.
+\begin{enumerate}
+	\item org.apache.http
+	\item org.json.JSONObject
+\end{enumerate}
+Das erste Paket stellt die Hauptklassen und -methoden zur Nutzung von HTTP Komponenten. Diese sind essentiell, um das HTTP Protokoll zu verwenden. Es stellt zum Beispiel über HTTP die Verbindung auf und bietet die Möglichkeiten Requests zu versenden und Responses entgegen zu nehmen.\footnote{citep{http}} Grundsätzlich ist zu sagen, dass hier nur eine schematische und vereinfachte Erklärung gewählt ist. 
+\\
+Das zweite Paket bietet Möglichkeiten JSON Objekte zu erstellen und mit diesen zu arbeiten. \footnote{citep{json}}
+\\
+Das folgende Klassendiagramm visualisiert die nötigen Klassen, um einen HTTP Request zu schicken, eine Antwort zu erhalten und schließlich die Informationen davon, zu verwenden.
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=0.7]{Bilder/Abbildungen/http_request_klassendiagramm.png}}
+	\caption{HTTP Request Klassendiagramm}
+	\label{fig:sequenz_warenannnahme}
+\end{figure}
+Zu Beginn wird ein Objekt der Klasse \glqq HttpClient\grqq erzeugt. Der HttpClient kann ein sogenanntes \glqq request\_object\grqq verwenden. In der Grafik ist es konkret ein \glqq HttpGet\grqq -Objekt, das erzeugt wird. Grundsätzlich sind aber auch HttpPost, HttpDelete und HttpPut, nur um die wichtigsten HTTP Verben zu nennen, möglich. In einer Instanz der Klasse HttpGet wird eine URL zugewiesen, und anschließend benutzt das Objekt HttpClient, mithilfe der \glqq execute\grqq -Methode, das request\_object.
+\\
+Wird dieser Befehl ausgeführt, so wird ein Http-Request an den Server geschickt. Dieser antwortet mit einem einfach HttpResponse, bestehend aus Header und Body. Sofern der Request korrekt und ohne Fehler durchlaufen ist, ist der Body des Response nicht leer. Somit kann er mithilfe eines Objekts der Klasse HttpResponse angenommen werden. Prinzipiell ist darin ein String enthalten. 
+\\
+Wie in einem vorherigen Kapitel schon angesprochen, sind die HttpResponses in diesem konkreten Projekt in JSON Syntax geschrieben. Deshalb ist der String im \glqq HttpResponse\grqq Objekt in JSON Syntax, sodass sich dieser leicht verwerten sollte. Dies ist mithilfe eines JSON Objekts einfach. Dazu wird die Methode bzw. auch der Konstruktor mit dem entsprechendem String gefüllt. Die Umwandlung des String in einzelne Attribute übernimmt das Objekt selbst. Mithilfe der Methode \glqq get(String)\grqq können einzelne Attribute herausgezogen werden, indem als \glqq String\grqq der Name des Attributes angegeben wird.
+\\
+Somit lassen sich die vielen Http-Aufrufe, also die Interaktion mit den hinterlegten REST Services, sehr einfach und elegant nutzen und verarbeiten.
 
 
 
