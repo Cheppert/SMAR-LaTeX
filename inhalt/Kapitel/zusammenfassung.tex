@@ -17,8 +17,14 @@ Book-Source in footnote\footnote{\citep{einfuehung_sap_hana}}\\
 	\label{fig:Example}
 \end{figure}
 
+\chapter{Reflexion}
+Das folgende Kapitel beschäftigt sich mit der kritischen Reflektion der Leistung und Entscheidungen des Projektteams und bezieht sich ausschließlich auf die Software.\\
 
-\section{Fazit}
+Während die Grundlegende Architektur das Projekt \ac{SMAR} in einer Thin Client-Server-Architektur aufzubauen in diesem Szenario durchaus Sinn macht, da in der Anwendung mehrere Clients vorhanden sind, die alle auf dieselben Daten - teilweise gleichzeitig - zugreifen, würde eine Berechnung der Daten auf den Clients inkonsistente Stände verursachen und die Performanz negativ beeinflussen. Außerdem waren die eingesetzten Technologien auf den Smartglasses durch das Android Betriebssystem weitestgehend vorgegeben und Entscheidungen wie \zB das Benutzen der ZBar, statt ZXing Library zur Bar-Code-Erkennung sorgen dafür, dass das Projekt eigenständig funktioniert und keine weiteren Softwarevoraussetzungen benötigt. Die \ac{REST} \ac{API} erzeugt eine einfache Kommunikation zwischen Clients (Web Administration und Android-App) und Server und wird von allen Teilen sehr gut unterstützt. Die Web Administration jedoch, die größtenteils eine asynchrone Kommunikation benutzt, kommuniziert im Hintergrund mit PHP-Skripten. Dies ist vor Allem aufgrund der asynchronen Arbeitsweise sehr kompliziert gelöst und nicht zeitgemäß. Hier wäre es von Vorteil gewesen einen NodeJS-Server mit einem AngularJS-Webfrontend einzusetzen. Dies hätte die Programmierung vereinfacht und deutlich Zeit gespart.\\
+
+Das zu Beginn der Entwicklung vereinbarte Zeitmanagement wurde durch das gesamte Projektteam nicht eingehalten. Betrachtet man entsprechende Pushs auf dem Git-Repository sind deutliche Fortschritte zu Anfang des Projekts, zu Anfang des Jahres und zu Ende des Projekts zu verzeichnen. Eine bessere Verteilung und ein kontinuierlicheres Arbeiten am Projekt hätte ein besseres Ergebnis erzielen können und vor Allem Schwachstellen in der Architektur und Technologieauswahl frühzeitig aufgedeckt.
+
+\chapter{Fazit}
 
 
-\section{Ausblick}
+\chapter{Ausblick}

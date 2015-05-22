@@ -32,6 +32,22 @@
   {{CAS(a)}{}{}{}{}} {} {} \bibAnnoteFile {cas}
 
 \backrefparscanfalse
+\bibitem[{comScore\jbdy {2015}}%
+         {}%
+         {{0}{}{}{2015}{}{}{}{}%
+          {2015}}%
+         {{Anzahl der Smartphone-Nutzer in Deutschland bis 2015}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{statista_smartphone}
+ \jburldef
+  {statista_smartphone}{http://de.statista.com/statistik/daten/studie/198959/umfrage/anzahl-der-smartphonenutzer-in-deutschland-seit-2010/}%
+ \jbbibargs {\bibnf {comScore} {} {} {} {}} { comScore} {au} {sexless}
+  {\bibtfont {Anzahl der Smartphone-Nutzer in Deutschland bis 2015}\bibatsep {}
+  2015 \jburluse {statista_smartphone}\bibbudcsep {}\urldatecomment 2015-05-20}
+  {\bibhowcited} \jbdoitem {{comScore}{}{}{}{}} {} {} \bibAnnoteFile
+  {statista_smartphone}
+
+\backrefparscanfalse
 \bibitem[{Corporation\jbdy {2013}}%
          {}%
          {{0}{}{}{2013}{}{}{}{}%
@@ -75,7 +91,7 @@
  \jbbibargs {\bibnf {Ihlenfeld} {Jens} {J.} {} {}} {Jens Ihlenfeld} {au}
   {sexless} {\bibtfont {Bluetooth 4.0: Mehr Reichweite und weniger
   Stromverbrauch}\bibatsep {} 2010 \jburluse {bluetooth}\bibbudcsep
-  {}\urldatecomment 2014-05-20} {\bibhowcited} \jbdoitem
+  {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{Ihlenfeld}{Jens}{J.}{}{}} {} {} \bibAnnoteFile {bluetooth}
 
 \backrefparscanfalse
