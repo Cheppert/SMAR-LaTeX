@@ -18,7 +18,7 @@ Book-Source in footnote\footnote{\citep{einfuehung_sap_hana}}\\
 \end{figure}
 
 \chapter{Reflexion}
-Das folgende Kapitel beschäftigt sich mit der kritischen Reflektion der Leistung und Entscheidungen des Projektteams und bezieht sich ausschließlich auf die Software.\\
+Das folgende Kapitel beschäftigt sich mit der kritischen Reflexion der Leistung und Entscheidungen des Projektteams und bezieht sich ausschließlich auf die Software.\\
 
 Während die Grundlegende Architektur das Projekt \ac{SMAR} in einer Thin Client-Server-Architektur aufzubauen in diesem Szenario durchaus Sinn macht, da in der Anwendung mehrere Clients vorhanden sind, die alle auf dieselben Daten - teilweise gleichzeitig - zugreifen, würde eine Berechnung der Daten auf den Clients inkonsistente Stände verursachen und die Performanz negativ beeinflussen. Außerdem waren die eingesetzten Technologien auf den Smartglasses durch das Android Betriebssystem weitestgehend vorgegeben und Entscheidungen wie \zB das Benutzen der ZBar, statt ZXing Library zur Bar-Code-Erkennung sorgen dafür, dass das Projekt eigenständig funktioniert und keine weiteren Softwarevoraussetzungen benötigt. Die \ac{REST} \ac{API} erzeugt eine einfache Kommunikation zwischen Clients (Web Administration und Android-App) und Server und wird von allen Teilen sehr gut unterstützt. Die Web Administration jedoch, die größtenteils eine asynchrone Kommunikation benutzt, kommuniziert im Hintergrund mit PHP-Skripten. Dies ist vor Allem aufgrund der asynchronen Arbeitsweise sehr kompliziert gelöst und nicht zeitgemäß. Hier wäre es von Vorteil gewesen einen NodeJS-Server mit einem AngularJS-Webfrontend einzusetzen. Dies hätte die Programmierung vereinfacht und deutlich Zeit gespart.\\
 
@@ -28,3 +28,17 @@ Das zu Beginn der Entwicklung vereinbarte Zeitmanagement wurde durch das gesamte
 
 
 \chapter{Ausblick}
+Das folgende Kapitel beschreibt den möglichen Ausblick einer Shelf Management Software in Verbindung mit einer Augmented Reality Smartglass aus Sicht der Projektteilnehmer. \\
+
+Der angezeigte Ausschnitt eines Regals ist bei dieser Software nur sehr schematisch gewesen. Außerdem wurde bereits im vorherigen Verlauf der Arbeit darauf verwiesen, dass es durchaus denkbar ist, und die Architektur darauf ausgelegt ist, die Kamera der Smartglass dauerhaft mitlaufen zu lassen. Mit zusätzlicher Positionsbestimmung in der Filiale und dauerhafter Kommunikation mit dem Server im Backoff ist bestimmt eine noch bessere und genauere Zielführung zu einem Regalplatz möglich. 
+\\
+Aufgrund der schwachen Auflösung der Kamera, ist es erforderlich die entsprechenden Codes sehr nah an die Linse zu halten, was in einem Live-Betrieb die Arbeit eher behindert als bereichert. Mit einer höheren Auflösung ist auch ein erfassen von entfernten Codes denkbar, sodass neben der Position des Mitarbeiter auch die Blickrichtung dessen erfasst werden kann. Dies ist quasi eine weitere Dimension, die zur Berechnung hinzugezogen werden kann und genauere Hilfen ermöglicht. 
+\\
+Durch höhere Auflösungen könnten der Mitarbeiter beim Vorbeigehen Produkte einscannen. Dabei könnte ihm angezeigt werden, dass manche Produkte nicht an diesen Regalplatz gehören, weil sie vom Kunden verlegt wurden, und weggeräumt werden müssen. 
+\\
+Vor allem bei frische Produkten ist es vorstellbar in den Barcode ein entsprechendes Mindesthalbarkeitsdatum einzuprägen. Beim Vorbeigehen könnte dieses eingescannt und angezeigt werden. Bei kritischen Fällen oder sogar Überläufen könnte dieses entsprechend markiert werden, sodass es einfach aus dem Verkauf genommen werden könnte.
+\\
+Außerdem ist es wahrscheinlich ratsam zum Scannen einiger Produkte nicht nur die Smartglass zu verwenden, sondern auch andere externe Komponenten, wie einen Ringscanner oder einen üblichen Handscanner, der über Bluetooth mit der Smartglass kommuniziert. So sind einige Prozesse bzw. Bewegungen natürlicher sowie ergonomischer für den Mitarbeiter. 
+\\
+Weiter in die Zukunft gedacht, ist es vorstellbar, dass nicht nur Mitarbeiter eine Smartglass verwenden, sondern die Kunden selbst. dazu wären natürlich hohe Stückzahlen und ein entsprechend verlässliches sowie benutzerfreundliches System notwendig. Allerdings wäre der Kunde vollkommen autark und könnte ohne jegliche Interaktion mit einem Mitarbeiter seine Einkäufe erledigen. Außerdem ist es denkbar, wenn der Kunde eine Smartglass verwendet, dass diesem mehr Produktinformationen, wie Nährstoffe passend zu seiner Diät, oder weitere dazu passende Produkte, ähnlich wie "Kunden kauften auch diesen Artikel", angezeigt werden könnten. 
+\\
