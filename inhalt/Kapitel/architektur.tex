@@ -44,10 +44,8 @@ Der Datenbankserver (auch \ac{DBMS}) bildet die Kommunikationsschnittstelle, üb
 \subsubsection{Web-Interface}
 Das Web-Interface bildet die Administrationsoberfläche, über die das System gesteuert werden kann. Hier können die Benutzer des Systems sowie ihre Berechtigungen verwaltet werden. Außerdem bietet die Webadministration umfangreiche Möglichkeiten, um die Entitäten des Systems zu konfigurieren, wie z.B. Produkte oder Regale auf der Verkaufsfläche.
 
-\subsubsection{\ac{REST} \ac{API}}
+\subsubsection{Client-Schnittstelle}
 Damit die Clients Daten aus der Datenbank abfragen oder ändern können, wird eine weitere Systemschnittstelle benötigt -- die Verwendung der Webadministration zur Datenmanipulation, z.B. über die Datenbrille, ist aus ergonomischen Gründen nicht geeignet, da die Brille über eingeschränkte Eingabemöglichkeiten verfügt und ohnehin über eine eigens entwickelte App mit Zusatzfunktionen wie z.B. Barcode-Scanner verfügt.
-
-Für diese Client-Schnittstelle fiel die Wahl auf eine REST API. Dabei handelt es sich um einen Webservice, der Ressourcen über fest definierte Routen (virtuelle Dateipfade auf dem Server) bereitstellt. Diese Routen können über die Standard-HTTP-Befehle wie z.B. GET oder POST angesprochen werden und sind somit technologisch sehr flexibel -- HTTP-Anfragen können von fast allen Programmiersprachen und -umgebungen versendet und empfangen werden.
 
 Die Schnittstelle stellt Dienste für alle Funktionen bereit, die von den Clients benötigt werden, z.B. einen Dienst zum Abruf von Produktinformationen, oder einen Dienst zum Aktualisieren des Warenbestandes. Das Kommunikationsverfahren und die bereitgestellten Dienste werden im Implementierungsteil dieser Arbeit erläutert.
 
