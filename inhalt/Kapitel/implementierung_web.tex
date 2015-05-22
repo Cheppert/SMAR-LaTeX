@@ -30,7 +30,7 @@ In den folgenden Kapiteln sollen die Bereiche der Webadministration ausführlich
 	\label{fig:webadmin_products}
 \end{figure}
 
-In diesem Abschnitt können alle wesentlichen Aspekte rund um Produkte und die Einheiten, in denen Produkte auftreten können, verwaltet werden.\\
+In diesem Bereich der Webadministration können alle wesentlichen Aspekte rund um Produkte und die Einheiten, in denen Produkte auftreten können, verwaltet werden.\\
 
 Als erstes wird eine Produktübersicht in Listenform angezeigt, über welche alle vorhandenen Produkte gefunden werden können. Zu einem Produkt werden die wesentlichen Informationen angezeigt, um ein Produkt identifizieren zu können, sowie der aktuelle Warenbestand eines Produktes. Über die Aktionen kann ein Produkt bearbeitet oder gelöscht werden, sowie die entsprechenden Produkt-Einheiten-Mappings angezeigt werden, die im Folgenden noch erläutert werden.\\
 
@@ -43,6 +43,12 @@ Ein nicht über die Subnavigation zugänglicher View sind die Produkt-Einheiten-
 
 \subsection{Regale \& Fächer}
 
+In diesem Bereich der Webadministration können die Regale auf der Verkaufsfläche sowie in dem Zusammenhang auch zugehörige Regalfächer angelegt und bearbeitet werden.\\
+
+Wie auch bei Produkten und Einheiten gibt es eine Unterseite mit einer Auflistung aller vorhandenen Regale. Die Funktionen sind grundsätzlich die selben wie bei der Produktliste: einzelne Einträge der Tabelle können bearbeitet oder gelöscht werden. Zusätzlich gibt es bei Regalen die Aktion, den Shelf Designer zu öffnen.\\
+
+
+
 
 \subsection{Shelf Designer}
 
@@ -52,6 +58,12 @@ Ein nicht über die Subnavigation zugänglicher View sind die Produkt-Einheiten-
 	\caption{Shelf Designer in der Webadministration (Screenshot)}
 	\label{fig:webadmin_shelves_designer}
 \end{figure}
+
+Der Shelf Designer ist ein Tool in der SMAR Webadministration, mit dessen Hilfe die Fächer eines Regals einfach angeordnet werden können. Wie in Abbildung \ref{fig:webadmin_shelves_designer} ersichtlich, besteht der Shelf Designer aus einer Arbeitsfläche, welche die Größe des zu bearbeitenden Regals hat. Auf der Arbeitsfläche sind die Regalfächer entsprechend ihrer in der Datenbank hinterlegten Position und Größe angeordnet.\\
+
+Die Anordnung der Regalfächer kann per Drag \& Drop direkt verändert werden. Ebenso ist die Größenänderung durch Ziehen am Rahmen oder an den Ecken eines Fachs möglich. Auf dem Regal liegt dabei ein Grundraster mit einem Linienabstand von 10 Pixeln, wobei diese 10cm in Bezug auf die realen Maße des Regals entsprechen. Wird ein Regalfach bewegt oder in seiner Größe verändert, so ist dies nur entlang dieses Grundrasters möglich, alle Bewegungen rasten an den Grundlinien ein. Dadurch wird der Gestaltungsprozess für den Anwender deutlich vereinfacht. Um die Änderungen an der Regalanordnung letztendlich zu speichern, muss dieser nur auf Speichern drücken (\emph{Save changes}).\\
+
+Neue Regalfächer lassen sich hier über einen Button anlegen. Im Gegensatz zu anderen Bereichen der Webadministration öffnet sich das Formular für eine neue  Section in einem Overlay, um den Arbeitsfluss mit dem Shelf Designer nicht zu unterbrechen. Nach Anlegen der neuen Section wird der Shelf Designer automatisch aktualisiert und enthält bereits die neue Section. Unter der Arbeitsfläche befindet sich eine Tabelle aller enthaltenen Regalfächer mit den üblichen Aktionen zum Bearbeiten und Löschen.\\
 
 
 \subsection{Benutzerverwaltung}
