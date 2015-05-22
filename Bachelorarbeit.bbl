@@ -155,21 +155,37 @@
   {} {} \bibAnnoteFile {mt_rand}
 
 \backrefparscanfalse
-\bibitem[{Steyer\jbbtasep Softic\jbdy {2013}}%
+\bibitem[{Prof. Dr.~Kleucker\jbdy {2013}}%
          {}%
          {{0}{}{book}{2013}{}{}{}{}%
           {Wiesbaden\bpubaddr {} Springer Fachmedien Wiesbaden\bibbdsep {}
   2013}}%
          {{Grundkurs Software-Engineering mit UML}%
           {}{}{2}{}{}{}{}{}}%
+        ]{anforderungsanalyse}
+ \jbbibargs {\bibnf {Prof. Dr.~Kleucker} {Stephan} {S.} {} {}} {Stephan Prof.
+  Dr.~Kleucker} {au} {sexless} {\bibtfont {Grundkurs Software-Engineering mit
+  UML}\bibatsep {}  \apyformat {Wiesbaden\jbpublisher{\bpubaddr {} Springer
+  Fachmedien Wiesbaden}\bibbdsep {} 2013}\jbisbn {978--3--658--00641--9}}
+  {\bibhowcited} \jbdoitem {{Prof. Dr.~Kleucker}{Stephan}{S.}{}{}} {} {}
+  \bibAnnoteFile {anforderungsanalyse}
+
+\backrefparscanfalse
+\bibitem[{Steyer\jbbtasep Softic\jbdy {2015}}%
+         {}%
+         {{0}{}{book}{2015}{}{}{}{}%
+          {Köln\bpubaddr {} O'Reilly Germany\bibbdsep {} 2015}}%
+         {{Angular JS: Moderne Webanwendungen und Single Page Applications mit
+  JavaScript -}%
+          {}{}{2}{}{}{}{}{}}%
         ]{book_jwt}
  \jbbibargs {\bibnf {Steyer} {Manfred} {M.} {} {}\Bibbtasep \bibnf {Softic}
   {Vildan} {V.} {} {}} {Manfred SteyerVildan Softic} {aus} {sexless} {\bibtfont
-  {Grundkurs Software-Engineering mit UML}\bibatsep {}  \apyformat
-  {Wiesbaden\jbpublisher{\bpubaddr {} Springer Fachmedien Wiesbaden}\bibbdsep
-  {} 2013}\jbisbn {978--3--658--00641--9}} {\bibhowcited} \jbdoitem
-  {{Steyer}{Manfred}{M.}{}{}; {Softic}{Vildan}{V.}{}{}} {} {} \bibAnnoteFile
-  {book_jwt}
+  {Angular JS: Moderne Webanwendungen und Single Page Applications mit
+  JavaScript -}\bibatsep {}  \apyformat {Köln\jbpublisher{\bpubaddr {}
+  O'Reilly Germany}\bibbdsep {} 2015}\jbisbn {978--3--955--61951--0}}
+  {\bibhowcited} \jbdoitem {{Steyer}{Manfred}{M.}{}{};
+  {Softic}{Vildan}{V.}{}{}} {} {} \bibAnnoteFile {book_jwt}
 
 \backrefparscanfalse
 \bibitem[{Wikipedia\jbdy {2015}}%
