@@ -47,15 +47,16 @@ Wie die folgende Grafik zeigt, gibt es drei Akteure, die miteinander kommunizier
 \end{figure}
 Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan-Modus springt (scan\_product()). Dabei hat der Mitarbeiter die Intention, dass die Smartglass ihm dabei Hilft den Regalplatz zu finden.
 
-Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Code (get\_code()). Dies geschieht mit der ZingLibrary (für Details siehe Kapitel). Nachdem die Smartglass den Code errechnet hat, verschickt sie diesen Code an den Datenbankserver, der sich im gleichen Netzwerk befindet, damit dieser mit Produktinformationen antwortet. Mithilfe des Codes sucht die Datenbank intern zuerst nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
+Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Code (get\_code()). Dies geschieht mit der ZingLibrary. Nachdem die Smartglass den Code errechnet hat, verschickt sie diesen Code an den Datenbankserver, der sich im gleichen Netzwerk befindet, damit dieser mit Produktinformationen antwortet. Mithilfe des Codes sucht die Datenbank intern zuerst nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
 \begin{itemize}
 	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
 	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
 	\item Die aktuell ausgewählte Unit (Karton, Einzelstück).
+	\item Das zugehörige Shelf als auch die entsprechende Section.
 \end{itemize}
 Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angezeigt.
 
-Mithilfe der Produktinformation, um welches Produkt es sich handelt, und der hinterlegten Karte aller Produktplätze generiert die Smartglass ein Bild – genauer eine SVG Grafik (generate\_picture). Dieses Bild zeigt einen Ausschnitt des Regalplatzes und markiert den Bereich, in dem das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (send\_shelf\_picture()).
+Mithilfe der Produktinformation, um welches Produkt es sich handelt, und der hinterlegten Karte aller Produktplätze generiert die Smartglass ein Bild – genauer eine SVG Grafik (generate\_picture()). Die Smartglass hat intern eine Karte mit den Attributen Shelf und Section. Dies sind Unterteilungen der Grafik in entsprechende Bereiche. Die Brille weiß allerdings nicht, welches Produkt in welchem Shelf, Section Paar liegt. Mithilfe der Datenbank erfährt sie diese Informationen und kann mit der lokal gespeicherten Karte, das Bild erzeugen. Dieses Bild zeigt einen Ausschnitt des Regalplatzes und markiert den Bereich, in dem das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (send\_shelf\_picture()).
 
 Da in den meisten Fällen nach der Produktplatz suche, das jeweilige Produkt eingeräumt werden soll, fragt die Brille den Mitarbeiter, ob er dies tun möchte.
 Bestätigt er, springt sozusagen der Instruction Pointer in den Prozess „Produkt einräumen“. Dort wird allerdings der Scan-Vorgang übersprungen und öffnet den Dialog mit schon getroffenen Produktinformationen. 
@@ -154,8 +155,17 @@ Wie in einem vorherigen Kapitel schon angesprochen, sind die HttpResponses in di
 \\
 Somit lassen sich die vielen Http-Aufrufe, also die Interaktion mit den hinterlegten REST Services, sehr einfach und elegant nutzen und verarbeiten.
 
-
-
+\section{Settings}
+\label{sec:settings}
+Dieser Abschnitt beschreibt und erklärt die Umsetzung des Speicherungsmechanismus auf der Smartglass. Hierzu wird die Klasse \glqq PreferencesHelper.java\grqq erläutert. 
+\\
+Prinzipiell werden in einer Applikation unter einer Android-Umgebung Informationen in einem sogenannten SharedPreferences-Pool gespeichert. Diese sind einer Aktivität zugeordnet, haben einen Namen und einen Wert. Dazu wird der Pool der aktuellen Aktivität geladen und über einen Editor editierbar gemacht. So können Einstellungen verändert werden. 
+\\
+Ähnlich ist das Abrufen von Einstellungen. Dazu wird ebenfalls über die aktuelle Aktivität der \glqq SharedPreferences\grqq aufgerufen, und darin der Name der Einstellung herausgesucht. Anschließend erhält man den Wert der Einstellung. 
+\\
+Es wurde sich dafür entschieden die oben erwähnte Klasse zu implementieren, um eine Abstraktionsschicht für jegliche Zugriffe auf Einstellungen zu gewährleisten. So laufen alle Zugriffe gleich ab, und bei Änderungen oder Erweiterungen gibt es einen zentralen Ort. Dennoch sind alle nutzenden Klassen von Veränderungen betroffen. 
+\\
+Konkret sind Standardmaßnahmen für den Lesenden sowie Schreibenden Zugriff auf Einstellung mit den Parameter String als auch Integer. Diese scharfe Trennung muss auch erfolgen, da der Editor nur genaue Typen akzeptiert. 
 
 
 
