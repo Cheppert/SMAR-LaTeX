@@ -1,18 +1,51 @@
 \chapter{Implementierung Device}
 \label{cha:impl_device}
 
-\section{Produkt finden}
-\label{sec:produkt_finden}
-Dieser Abschnitt beschreibt, wie ein Mitarbeiter mithilfe der Smartglass einen Produktplatz finden kann. Dies wird mithilfe eines Sequenzdiagramms durchgeführt. Die Voraussetzung für diesen Prozess ist, dass der Anwender den Menüpunkt „Produkt finden“ im Hauptmenü ausgewählt hat.\\
+\section{Technologische Grundlagen}
+\subsection{Android}
+%TODO evtl. ein kurzer Abschnitt über Android, Java, die App auf der Brille?
 
-Wie die folgende Grafik zeigt, gibt es drei Aktoren, die miteinander kommunizieren, den Mitarbeiter, die Smartglass und die Datenbank.
+\subsection{Visualisierung der Regale}
+Für einige Prozesse auf der Brille ist es erforderlich, dass die exakte Position eines Produktes in einem Regal auf der Verkaufsfläche angezeigt wird. Dazu gibt es unter Verwendung von Wearable Computern grundsätzlich zwei Möglichkeiten:
+
+\begin{enumerate}
+	\item Das Regal wird abstrahiert und schematisch in einer vereinfachten Form dargestellt. Innerhalb dieser Darstellung wird die Position des gesuchten Produktes im Regal markiert. Der Benutzer muss selbst die Verknüpfung zwischen der Darstellung und der Realität herstellen, wenn er vor dem Regal steht.
+	\item Durch Nutzung einer Videokamera wird die Umgebung des Benutzers und somit das Regal digital erfasst und durch Bild-im-Bild-Überlagerung die Produktposition im Regal markiert. Die Verknüpfung von Darstellung und Realität ist dadurch sehr stark. Voraussetzung ist hierbei jedoch, dass der Benutzer sich direkt vor dem Regal befindet -- andernfalls ist wiederum eine abstrahierte Darstellung erforderlich.
+\end{enumerate}
+
+Für die Umsetzung des Systems im Rahmen dieser Arbeit wurde die erste Möglichkeit gewählt, da sie technisch einfacher umzusetzen ist und zugleich auch eine Umsetzung der zweiten Möglichkeit vorbereitet.
+
+Für die schematische Darstellung des Regals wurde die Ansicht gewählt, die ein Benutzer hat, wenn er sich vor dem Regal befindet (Frontalansicht oder Draufsicht). Regale sind rechteckig, ebenso wie Regalfächer, und lassen sich jeweils über Höhe und Breite, sowie bei den Fächern über die Position im Regal beschreiben. Dies sind optimale Voraussetzung für die Umsetzung als zweidimensionale Ansicht.
+
+Die technische Umsetzung der schematischen Darstellung kann i.A. auf drei Arten erfolgen:
+
+\begin{enumerate}
+	\item als Bitmap (pixelbasierte Grafik);
+	\item als Vektorgrafik, also eine mathematisch beschriebene Grafik, die bei Ausgabe auf Bildschirmen verlustfrei in eine Bitmap der gewünschten Auflösung umgewandelt wird; oder
+	\item als \acs{3D}-Grafik, die zusätzlich noch Tiefeninformationen speichert.
+\end{enumerate}
+
+Für die Darstellung auf dem Gerät fiel die Entscheidung auf eine Umsetzung als Vektorgrafik im \acs{SVG}-Format. Eine \acs{SVG}-Grafik ist im Grunde eine \acs{XML}-Datei, besteht also aus Text. Grundformen wie Rechtecke lassen sich über \acs{SVG} sehr einfach beschreiben, und für die Darstellung eines Regals werden keine komplizierteren Formen benötigt. Dies ist sehr platzsparend im Vergleich zu Bitmaps mit dem selben visuellen Inhalt. Außerdem können im \acs{XML}-Code der \acs{SVG}-Grafik weitere Informationen über das Regal und die Fächer hinterlegt werden, wie z.B. die entsprechenden IDs der Fächer und Produkte aus der Datenbank. Nicht zuletzt ist die verlustfreie Skalierbarkeit der Vektorgrafik ein unschätzbarer Vorteil, der das Grafikformat unabhängig von der Größe der Ausgabe macht und somit die Geräteunabhängigkeit der Applikation wesentlich verbessert.
+
+Für SMAR sind daher alle Regale als \acs{SVG}-Grafiken angelegt. Die Grafiken werden bei Anlegen eines Regals in der Webadministration automatisiert erzeugt und in einer eigenen Tabelle (\textbf{\textit{shelf\_graphic}}) gespeichert. Bei Updates für ein entsprechendes Regal (z.B. Bearbeiten des Regals oder von darin enthaltenen Fächern) wird die \acs{SVG}-Grafik neu generiert und in der Tabelle aktualisiert. Die Grafik selbst enthält neben der Darstellung auch die IDs der Fächer, um diese später einfach ansprechen zu können.
+
+Die Smartglass selbst lädt sich bei Start der App automatisch den neuesten Stand der \acs{SVG}-Grafiken aus der Datenbank herunter und speichert die Grafiken lokal als Dateien ab. Wird eine Regal-Darstellung benötigt, kann diese direkt aus dem lokalen Speicher der Smartglass geladen werden. Dies spart während der Nutzung der Brille Traffic und erhöht somit die Performance der Anwendung. Soll außerdem ein Regalfach markiert werden, kann direkt der \acs{XML}-Code der \acs{SVG}-Grafik manipuliert werden -- z.B. kann über die angeheftete ID eines Faches die entsprechende Rechteck-Form gesucht und über entsprechende \acs{SVG}-Anweisungen eingefärbt werden.
+
+
+\section{Interaktionsprozesse}
+
+\subsection{Produkt finden}
+\label{sec:produkt_finden}
+Dieser Abschnitt beschreibt, wie ein Mitarbeiter mithilfe der Smartglass einen Produktplatz finden kann. Dies wird anhand eines Sequenzdiagramms veranschaulicht. Die Voraussetzung für diesen Prozess ist, dass der Anwender den Menüpunkt „Produkt finden“ im Hauptmenü ausgewählt hat.
+
+Wie die folgende Grafik zeigt, gibt es drei Akteure, die miteinander kommunizieren: den Mitarbeiter, die Smartglass und die Datenbank.
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.8]{Bilder/Abbildungen/SMAR_produkt_finden_Sequenzdiagramm.png}}
 	\caption{Sequenzdiagramm Produkt finden}
 	\label{fig:jwt_encode}
 \end{figure}
-Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan Modus springt (scan\_product()). Dabei hat der Mitarbeiter die Intention, dass die Smartglass ihm dabei Hilft den Regalplatz zu finden.\\
+Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan-Modus springt (scan\_product()). Dabei hat der Mitarbeiter die Intention, dass die Smartglass ihm dabei Hilft den Regalplatz zu finden.
 
 Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Code (get\_code()). Dies geschieht mit der ZingLibrary (für Details siehe Kapitel). Nachdem die Smartglass den Code errechnet hat, verschickt sie diesen Code an den Datenbankserver, der sich im gleichen Netzwerk befindet, damit dieser mit Produktinformationen antwortet. Mithilfe des Codes sucht die Datenbank intern zuerst nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
 \begin{itemize}
@@ -20,16 +53,16 @@ Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den ent
 	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
 	\item Die aktuell ausgewählte Unit (Karton, Einzelstück).
 \end{itemize}
-Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angezeigt.\\
+Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angezeigt.
 
 Mithilfe der Produktinformation, um welches Produkt es sich handelt, und der hinterlegten Karte aller Produktplätze generiert die Smartglass ein Bild – genauer eine SVG Grafik (generate\_picture). Dieses Bild zeigt einen Ausschnitt des Regalplatzes und markiert den Bereich, in dem das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (send\_shelf\_picture()).
-\\
+
 Da in den meisten Fällen nach der Produktplatz suche, das jeweilige Produkt eingeräumt werden soll, fragt die Brille den Mitarbeiter, ob er dies tun möchte. 
 Bestätigt er, springt sozusagen der Instruction Pointer in den Prozess „Produkt einräumen“. Dort wird allerdings der Scan-Vorgang übersprungen und öffnet den Dialog mit schon getroffenen Produktinformationen. 
-\\
+
 Verneint der Nutzer, so springt die Smartglass zurück an den Anfang vom „Produkt finden“ Prozess. 
 
-\section{Produkt einräumen}
+\subsection{Produkt einräumen}
 Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses „Produkt einräumen“. Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion „Produkt einräumen“ ausgewählt hat. 
 \begin{figure}[H]
 	\centering
@@ -44,15 +77,22 @@ Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke i
 	\item Die aktuell gescannte Unit (Karton, Einzelstück).
 \end{enumerate}
 Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. 
-\\
+
 Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt an dem der Prozess \glqq Produkt finden\grqq , in diesen Prozess springt.
-\\
+
 So muss der Mitarbeiter weniger mit der Smartglass interagieren. Er hat allerdings noch die Möglichkeit die Unit entsprechend anzupassen (ask\_for\_unit() und enter\_unit()). Dabei hat der Mitarbeiter auch die Möglichkeit nicht nur die Unit anzugeben (ob Karton oder Einzelstück), sondern direkt die Möglichkeit eine Anzahl anzugeben (\zB 4 Kartons). Damit soll die mehrfache Interaktion vermieden werden. 
-\\
+
 Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leitet die neuen Informationen an die Datenbank weiter (update\_stock()). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (update\_stock()).
-\\
+
 Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
-\\
+
+
+
+
+
+
+
+
 \section{Projektdefinition}
 Kapitel \ref{cha:intro}
 
