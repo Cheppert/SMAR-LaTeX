@@ -30,11 +30,20 @@ Warning--entry type for "uebertragungsgeschwindigkeit" isn't style-file defined
 --line 127 of file Inhalt/bib.bib
 Warning--entry type for "bluetooth" isn't style-file defined
 --line 146 of file Inhalt/bib.bib
+Warning--entry type for "statista_smartphone" isn't style-file defined
+--line 165 of file Inhalt/bib.bib
+Warning--entry type for "json" isn't style-file defined
+--line 184 of file Inhalt/bib.bib
+Warning--entry type for "http" isn't style-file defined
+--line 203 of file Inhalt/bib.bib
 Warning--Neither address nor year in cas
+Warning--No address in statista_smartphone
 Warning--No address in vuzixm100
+Warning--No address in json
+Warning--No address in http
 Warning--No address in uebertragungsgeschwindigkeit
 Warning--No address in bluetooth
 Warning--No address in omap4430
 Warning--No address in mt_rand
 Warning--No address in wqvga
-(There were 14 warnings)
+(There were 20 warnings)
