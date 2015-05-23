@@ -2,7 +2,38 @@
 \label{cha:architektur}
 \sloppy
 
-Im Folgenden werden die allgemeine Architektur der Anwendung mit einbezogener Hard- und Software (Server-Client-Architektur, Kapitel \ref{sec:architektur_serverclient}) sowie im Speziellen die Datenbank-Architektur (Kapitel \ref{sec:architektur_datenbank}) vorgestellt. Von den gegebenen Anforderungen lassen sich bereits viele Eigenschaften der Architektur ableiten.
+In diesem Kapitel werden allgemeine architektonische Entscheidungen der Anwendung mit einbezogener Hard- und Software (Server-Client-Architektur, Kapitel \ref{sec:architektur_serverclient}) sowie im Speziellen die Datenbank-Architektur (Kapitel \ref{sec:architektur_datenbank}) vorgestellt. Dabei werden die Umsetzungsmöglichkeiten mit ihren Vor- und Nachteilen im Bezug auf die Anforderungen erläutert.
+
+\section{Grundlegende Entscheidungen}
+\label{sec:grund_entscheidungen}
+
+\subsection{Erfassung von Produkten}
+%TODO Quelle der Anforderung einfügen
+Wie aus den Anforderungen hervorgeht, muss ein Produkt elektronisch im System erfasst werden können. Dazu gibt es mehrere Möglichkeiten.\\ 
+Der Anwender könnte einen bestimmten Code für das jeweilige Produkt in die Brille eingeben. Dies hätte allerdings den Nachteil, dass der Anwender für jedes Produkt einen Code merken müsste, was eine weitere Entlastung des Mitarbeiters zur Folge hätte.\\
+Eine andere Möglichkeit ist, den entsprechenden Artikel einzuscannen. Ein Barcode oder anderer Typ von Code ist für ein Produkt immer gegeben, dieser kann also für die Erfassung genutzt werden. Da die Brille eine integrierte Kamera besitzt, kann das Scannen des Artikels mithilfe der Brille direkt erfolgen. Der Vorteil daran ist, dass der Nutzer beide Hände frei hat, um zu arbeiten und keine weiteren Gerätschaften mittragen muss.
+
+\subsection{Zuordnung von Code zu Produkt}
+%TODO Quelle der Anforderung einfügen
+Laut Anforderung soll anhand eines erfassten Codes das zugehörige Produkt ermittelt werden können.\\
+Dieses Mapping kann entweder auf der Brille erfolgen oder auf einer externen Komponente. Für eine Zuordnung direkt auf der Smartglass müssten alle Daten lokal gespeichert sein. Dies kostet bei entsprechend hoher Anzahl von Produkten viel Speicherplatz, der nur begrenzt zur Verfügung steht. Sind nun noch mehrere Smartglasses in Betrieb, muss bei einem Update des Datenbestandes jede Brille einzeln aktualisiert werden, was sehr aufwändig ist. Da davon auszugehen ist, dass bei größeren Filialen mehrere Mitarbeiter zeitgleich im Verkaufsbereich arbeiten, sind mehrere im Betrieb befindliche Smartglasses ein realistisches Szenario.\\
+Das Auslagern der Datenspeicherung auf einen Datenbankserver behebt diese Nachteile, erfordert allerdings die Bereitstellung eines Servers sowie einer Datenbank zur Speicherung der Daten. Zusätzlich ist eine Datenverbindung zwischen den Smartglasses und dem entsprechenden Server notwendig, um Zugriff auf die Daten zu gewährleisten.\\
+Die Kommunikation betreffend, ist eine gute Performance ein wichtiger Faktor, gegenüber der sich ein Server bei der die Auslagerung der Speicherung beweisen muss. Die versendeten Datenmengen bei der Abfrage eines Produktcodes sind sehr gering, und ein darauf optimierter Server kann eine Antwort in ausreichend hoher Geschwindigkeit zurücksenden. Daher wurde für die Umsetzung ein externer Server herangezogen.\\
+
+Daraus ergeben sich folgende neue Anforderungen: 
+\begin{itemize}
+	\item Anforderung S1: Es muss ein Server aufgestellt werden.
+	\item Anforderung S30: Es muss eine Kommunikationsschnittstelle zwischen Smartglass und Server geben.
+\end{itemize}
+
+\subsection{Speicherung der Produktposition}
+Auch die Position eines Produktes im Regal auf der Verkaufsfläche muss verwaltet werden. Da das Display der Smartglass sehr klein und die Handhabung für komplexe Eingaben nicht ergonomisch ist, ist die Erstellung und Verwaltung der Produktpositionen auf der Smartglass nicht effizient umsetzbar. Da für die Speicherung der Daten bereits ein Server vorhanden sein muss, kann der Server auch für die Verwaltung des Systems genutzt werden. Dazu wäre eine Administrationsanwendung erforderlich; diese soll ermöglichen, dass Regale erstellt und mit Produkten verknüpft werden können (siehe Anforderungen A10, A20 und A30).\\
+
+Für die Speicherung grafischen Darstellung der Produktposition im Regal ergeben sich wieder zwei Möglichkeiten: die Datenhaltung im internen Speicher der Smartglass, oder Speicherung in der Datenbank auf dem Server.\\
+Bei Speicherung auf dem Server agiert die Smartglass als Thin-Client und lädt die passende Grafik jedes Mal neu vom Server. Dabei wird die Rechenleistung der Smartglass wenig beansprucht, was der Batterieleistung zugute kommt. Jedoch muss auch die langfristige Planung berücksichtigt werden. Sollte die Markierung der Produktposition nicht in einer Grafik, sondern z.B. direkt durch Überlagerung eines Kamerabildes geschehen, so ist ein Austausch der Grafik auf dem Server (und zwischenzeitliche Positionsmarkierung durch den Server) nicht mehr performant möglich.\\
+Deshalb wurde sich dafür entschieden, dass die Karte mit allen Regalinformationen auf der Smartglass gespeichert wird. Die Smartglass erfragt beim Server nach dem einscannen des Codes das Produkt und dessen Regalplatz. Anschließend berechnet die Smartglass selbst den Regalplatz und erzeugt das Bild.
+
+
 
 \section{Server-Client-Architektur}
 \label{sec:architektur_serverclient}
