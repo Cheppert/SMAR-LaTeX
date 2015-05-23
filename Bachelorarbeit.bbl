@@ -4,20 +4,6 @@
 \begin{thebibliography}{}
 
 \backrefparscanfalse
-\bibitem[{Berg\jbbtasep Silvia\jbdy {2013}}%
-         {}%
-         {{0}{}{book}{2013}{}{}{}{}%
-          {Galileo PRESS\bibbdsep {} 2013}}%
-         {{Einführung in SAP HANA}%
-          {}{}{2}{}{}{}{}{}}%
-        ]{einfuehung_sap_hana}
- \jbbibargs {\bibnf {Berg} {Bjarne} {B.} {} {}\Bibbtasep \bibnf {Silvia}
-  {Penny} {P.} {} {}} {Bjarne BergPenny Silvia} {aus} {sexless} {\bibtfont
-  {Einführung in SAP HANA}\bibatsep {}  \apyformat {\jbpublisher{Galileo
-  PRESS\bibbdsep {}} 2013}} {\bibhowcited} \jbdoitem {{Berg}{Bjarne}{B.}{}{};
-  {Silvia}{Penny}{P.}{}{}} {} {} \bibAnnoteFile {einfuehung_sap_hana}
-
-\backrefparscanfalse
 \bibitem[{Brown\jbdy {2015}}%
          {}%
          {{0}{}{}{2015}{}{}{}{}%
@@ -31,20 +17,6 @@
   {\bibtfont {ZBar}\bibatsep {} 2015 \jburluse {zbar}\bibbudcsep
   {}\urldatecomment 2015-05-21} {\bibhowcited} \jbdoitem
   {{Brown}{Jeff}{J.}{}{}} {} {} \bibAnnoteFile {zbar}
-
-\backrefparscanfalse
-\bibitem[{CAS(a)}%
-         {}%
-         {{0}{}{}{}{}{}{}{}%
-          {}}%
-         {{The Children's Aid Society - Overview}%
-          {}{}{2}{}{}{}{}{}}%
-        ]{cas}
- \jburldef {cas}{http://www.childrensaidsociety.org/about}%
- \jbbibargs {\bibnf {CAS(a)} {} {} {} {}} { CAS(a)} {au} {sexless} {\bibtfont
-  {The Children's Aid Society - Overview}\bibatsep {}  \jburluse
-  {cas}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
-  {{CAS(a)}{}{}{}{}} {} {} \bibAnnoteFile {cas}
 
 \backrefparscanfalse
 \bibitem[{comScore\jbdy {2015}}%
