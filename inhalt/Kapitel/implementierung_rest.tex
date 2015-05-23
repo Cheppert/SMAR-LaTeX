@@ -5,7 +5,25 @@ Die Client-Schnittstelle dient der Kommunikation zwischen den Clients (z.B. Smar
 
 Für diese Client-Schnittstelle fiel die Wahl auf eine \acs{REST} \acs{API}. Dabei handelt es sich um einen Webservice, der Ressourcen über fest definierte Routen (virtuelle Dateipfade auf dem Server) bereitstellt. Diese Routen können über die Standard-\acs{HTTP}-Befehle wie z.B. \emph{GET} oder \emph{POST} angesprochen werden und sind somit technologisch sehr flexibel -- \acs{HTTP}-Anfragen können von fast allen Programmiersprachen und -umgebungen versendet und empfangen werden.\\
 
-Wie die Webadministration wurde die \acs{REST} \acs{API} über die Scriptsprache \acs{PHP} umgesetzt. Um den Arbeitsaufwand möglichst gering zu halten und gleichzeitig eine stabile API bereitstellen zu können, wurde das \emph{Slim Framework}(\url{http://www.slimframework.com/}) verwendet. Dabei handelt es sich um ein leichtgewichtiges Framework, mit dem Routen für die gängigen \acs{HTTP}-Befehle in \acs{PHP} programmiert werden.\\
+Die \acs{API} wird nicht nur von externen Clients verwendet. Auch die Webadministration greift zum Teil auf \acs{REST} Services zu, teilweise wurden Services explizit für die Webadministration implementiert. Anwendungsbeispiele sind asynchrone \acs{AJAX}-Requests, die Funktionen wie Autovervollständigung in Formularfeldern bedienen und über einen Service optimal mit Daten versorgt werden können.
 
+\section{Technologische Grundlagen}
+Wie die Webadministration wurde die \acs{REST} \acs{API} über die Scriptsprache \acs{PHP} umgesetzt. Um den Arbeitsaufwand möglichst gering zu halten und gleichzeitig eine stabile API bereitstellen zu können, wurde das \emph{Slim Framework}(\url{http://www.slimframework.com/}) verwendet. Dabei handelt es sich um ein leichtgewichtiges Framework, mit dem Routen für die gängigen \acs{HTTP}-Befehle in \acs{PHP} programmiert werden. Das Format für den Datenaustausch ist dabei nicht vorgegeben, die Kommunikation wird im Rahmen von Webapplikationen jedoch in der Regel auf JSON basiert.\\
 
+Der Ablauf eines Kommunikationszyklusses gestaltet sich analog zu einem regulären \acs{HTTP}-Request. Der Client sendet eine Anfrage an den entsprechenden \acs{URL} des \acs{REST} Service, den der Client ansprechen möchte. Abhängig vom Service muss der Request \emph{GET} oder \emph{POST} als Methode verwenden, sowie u.U. notwendige Parameter für die Anfrage enthalten. Der Webserver empfängt die Anfrage und leitet sie aufgrund der Konfiguration des Slim Frameworks an die \acs{API} weiter. Diese ordnet die Route einer Programmroutine zu, welche entsprechend der Anfrage Daten zurückliefert. Dazu werden vom REST Service eventuell Datenbankabfragen durchgeführt.\\
 
+\section{REST Services}
+Die Routen der \acs{REST} Services starten alle im Unterordner \emph{/api} des Web-Interfaces. Routen müssen nicht nur statisch sein, sondern können auch Parameter enthalten -- entsprechend der Philosophie von \acs{REST} Services, bereits über den \acs{URL} die angesprochene(n) Ressource(n) zu definieren. Die folgende Liste soll alle relevanten Services kurz vorstellen.
+
+\begin{description}
+  \item[/authenticate] \hfill \\
+    Dieser Service dient zur initialen Anmeldung an der \acs{API} und liefert einen Token (\acs{JWT}) zurück, der bei den folgenden Requests zur Authentifizierung verwendet wird.
+  \item[/sections/:shelfid] \hfill \\
+    Gibt den kompletten Datenbankeintrag einer Section (Regalplatz) mit der übergebenen ID (\emph{shelfid}) zurück.
+  \item[/barcode/:barcode] \hfill \\
+    Sucht in der Datenbank nach dem Objekt mit dem übergebenen Barcode (in Tabellen \textit{\textbf{product}}, \textit{\textbf{product\_unit}}, \textit{\textbf{shelf}}) und gibt den kompletten Datensatz bei Fund zurück.
+  \item[/search/:table/:search(/:limit)] \hfill \\
+    Dieser Service bedient Autovervollständigungsfelder in Formularen der Webadministration. Zu einer gegebenen Tabelle und einem Suchbegriff gibt der Dienst passende Datensätze (optional in limitierter Menge) zurück.
+  \item[/designer/update/:shelfid] \hfill \\
+    Der Speicherbutton des Shelf Designers in der Webadministration sendet die Anordnung der Sections an diesen Service, welcher die Positionen und Größen der Sections in der Datenbank updatet und auch die Grafik für das Regal neu generiert.
+\end{description}
