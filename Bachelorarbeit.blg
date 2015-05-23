@@ -37,6 +37,9 @@ Warning--entry type for "json" isn't style-file defined
 --line 194 of file Inhalt/bib.bib
 Warning--entry type for "http" isn't style-file defined
 --line 213 of file Inhalt/bib.bib
+Warning--entry type for "zbar" isn't style-file defined
+--line 232 of file Inhalt/bib.bib
+Warning--No address in zbar
 Warning--Neither address nor year in cas
 Warning--No address in statista_smartphone
 Warning--No address in vuzixm100
@@ -47,4 +50,4 @@ Warning--No address in bluetooth
 Warning--No address in omap4430
 Warning--No address in mt_rand
 Warning--No address in wqvga
-(There were 20 warnings)
+(There were 22 warnings)

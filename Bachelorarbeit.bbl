@@ -18,6 +18,21 @@
   {Silvia}{Penny}{P.}{}{}} {} {} \bibAnnoteFile {einfuehung_sap_hana}
 
 \backrefparscanfalse
+\bibitem[{Brown\jbdy {2015}}%
+         {}%
+         {{0}{}{}{2015}{}{}{}{}%
+          {2015}}%
+         {{ZBar}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{zbar}
+ \jburldef
+  {zbar}{http://zbar.sourceforge.net/iphone/userguide/symbologies.html}%
+ \jbbibargs {\bibnf {Brown} {Jeff} {J.} {} {}} {Jeff Brown} {au} {sexless}
+  {\bibtfont {ZBar}\bibatsep {} 2015 \jburluse {zbar}\bibbudcsep
+  {}\urldatecomment 2015-05-21} {\bibhowcited} \jbdoitem
+  {{Brown}{Jeff}{J.}{}{}} {} {} \bibAnnoteFile {zbar}
+
+\backrefparscanfalse
 \bibitem[{CAS(a)}%
          {}%
          {{0}{}{}{}{}{}{}{}%
