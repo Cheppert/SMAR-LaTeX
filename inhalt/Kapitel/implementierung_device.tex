@@ -26,6 +26,36 @@ Die Architektur von Android empfiehlt diese Vorgehensweise jedoch nicht. Das And
 Android bietet stattdessen \glqq ASyncTasks\grqq , also eine Klasse für Asynchrone Aufgaben an. Diese Klasse muss durch \ac{SMAR} eigene Klassen erweitert werden, die in die bereitgestellten Methoden die durchzuführenden Aufgaben implementieren. Diese asynchrone Aufgabe wird dabei durch einen neuen Thread im Hintergrund ausgeführt, während der UI-Thread  annähernd\footnote{Annähernd, da der Prozessor nur eine Aufgabe gleichzeitig ausführen kann, aber die Threads abwechselnd für eine kurze Dauer ausführt, sodass dies für den Benutzer als parallel ausgeführt wirkt.} parallel im Vordergrund weiter ausgeführt wird und somit die Ausgabe (wie \zB einen bewegten Ladebildschirm) ständig aktualisiert.\\
 Sobald die asynchrone Aufgabe vollständig ausgeführt wurde, wird das Ergebnis an eine Methode der ASyncTasks-Klasse übergeben, die auf dem UI-Thread ausgeführt wird. Dadurch wird  die Ausgabe auf dem UI-Thread verändert und die von Google vorgesehene Architektur wird nicht verletzt.\footnote{\citep[S. 115ff.]{android_threads}}
 
+\subsection{Barcode Erkennung}
+\label{sec:barcode}
+Dieses Kapitel beschäftigt sich mit der Implementation der Barcode Scanner-Funktion in die \ac{SMAR} Anwendung auf der Smartglass. Wie im Kapitel \ref{cha:technik} \nameref{cha:technik} bereits beschrieben, wurde sich gegen die Anschaffung eines externen Barcode Scanners entschieden, sodass die Erkennung von Bar- und QR-Codes durch eine Library in Verbindung mit der eingebauten Kamera übernommen wird.\\
+
+Android \bzw Google bieten keine Library für das Erkennen von Bar-/QR-Codes an. Außerdem würde es den Rahmen dieses Projektes übersteigen eigene Klassen für diese Aufgabe zu entwickeln. Eine Recherche ergab folgende zwei populäre und ausgereifte externe Anwendungen \bzw Librarys, die frei zur Verfügung stehen:
+\begin{itemize}
+	\item zebra crossing (ZXing)
+	\item ZBar SDK
+\end{itemize}
+Bei ZXing handelt es sich in erster Linie um eine Barcode Scanner App für Android. Darüber hinaus unterstützt die App jedoch den externen Zugriff durch eine andere App und kann das Ergebnis des Scans an die externe App weitergeben. Das \ac{SMAR}-Projekt würde die Barcode Scanner App von ZXing entsprechend jedes mal starten, sobald ein neuer Code benötigt wird und die Antwort der Barcode Scanner App abwarten.\\
+Ein großer Vorteil ist die schnelle und einfache Integration, die anhand weniger Zeilen Sourcecode geschieht. Entscheidende Nachteile sind jedoch die Abhängigkeit von einer anderen App, die auf dem Gerät ebenfalls installiert sein muss und der erhöhte Ressourcenverbrauch, der das\ac{SMAR}-Projekt in der Effizienz einschränken könnte. Da der Sourcecode der Barcode Scanner App frei verfügbar ist, wäre die Möglichkeit der Integration der gesamten Anwendung. Dies ist aufgrund der Komplexität aber ebenfalls nicht praktikabel.\\
+
+Die Entscheidung fiel daher auf die ZBar SDK Library. Diese wird in das Projekt als externe Library integriert und bietet die Möglichkeit Bilder auf einen Bar- oder QR-Code zu untersuchen. Ein Nachteil ist der erhöhte Programmieraufwand, der für das Erstellen der Kamera Vorschau und der Aufruflogik benötigt wird. Der entscheidende Vorteil ist jedoch, dass alle Aktionen innerhalb der \ac{SMAR}-Anwendung stattfinden und keine externen Anwendungen zur Laufzeit benötigt werden.\\
+
+Die ZBar Library unterstützt alle gängigen Barcode- und QR-Code Typen und ist damit optimal für den Einsatz in diesem Projekt geeignet:\footnote{\citep{zbar}}
+\begin{itemize}
+	\item EAN/UPC: EAN-8, EAN-13, UPC-A, UPC-E
+	\item Linear: Code 39, Code 93, Code 128, Interleaved 2 of 5, DataBar
+	\item 2-D: QR-Code
+\end{itemize}
+
+Für die Integration der ZBar Library werden zwei neue Klassen benötigt:
+\begin{enumerate}
+	\item Eine Activity (eine neue Seite), im folgenden Barcode-Klasse genannt.
+	\item Eine Klasse, die die Kamera Vorschau innerhalb eines Fensters erstellt, das in eine Activity eingebunden werden kann. Im folgenden Kamera-Klasse genannt.
+\end{enumerate} 
+Wird das Einscannen eines Barcodes benötigt, so wird die Barcode-Klasse aufgerufen. Diese erstellt eine neue Instanz der ZBar Lybrary mit entsprechend eingestellter Konfiguration (wie \zB Auflösungseinstellungen, zu erkennende Codes) und fragt beim Android Betriebssystem nach der Öffnung einer Kamerainstanz. Wird eine gültige Kamerainstanz zurückgeliefert, so wird die Kamera-Klasse mit dieser Instanz ausgeführt und das Vorschaubild in die Activity integriert. Außerdem stellt die Barcode-Klasse Methoden zur Verfügung, die bei Rückgabe von Werten seitens der Kamera-Klasse, ausgeführt wird. Dies sind die Bilder, die die Kamera aufzeichnet, die anschließend an die Instanz der ZBar Library weitergeleitet werden. Liefert die ZBar Library ein Ergebnis zurück, wird die Kamera-Klasse und die Kamerainstanz geschlossen, sowie die Activity geschlossen und die Barcode-Klasse gibt das Ergebnis zurück. Dieses Ergebnis kann durch die Klasse, die die Barcode-Klasse ausgeführt hat, über eine onActivityResult()-Methode abgerufen werden.\\
+
+Die Kamera-Klasse konfiguriert bei Ausführung zunächst die Kamera (Ausrichtung der Kamera, Bildwiederholrate, Autofokus, ...) und definiert den Callback. Der Callback wird ausgeführt, sobald die Kamera ein Bild aufgenommen hat. Als Daten werden dabei die Bildinformationen übergeben, die von der Barcode-Klasse abgerufen werden.
+
 \subsection{Visualisierung der Regale}
 Für einige Prozesse auf der Brille ist es erforderlich, dass die exakte Position eines Produktes in einem Regal auf der Verkaufsfläche angezeigt wird. Dazu gibt es unter Verwendung von Wearable Computern grundsätzlich zwei Möglichkeiten:
 
@@ -164,41 +194,9 @@ Prinzipiell werden in einer Applikation unter einer Android-Umgebung Information
 Es wurde sich dafür entschieden die oben erwähnte Klasse zu implementieren, um eine Abstraktionsschicht für jegliche Zugriffe auf Einstellungen zu gewährleisten. So laufen alle Zugriffe gleich ab, und bei Änderungen oder Erweiterungen gibt es einen zentralen Ort. Dennoch sind alle nutzenden Klassen von Veränderungen betroffen. 
 \\
 Konkret sind Standardmaßnahmen für den Lesenden sowie Schreibenden Zugriff auf Einstellung mit den Parameter String als auch Integer. Diese scharfe Trennung muss auch erfolgen, da der Editor nur genaue Typen akzeptiert. 
-\\
-\section{Barcode Erkennung}
-\label{sec:barcode}
-Dieses Kapitel beschäftigt sich mit der Implementation der Barcode Scanner-Funktion in die \ac{SMAR} Anwendung auf der Smartglass. Wie im Kapitel \ref{cha:technik} \nameref{cha:technik} bereits beschrieben, wurde sich gegen die Anschaffung eines externen Barcode Scanners entschieden, sodass die Erkennung von Bar- und QR-Codes durch eine Library in Verbindung mit der eingebauten Kamera übernommen wird.\\
-
-Android \bzw Google bieten keine Library für das Erkennen von Bar-/QR-Codes an. Außerdem würde es den Rahmen dieses Projektes übersteigen eigene Klassen für diese Aufgabe zu entwickeln. Eine Recherche ergab folgende zwei populäre und ausgereifte externe Anwendungen \bzw Librarys, die frei zur Verfügung stehen:
-\begin{itemize}
-	\item zebra crossing (ZXing)
-	\item ZBar SDK
-\end{itemize}
-Bei ZXing handelt es sich in erster Linie um eine Barcode Scanner App für Android. Darüber hinaus unterstützt die App jedoch den externen Zugriff durch eine andere App und kann das Ergebnis des Scans an die externe App weitergeben. Das \ac{SMAR}-Projekt würde die Barcode Scanner App von ZXing entsprechend jedes mal starten, sobald ein neuer Code benötigt wird und die Antwort der Barcode Scanner App abwarten.\\
-Ein großer Vorteil ist die schnelle und einfache Integration, die anhand weniger Zeilen Sourcecode geschieht. Entscheidende Nachteile sind jedoch die Abhängigkeit von einer anderen App, die auf dem Gerät ebenfalls installiert sein muss und der erhöhte Ressourcenverbrauch, der das\ac{SMAR}-Projekt in der Effizienz einschränken könnte. Da der Sourcecode der Barcode Scanner App frei verfügbar ist, wäre die Möglichkeit der Integration der gesamten Anwendung. Dies ist aufgrund der Komplexität aber ebenfalls nicht praktikabel.\\
-
-Die Entscheidung fiel daher auf die ZBar SDK Library. Diese wird in das Projekt als externe Library integriert und bietet die Möglichkeit Bilder auf einen Bar- oder QR-Code zu untersuchen. Ein Nachteil ist der erhöhte Programmieraufwand, der für das Erstellen der Kamera Vorschau und der Aufruflogik benötigt wird. Der entscheidende Vorteil ist jedoch, dass alle Aktionen innerhalb der \ac{SMAR}-Anwendung stattfinden und keine externen Anwendungen zur Laufzeit benötigt werden.\\
-
-Die ZBar Library unterstützt alle gängigen Barcode- und QR-Code Typen und ist damit optimal für den Einsatz in diesem Projekt geeignet:\footnote{\citep{zbar}}
-\begin{itemize}
-	\item EAN/UPC: EAN-8, EAN-13, UPC-A, UPC-E
-	\item Linear: Code 39, Code 93, Code 128, Interleaved 2 of 5, DataBar
-	\item 2-D: QR-Code
-\end{itemize}
-
-Für die Integration der ZBar Library werden zwei neue Klassen benötigt:
-\begin{enumerate}
-	\item Eine Activity (eine neue Seite), im folgenden Barcode-Klasse genannt.
-	\item Eine Klasse, die die Kamera Vorschau innerhalb eines Fensters erstellt, das in eine Activity eingebunden werden kann. Im folgenden Kamera-Klasse genannt.
-\end{enumerate} 
-Wird das Einscannen eines Barcodes benötigt, so wird die Barcode-Klasse aufgerufen. Diese erstellt eine neue Instanz der ZBar Lybrary mit entsprechend eingestellter Konfiguration (wie \zB Auflösungseinstellungen, zu erkennende Codes) und fragt beim Android Betriebssystem nach der Öffnung einer Kamerainstanz. Wird eine gültige Kamerainstanz zurückgeliefert, so wird die Kamera-Klasse mit dieser Instanz ausgeführt und das Vorschaubild in die Activity integriert. Außerdem stellt die Barcode-Klasse Methoden zur Verfügung, die bei Rückgabe von Werten seitens der Kamera-Klasse, ausgeführt wird. Dies sind die Bilder, die die Kamera aufzeichnet, die anschließend an die Instanz der ZBar Library weitergeleitet werden. Liefert die ZBar Library ein Ergebnis zurück, wird die Kamera-Klasse und die Kamerainstanz geschlossen, sowie die Activity geschlossen und die Barcode-Klasse gibt das Ergebnis zurück. Dieses Ergebnis kann durch die Klasse, die die Barcode-Klasse ausgeführt hat, über eine onActivityResult()-Methode abgerufen werden.\\
-
-Die Kamera-Klasse konfiguriert bei Ausführung zunächst die Kamera (Ausrichtung der Kamera, Bildwiederholrate, Autofokus, ...) und definiert den Callback. Der Callback wird ausgeführt, sobald die Kamera ein Bild aufgenommen hat. Als Daten werden dabei die Bildinformationen übergeben, die von der Barcode-Klasse abgerufen werden.
 
 \section{Rechteverwaltung}
 \label{cha:rechteverwaltung_vr}
-
-
 
 \subsection{\acf{AuthN}}
 Das folgende Kapitel beschäftigt sich mit der Authentifizierung in der App gegenüber dem Server. Benutzte Bibliotheken und Eingabemethoden werden erklärt. Darüber hinaus wird die verwendete Methode mit anderen technisch möglichen Eingabemethoden verglichen.\\
