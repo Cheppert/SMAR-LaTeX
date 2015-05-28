@@ -144,6 +144,21 @@
   {{Instruments}{Texas}{T.}{}{}} {} {} \bibAnnoteFile {omap4430}
 
 \backrefparscanfalse
+\bibitem[{Oaks\jbbtasep Wong\jbdy {2004}}%
+         {}%
+         {{0}{}{book}{2004}{}{}{}{}%
+          {Sebastopol\bpubaddr {} "O'Reilly Media, Inc."\bibbdsep {} 2004}}%
+         {{Java Threads}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{java_threads}
+ \jbbibargs {\bibnf {Oaks} {Scott} {S.} {} {}\Bibbtasep \bibnf {Wong} {Henry}
+  {H.} {} {}} {Scott OaksHenry Wong} {aus} {sexless} {\bibtfont {Java
+  Threads}\bibatsep {}  \apyformat {Sebastopol\jbpublisher{\bpubaddr {}
+  "O'Reilly Media, Inc."}\bibbdsep {} 2004}\jbisbn {978--1--449--36666--7}}
+  {\bibhowcited} \jbdoitem {{Oaks}{Scott}{S.}{}{}; {Wong}{Henry}{H.}{}{}} {} {}
+  \bibAnnoteFile {java_threads}
+
+\backrefparscanfalse
 \bibitem[{PHP-Group\jbdy {2015}}%
          {}%
          {{0}{}{}{2015}{}{}{}{}%

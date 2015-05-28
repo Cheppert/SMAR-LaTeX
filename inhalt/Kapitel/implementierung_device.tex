@@ -12,8 +12,19 @@ Anwendungen, die nur einen Thread benutzen, werden ausschließlich sequentiell a
 
 Das folgende Beispiel soll verdeutlichen, wann solch ein Fall eintreten kann: Die \ac{SMAR} App schickt eine Anfrage an den \ac{SMAR}-Server, der angenommene Ware einspeichern soll. Da das Firmennetzwerk gerade überlastet ist, wird die Anfrage erst nach einigen Sekunden bearbeitet. Der Benutzer empfängt, statt eines bewegten Ladebildschirms, den Dialog des Android Systems und schließt die Anwendung. Arbeitsfortschritte gehen verloren. Dies wäre für einen Einsatz in großen Filialen fatal, da ein inkonsistenter Warenbestand die Folge wäre.\\
 
-%TODO Multithreading wie geplant erklären, Android Async erklären (UI Thread + Other Threads), Lösung erklären
-Dummy\footnote{\citep[S. 115ff.]{android_threads}}
+Die gängige Lösung ist das Aufteilen der Anwendung auf mehrere Threads, wobei jedem Thread eine bestimmte Aufgabe zugeordnet wird. Eine sinnvolle Aufteilung in \ac{SMAR} sieht folgendermaßen aus:
+\begin{itemize}
+	\item Main-Thread: Verwaltung aller weiteren Threads
+	\item UI-Thread: Anzeige der Oberfläche (mit Informationen, die in anderen Threads generiert werden), sowie Weiterleitung von Benutzerinteraktionen
+	\item Scanner-Thread: Zuständig für das Scannen der Barcodes
+	\item Netzwerkkommunikation-Thread: Sendet Netzwerkanfragen an den Server und liefert die Ergebnisse zurück
+\end{itemize}
+Diese Threads können über Java durch die Erweiterung der Klasse java.lang.Thread einfach erstellt und verwendet werden.\footnote{\citep[S. 18ff.]{java_threads}}\\
+
+Die Architektur von Android empfiehlt diese Vorgehensweise jedoch nicht. Das Android System erstellt einen Thread für jede gestartete App, auf welchem die Anwendung sequentiell abläuft. Dieser Thread wird von Google auch UI-Thread genannt, da dieser der einzige Thread ist, welcher mit der \ac{UI} interagiert und interagieren darf. Andere Threads sollen das \ac{UI} nicht bearbeiten, was die oben vorgestellte Architektur verletzt, da diese Threads die Informationen in dem \ac{UI} eintragen müssen oder mit dem UI-Thread synchronisiert werden müssen. Diese Synchronisierung ist sehr kompliziert und würde den Rahmen dieser Arbeit sprengen.\\
+
+Android bietet stattdessen \glqq ASyncTasks\grqq , also eine Klasse für Asynchrone Aufgaben an. Diese Klasse muss durch \ac{SMAR} eigene Klassen erweitert werden, die in die bereitgestellten Methoden die durchzuführenden Aufgaben implementieren. Diese asynchrone Aufgabe wird dabei durch einen neuen Thread im Hintergrund ausgeführt, während der UI-Thread  annähernd\footnote{Annähernd, da der Prozessor nur eine Aufgabe gleichzeitig ausführen kann, aber die Threads abwechselnd für eine kurze Dauer ausführt, sodass dies für den Benutzer als parallel ausgeführt wirkt.} parallel im Vordergrund weiter ausgeführt wird und somit die Ausgabe (wie \zB einen bewegten Ladebildschirm) ständig aktualisiert.\\
+Sobald die asynchrone Aufgabe vollständig ausgeführt wurde, wird das Ergebnis an eine Methode der ASyncTasks-Klasse übergeben, die auf dem UI-Thread ausgeführt wird. Dadurch wird  die Ausgabe auf dem UI-Thread verändert und die von Google vorgesehene Architektur wird nicht verletzt.\footnote{\citep[S. 115ff.]{android_threads}}
 
 \subsection{Visualisierung der Regale}
 Für einige Prozesse auf der Brille ist es erforderlich, dass die exakte Position eines Produktes in einem Regal auf der Verkaufsfläche angezeigt wird. Dazu gibt es unter Verwendung von Wearable Computern grundsätzlich zwei Möglichkeiten:
