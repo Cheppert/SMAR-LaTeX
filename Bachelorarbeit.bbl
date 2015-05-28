@@ -99,6 +99,22 @@
   \bibAnnoteFile {uebertragungsgeschwindigkeit}
 
 \backrefparscanfalse
+\bibitem[{Gargenta\jbbtasep Nakamura\jbdy {2014}}%
+         {}%
+         {{0}{}{book}{2014}{}{}{}{}%
+          {Sebastopol\bpubaddr {} "O'Reilly Media, Inc."\bibbdsep {} 2014}}%
+         {{Learning Android - Develop Mobile Apps Using Java and Eclipse}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{android_threads}
+ \jbbibargs {\bibnf {Gargenta} {Marko} {M.} {} {}\Bibbtasep \bibnf {Nakamura}
+  {Masumi} {M.} {} {}} {Marko GargentaMasumi Nakamura} {aus} {sexless}
+  {\bibtfont {Learning Android - Develop Mobile Apps Using Java and
+  Eclipse}\bibatsep {}  \apyformat {Sebastopol\jbpublisher{\bpubaddr {}
+  "O'Reilly Media, Inc."}\bibbdsep {} 2014}\jbisbn {978--1--449--33626--4}}
+  {\bibhowcited} \jbdoitem {{Gargenta}{Marko}{M.}{}{};
+  {Nakamura}{Masumi}{M.}{}{}} {} {} \bibAnnoteFile {android_threads}
+
+\backrefparscanfalse
 \bibitem[{Ihlenfeld\jbdy {2010}}%
          {}%
          {{0}{}{}{2010}{}{}{}{}%

@@ -2,10 +2,10 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: Bachelorarbeit.aux
 A level-1 auxiliary file: Inhalt/titelseite.aux
 A level-1 auxiliary file: Inhalt/erklaerung.aux
 A level-1 auxiliary file: Inhalt/abstract.aux
+A level-1 auxiliary file: Inhalt/Kapitel/vorwort.aux
 A level-1 auxiliary file: Inhalt/Kapitel/bedarfsanalyse.aux
 A level-1 auxiliary file: Inhalt/Kapitel/technik.aux
 A level-1 auxiliary file: Inhalt/Kapitel/anforderungsanalyse.aux
-A level-1 auxiliary file: Inhalt/Kapitel/architektur0.aux
 A level-1 auxiliary file: Inhalt/Kapitel/architektur.aux
 A level-1 auxiliary file: Inhalt/Kapitel/implementierung_web.aux
 A level-1 auxiliary file: Inhalt/Kapitel/implementierung_rest.aux
@@ -14,25 +14,25 @@ A level-1 auxiliary file: Inhalt/Kapitel/zusammenfassung.aux
 The style file: jurabib.bst
 Database file #1: Inhalt/bib.bib
 Warning--entry type for "mt_rand" isn't style-file defined
---line 33 of file Inhalt/bib.bib
+--line 42 of file Inhalt/bib.bib
 Warning--entry type for "omap4430" isn't style-file defined
---line 52 of file Inhalt/bib.bib
+--line 61 of file Inhalt/bib.bib
 Warning--entry type for "vuzixm100" isn't style-file defined
---line 71 of file Inhalt/bib.bib
+--line 80 of file Inhalt/bib.bib
 Warning--entry type for "wqvga" isn't style-file defined
---line 90 of file Inhalt/bib.bib
+--line 99 of file Inhalt/bib.bib
 Warning--entry type for "uebertragungsgeschwindigkeit" isn't style-file defined
---line 109 of file Inhalt/bib.bib
+--line 118 of file Inhalt/bib.bib
 Warning--entry type for "bluetooth" isn't style-file defined
---line 128 of file Inhalt/bib.bib
+--line 137 of file Inhalt/bib.bib
 Warning--entry type for "statista_smartphone" isn't style-file defined
---line 147 of file Inhalt/bib.bib
+--line 156 of file Inhalt/bib.bib
 Warning--entry type for "json" isn't style-file defined
---line 166 of file Inhalt/bib.bib
+--line 175 of file Inhalt/bib.bib
 Warning--entry type for "http" isn't style-file defined
---line 185 of file Inhalt/bib.bib
+--line 194 of file Inhalt/bib.bib
 Warning--entry type for "zbar" isn't style-file defined
---line 204 of file Inhalt/bib.bib
+--line 213 of file Inhalt/bib.bib
 Warning--No address in zbar
 Warning--No address in statista_smartphone
 Warning--No address in vuzixm100
