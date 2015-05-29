@@ -20,6 +20,13 @@
 \chapter{Reflexion}
 Das folgende Kapitel beschäftigt sich mit der kritischen Reflexion der Leistung und Entscheidungen des Projektteams und bezieht sich ausschließlich auf die Software.\\
 
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=0.73]{Bilder/Abbildungen/anforderungen_zusammenfassung_bewertung.png}}
+	\caption{Zusammenfassung der Anforderungen mit Bewertungsmöglichkeit}
+	\label{fig:jwt_encode}
+\end{figure}
+
 Während die grundlegende Architektur, das Projekt \ac{SMAR} in einer Thin Client-Server-Architektur aufzubauen, in diesem Szenario durchaus Sinn macht, da in der Anwendung mehrere Clients vorhanden sind, die alle auf dieselben Daten - teilweise gleichzeitig - zugreifen, würde eine Berechnung der Daten auf den Clients inkonsistente Stände verursachen und die Performanz negativ beeinflussen. Außerdem waren die eingesetzten Technologien auf den Smartglasses durch das Android Betriebssystem weitestgehend vorgegeben. Entscheidungen wie \zB das Benutzen der ZBar Library, statt der ZXing Anwendung zur Bar-Code-Erkennung sorgen dafür, dass das Projekt eigenständig funktioniert und keine weiteren Softwarevoraussetzungen benötigt. Die \ac{REST} \ac{API} erzeugt eine einfache Kommunikation zwischen Clients (Web Administration und Android-App) und Server und wird von allen Teilen sehr gut unterstützt. Die Web Administration jedoch, die größtenteils eine asynchrone Kommunikation benutzt, kommuniziert im Hintergrund mit PHP-Skripten. Dies ist vor Allem aufgrund der asynchronen Arbeitsweise sehr kompliziert gelöst und nicht zeitgemäß. Hier wäre es von Vorteil gewesen einen NodeJS-Server mit einem AngularJS-Webfrontend einzusetzen. Dies hätte die Programmierung vereinfacht und deutlich Zeit gespart.\\
 
 Das zu Beginn der Entwicklung vereinbarte Zeitmanagement wurde durch das gesamte Projektteam nicht eingehalten. Betrachtet man entsprechende Pushs auf dem Git-Repository sind deutliche Fortschritte zu Anfang des Projekts, zu Anfang des Jahres und zu Ende des Projekts zu verzeichnen. Eine bessere Verteilung und ein kontinuierlicheres Arbeiten am Projekt hätten das Ergebnis verbessern und Schwachstellen in der Architektur und Technologieauswahl frühzeitig aufdecken können.
