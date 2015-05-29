@@ -2,11 +2,11 @@
 \label{cha:technik}
 Das folgende Kapitel beschäftigt sich mit der bei diesem Projekt einzusetzenden Technik. Wie der Titel dieser Arbeit bereits verdeutlicht, soll dieses Projekt mit Hilfe von Wearable-Computern umgesetzt werden. In den folgenden Unterkapiteln sollen darüber hinaus weitere Gerätetypen dargestellt und miteinander verglichen werden. Die für diese Arbeit verwendete \emph{Vuzix M100} Smartglass soll bewertet werden. Beim Vergleich der Gerätetypen wird nur die Hardware verglichen, die Software wird später definiert und im Rahmen dieses Projektes entwickelt. Dieses Kapitel soll sicherstellen, dass die eingesetzte Technik für die Erfüllung der Ziele am besten geeignet ist.\\
 
-Beim Vergleich der Hardware wird insbesondere auf die definierten Ziele\footnote{Siehe Kapitel \ref{sec:zieldefinition} \nameref{sec:zieldefinition}} eingegangen, die mit Hilfe dieses Projektes in Verbindung mit der hier ausgewählten Hardware erreicht werden sollen. Außerdem wird hauptsächlich auch auf die Usability der Geräte eingegangen, die Voraussetzung für eine effektive und effiziente Arbeit mit dem Produkt ist. 
+Beim Vergleich der Hardware wird insbesondere auf die definierten Ziele\footnote{Siehe Kapitel \ref{sec:zieldefinition} \nameref{sec:zieldefinition}} eingegangen, die mit Hilfe dieses Projektes, in Verbindung mit der hier ausgewählten Hardware, erreicht werden sollen. Außerdem wird hauptsächlich auf die Usability der Geräte eingegangen, die Voraussetzung für eine effektive und effiziente Arbeit mit dem Produkt ist. 
 
 \section{Gerätetypen}
 \label{sec:geraete}
-In Kapitel \ref{cha:bedarfsanalyse} \nameref{cha:bedarfsanalyse} wurde der Bedarf an elektronischer Hilfe bei der Warenannahme/-einräumung erläutert, um auf dem Markt langfristig wettbewerbsfähig zu bleiben. Die Warenannahme und -einräumung findet an verschiedenen Stellen der Filiale statt und das sowohl im Lager- als auch im Kundenbereich. Feststehende große Gerätschaften sind somit nicht praktikabel und werden bereits ausgeschlossen. Voraussetzung sind somit mobile Gerätetypen mit aktuellen Schnittstellen \bzw Verbindungsmöglichkeiten, die eine reibungslose Integration in jedes Firmennetzwerk ermöglichen.\\
+In Kapitel \ref{cha:bedarfsanalyse} \nameref{cha:bedarfsanalyse} wurde der Bedarf an elektronischer Hilfe bei der Warenannahme/-einräumung erläutert, um auf dem Markt langfristig wettbewerbsfähig zu bleiben. Die Warenannahme und -einräumung findet an verschiedenen Stellen der Filiale statt und das sowohl im Lager- als auch im Kundenbereich. Feststehende, große Gerätschaften sind somit nicht praktikabel und werden bereits ausgeschlossen. Voraussetzung sind somit mobile Gerätetypen mit aktuellen Schnittstellen \bzw Verbindungsmöglichkeiten, die eine reibungslose Integration in jedes Firmennetzwerk ermöglichen.\\
 Aus diesen Anforderungen lassen sich folgende Gerätetypen ableiten:
 \begin{itemize}
 	\item Laptop
@@ -29,7 +29,15 @@ Als \emph{Wearable Computer} werden Computer bezeichnet, die am Körper getragen
 Smartwatches sind Armbanduhren mit einem Touchbildschirm, die durch die Verbindung mit dem Smartphone das Anzeigen von Kalender-, Nachrichten-, Navigations- und weiteren Informationen erlauben. Da die Smartwatches ein sehr kleines Display und in der Regel keine Kamera besitzen, sind diese für die Warenannahme und Augmented Reality nicht geeignet.\\
 Smartglasses sind hingegen Computer, die in eine Brille integriert werden oder über ein Bügel vor das Auge geschoben werden können (einem Headset ähnlich). Die Bedienung über Knöpfe soll hier vermieden und die Bedienung per Sprache und Gesten präferiert werden. Darüber hinaus ist ein Ziel von Smartglasses, dass die Brillen \bzw die Apps, die auf den Smartglasses laufen, mit Hilfe von Kameras und Augmented Reality in die Umwelt integriert werden. Diese Technologie befindet sich aktuell noch in der Entwicklungsphase und ist daher noch nicht ausgereift. Dennoch eignet sich diese Technologie für die Bedürfnisse, die an dieses Projekt gekoppelt sind, optimal. Zur Bedienung muss kein Gerät in der Hand gehalten werden, sodass diese frei für die Erledigung der eigentlichen Aufgabe sind; außerdem befindet sich das Display jederzeit im Blick und ermöglicht somit die Warenannahme \bzw -einräumung und das Abrufen der dafür notwendigen Informationen (wie \zB Regalplatz) gleichzeitig.\\
 
-Das Benutzen von Wearable Computern, im Speziellen von Smartglasses, ist somit sinnvoll und wird, nach Einarbeitung der Anwender, voraussichtlich erheblichen Mehrwert erzeugen. Für eine schnelle Bearbeitung von kleineren Aufgaben sollte die App allerdings auch für das Smartphone ohne Augmented Reality zur Verfügung stehen. Dies ermöglicht \zB eine schnelle Unterstützung des Kunden bei der Suche eines Produktes.
+Das Benutzen von Wearable Computern, im Speziellen von Smartglasses, ist somit sinnvoll und wird, nach Einarbeitung der Anwender, voraussichtlich erheblichen Mehrwert erzeugen. Für eine schnelle Bearbeitung von kleineren Aufgaben sollte die App allerdings auch für das Smartphone ohne Augmented Reality zur Verfügung stehen. Dies ermöglicht \zB eine schnelle Unterstützung des Kunden bei der Suche eines Produktes.\\
+
+Die folgende Abbildung zeigt den zusammengefassten Vergleich der verschiedenen Gerätetypen auf:
+\begin{figure}[H]
+	\centering
+	{\includegraphics[width=\textwidth]{Bilder/device_comparison.jpg}}
+	\caption{Vergleich Gerätetypen}
+	\label{fig:role_web}
+\end{figure}
 
 \section{Vuzix M100}
 \label{sec:vuzix}
@@ -49,7 +57,7 @@ Im \ac{WLAN} erreicht das Gerät Datenübertragungsraten von maximal 150Mbit/s, 
 Da Bluetooth 4.0 eine maximale Reichweite von 100 Metern erreichen kann (und das auch nur theoretisch, gängig sind Reichweiten von ca. 10 - 50 Metern)\footnote{\citep{bluetooth}} und eine Übertragungsrate von nur ca. 1-2 Mbit/s erreicht, eignet es sich nicht zur Datenübertragung von Regalbildern oder komplexen Positionsbeschreibungen und Datenbankabfragen nach einem Produkt. Bluetooth eignet sich hingegen gut für die Verbindung zu Host-Systemen zur externen Steuerung der Datenbrille\footnote{Voraussetzung ist ein Android-Handy mit entsprechender App} und zur Anbindung externer Geräte, wie z.B. einem Bluetooth Barcode-Scanner.
 
 \subsection{Bewertung}
-Die Leistung der Vuzix M100 Smartglasses ist durch das Datenblatt bereits ausführlich beschrieben und ist sowohl für das Android-Bertriebssystem als auch für dieses Projekt zufriedenstellend. Verbindungen per \ac{WLAN} und Bluetooth konnten ohne Probleme hergestellt werden und liefen stabil. Die Verbindung in ein ausreichend gedecktes \ac{WLAN}-Firmennetzwerk sollte daher ohne Probleme funktionieren.\\
+Die Leistung der Vuzix M100 Smartglasses ist durch das Datenblatt bereits ausführlich beschrieben und ist sowohl für das Android-Bertriebssystem als auch für dieses Projekt zufriedenstellend. Verbindungen per \ac{WLAN} und Bluetooth konnten ohne Probleme hergestellt werden und liefen stabil. Die Verbindung in einem ausreichend gedeckten \ac{WLAN}-Firmennetzwerk sollte daher ohne Probleme funktionieren.\\
 
 Doch bei diesem Projekt steht die Leistung des Gerätes nicht ausschließlich im Vordergrund. Ein besonderes Augenmerk sollte auf den Tragekomfort und die Usability gelegt werden. Diese wird in diesem Kapitel anhand von subjektiven Wahrnehmungen der Entwickler beschrieben.\\
 
