@@ -49,14 +49,15 @@ BCOR10mm,						% Bindekorrektur, die den Seitenspiegel um 15mm nach rechts versc
 \newcommand{\titelzwei}{Shelf Management Augmented Reality}
 \newcommand{\untertitel}{mit Hilfe von Augmented Reality auf Wearable-Computern}
 \newcommand{\arbeit}{Große Studienarbeit}
-\newcommand{\studiengang}{Angewandte Informatik Business Competence}
+\newcommand{\studiengang}{Angewandte Informatik -- International Business Competence}
 \newcommand{\autor}{Stephan Giesau, Sebastian Kowalski, Raffael Wojtas}
+\newcommand{\autorshort}{Giesau, Kowalski, Wojtas}
 \newcommand{\matrikelnr}{5890600, 6664480, 7998056}
 \newcommand{\kurs}{TINF12AI-BC}
-\newcommand{\firma}{FIRMA?!}
+\newcommand{\firma}{}
 \newcommand{\zeitraum}{12.05.2014 - 31.05.2015}
-\newcommand{\betreuerdhbw}{Prof. Dr. Christian Buergy}
-\newcommand{\betreuerfirma}{Max Mustermann}
+\newcommand{\betreuerdhbw}{Prof. Dr. Christian Bürgy}
+\newcommand{\betreuerfirma}{}
 \newcommand{\location}{Mannheim}
 
 \newcommand{\jahr}{2015}			% für Angabe im Copyright-Vermerk der Titelseite
@@ -74,10 +75,10 @@ BCOR10mm,						% Bindekorrektur, die den Seitenspiegel um 15mm nach rechts versc
 %                      Definition der Kopf- und Fußzeilen -------------------------------------------------------------------------------------------
 \lhead{}								% Kopf links
 \chead{}								% Kopf mitte
-\rhead{\sffamily{\titelzwei}}				% Kopf rechts
+\rhead{\rmfamily{\titelzwei}}				% Kopf rechts
 \lfoot{}								% Fuß links
-\cfoot{\sffamily{\thepage}}				% Fuß mitte
-\rfoot{\sffamily{\autor}}				% Fuß rechts
+\cfoot{\rmfamily{\thepage}}				% Fuß mitte
+\rfoot{\rmfamily{\autorshort}}				% Fuß rechts
 \renewcommand{\headrulewidth}{0.4pt}	% Liniendicke Kopf
 \renewcommand{\footrulewidth}{0.4pt}	% Liniendicke Fuß
 
@@ -112,8 +113,9 @@ BCOR10mm,						% Bindekorrektur, die den Seitenspiegel um 15mm nach rechts versc
 \begin{document}
 \setcounter{secnumdepth}{3}					% Nummerierungstiefe fürs Inhaltsverzeichnis
 \setcounter{tocdepth}{3}
-%\setkomafont{sectioning}{\rmfamily} 
-\sffamily									% für die Titelei serifenlose Schrift verwenden
+\setkomafont{sectioning}{\rmfamily} 
+%\sffamily									% für die Titelei serifenlose Schrift verwenden
+\rmfamily
 \setlength{\parindent}{0pt}					% Einrückungen ausschalten
 
 % -------------------------------------------------------------------------------------------
@@ -187,18 +189,10 @@ BCOR10mm,						% Bindekorrektur, die den Seitenspiegel um 15mm nach rechts versc
 \include{Inhalt/Kapitel/bedarfsanalyse}
 \include{Inhalt/Kapitel/technik}
 \include{Inhalt/Kapitel/anforderungsanalyse}
-% \include{Inhalt/Kapitel/kapitel01}
-% \include{Inhalt/Kapitel/kapitel02}
-% \include{Inhalt/Kapitel/kapitel03}
-% \include{Inhalt/Kapitel/kapitel04}
-% \include{Inhalt/Kapitel/architektur0}
 \include{Inhalt/Kapitel/architektur}
-% \include{Inhalt/Kapitel/jwt}
 \include{Inhalt/Kapitel/implementierung_web}
 \include{Inhalt/Kapitel/implementierung_rest}
-% \include{Inhalt/Kapitel/rechteverwaltung_web}
 \include{Inhalt/Kapitel/implementierung_device}
-% \include{Inhalt/Kapitel/authentifizierung}
 \include{Inhalt/Kapitel/zusammenfassung}	
 
 

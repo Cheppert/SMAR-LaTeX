@@ -49,31 +49,40 @@ Neben den beiden großen Prozessen der Warenannahme und -einräumung ist als Zie
 	\item Anforderung B45: Es gibt die Möglichkeit, den Lagerbestand eines Artikels abzufragen und anzuzeigen. \label{anforderung_b45}
 \end{itemize}
 
+
 \section{Nicht funktionale Anforderungen}
-Einer der wichtigsten Punkte ist, dass der Mitarbeiter durch die Smartglass bei seiner Arbeit nicht behindert wird, sonst würde er die Technik nicht akzeptieren und nicht damit arbeiten wollen. \\
-Deshalb ist es enorm wichtig die Performance sehr hoch zu halten. Das bedeutet, dass das System geringe Antwortzeiten anstreben muss, sodass der Nutzer nicht den Eindruck hat, auf eine Antwort warten zu müssen. 
-Zusätzlich ist es dabei wichtig dem Nutzer die Bedienung so einfach wie möglich zu machen. Damit ist einmal eine detaillierte und selbsterklärende Menüführung und Anwendungsbeschreibung gemeint, aber gleichzeitig auch der Umgang mit der Brille bzw. die Eingaben auf der Brille. \\
-Die Robustheit spielt eine wichtige Rolle. Das bedeutet, dass das System niemals abstürzen bzw. den Nutzer niemals ohne eine entsprechende Antwort zurücklassen sollte, da von Mitarbeitern in einer Filiale nicht erwartet werden darf, dass sie sich gut mit solchen Geräten auskennen. Zusätzlich zur Ausfallsicherheit ist die Fehlertoleranz ein entscheidender Faktor. Bei Fehleingaben sollte das System entsprechend reagieren, sodass der Mitarbeiter seinen Fehler erkennt und weiß, was er tun muss, um sein Ziel zu erreichen. \\
-Eine weitere nicht funktionale Anforderung ist eine gewisse Energiesparsamkeit. Diese Anforderung entsteht aus dem praktischen Nutzen der Smartglass. Sie muss entsprechend lang funktionsfähig sein, damit sie sinnvoll eingesetzt werden kann, und nicht dauerhaft während des Betriebs ausfällt. 
-\\
-Die zusammengefassten, nicht funktionalen Anforderungen lauten:
+
+\begin{figure}[H]
+	\centering
+	{\includegraphics[width=\textwidth]{Bilder/Abbildungen/Technology_Acceptance_Model.png}}
+	\caption{Technology Acceptance Model mit externen Einflussfaktoren} 
+	\label{fig:tam}
+\end{figure}
+
+Neben der eigentlichen Funktionalität spielen die nicht-funktionalen Anforderungen ebenfalls eine große Rolle. Nach dem Technology Acceptance Model (TAM, Version 1)\footnote{Grafik aus: http://commons.wikimedia.org/wiki/File:Technology\_Acceptance\_Model.png} beeinflussen hauptsächlich die \emph{Perceived Usefullness} (empfundener Nutzen) sowie der \emph{Perceived Ease Of Use} (empfundene Einfachheit der Benutzung) als externe Faktoren die Benutzerakzeptanz gegenüber einem System.\footnote{\citep{tam}} Gerade letzterer Punkt wird durch nicht-funktionale Anforderungen abgedeckt. Einer der wichtigsten Punkte ist, dass der Mitarbeiter durch die Smartglass bei seiner Arbeit nicht behindert wird, sonst würde er die Technik nicht akzeptieren und nicht damit arbeiten wollen.\\
+
+Deshalb ist es enorm wichtig, die Performance sehr hoch zu halten. Das bedeutet, dass das System geringe Antwortzeiten anstreben muss, sodass der Nutzer nicht den Eindruck hat, lange auf eine Antwort warten zu müssen. 
+Dem Nutzer soll die Bedienung so einfach wie möglich gemacht werden. Damit ist  eine detaillierte und selbsterklärende Menüführung und Anwendungsbeschreibung gemeint, aber gleichzeitig auch der Umgang mit der Smartglass \bzw die Eingaben auf der Brille. \\
+Ebenso muss das System robst sein. Das bedeutet, dass das System niemals abstürzen und den Nutzer ohne eine entsprechend aussagekräftige Antwort zurücklassen sollte, da von Mitarbeitern in einer Filiale nicht erwartet werden darf, dass sie sich gut mit solchen Geräten auskennen. Zusätzlich zur Ausfallsicherheit ist die Fehlertoleranz ein entscheidender Faktor. Bei Fehleingaben sollte das System entsprechend reagieren, sodass der Mitarbeiter seinen Fehler erkennt und weiß, was er tun muss, um ihn zu korrigieren und sein Ziel zu erreichen. \\
+Eine weitere nicht-funktionale Anforderung ist Energiesparsamkeit. Diese Anforderung entsteht aus dem praktischen Nutzen der Smartglass: Sie muss lange funktionsfähig sein und nicht zu oft aufgeladen werden müssen, weil der Akku leer ist, damit sie sinnvoll eingesetzt werden kann.\\
+
+Die zusammengefassten, nicht-funktionalen Anforderungen lauten:
 \begin{itemize}
-	\item Anforderung BN1: Es gibt eine entsprechend hohe Perforcmance der Smartglass. 
-	\item Anforderung BN1.10: Das Scannen eines Produktes sollte im Durchschnitt nicht länger als 1 Sekunde dauern. 
-	\item Anforderung BN1.20: Der Abruf der Produktposition inklusive Anzeige des Regalplatzes sollte höchstens 3 Sekunden dauern. Im Durchschnitt nur 1,5 Sekunden.
-	\item Anforderung BN20: Die Smartglass bzw. deren Software sollte ein gewisses, hohes Maß an Robustheit vorzeigen.
+	\item Anforderung BN1: Die Performance der Smartglass und des Systems ist hoch und erträgliche Antwortzeiten ermöglichen, die den Arbeitsprozess nicht behindern.
+	\item Anforderung BN1.10: Das Scannen eines Produktes sollte im Durchschnitt nicht länger als eine Sekunde dauern.
+	\item Anforderung BN1.20: Der Abruf der Produktposition inklusive Anzeige des Regalplatzes sollte höchstens 3 Sekunden dauern, im Durchschnitt nur 1,5 Sekunden.
+	\item Anforderung BN20: Die Smartglass \bzw deren Software sollte ein hohes Maß an Robustheit aufweisen.
 	\item Anforderung BN20.10: Abstürze sollten nicht vorkommen. 
 	\begin{itemize}
-		\item Anfoderung BN20.10.1: Falls doch Abstürze vorkommen sollten, sollte eine beschreibende und zielführende Meldung erscheinen.
+		\item Anforderung BN20.10.1: Falls doch Abstürze vorkommen sollten, sollte eine beschreibende und zielführende Meldung erscheinen.
 	\end{itemize}
 	\item Anforderung BN30: Die Software sollte durch Einsparung von Ressourcen möglichst wenig Energie verbrauchen.
 \end{itemize}
 
-
-Die folgende Grafik illustriert alle angesprochenen und erklärten Anforderungen gebündelt dar. 
+Die folgende Tabelle enthält alle angesprochenen Anforderungen in einer Übersicht. 
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.9]{Bilder/Abbildungen/anforderungen_zusammenfassung.png}}
-	\caption{Zusammenfassung der Anforderungen}
-	\label{fig:jwt_encode}
+	\caption{Übersicht der wichtigsten Anforderungen}
+	\label{fig:anforderungen_uebers}
 \end{figure}
