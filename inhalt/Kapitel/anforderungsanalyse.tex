@@ -1,29 +1,22 @@
 \chapter{Anforderungsanalyse}
 \label{annforderungnsanalyse}
-Nachdem die Ziele der Arbeit definiert und sich für Wearable Computing, genau eine Smartglass, als technische Umsetzung entschieden wurde, kann nun die Softwareentwicklung beginnen. Dabei gilt laut Kleucker\footnote{\citep{anforderungsanalyse}} die Anforderungsanalyse als systematischer Einstieg. Deshalb werden in diesem Abschnitt die Anforderungen an das gesamte Softwareprojekt gestellt. Dazu werden anfangs die funktionalen Anforderungen, welche anhand der Arbeitsprozesse aufgeteilt werden, und anschließend die nicht funktionalen Anforderungen erläutert.\\
-Hinweis: In diesem Abschnitt werden die Anforderungen hergeleitet und erläutert, allerdings nicht bis ins kleinste Detail analysiert und auch nicht alle Anforderungen vorgestellt. Eine vollständige Liste aller Anforderungen ist dem Anhang zu entnehmen.
+Nachdem die Ziele der Arbeit definiert und bezüglich der einzusetzenden Technik für die Umsetzung die Wahl auf Wearable-Computer (Smartglass) fiel, kann nun die Softwareentwicklung beginnen. Dabei gilt laut Kleucker\footnote{\citep{anforderungsanalyse}} die Anforderungsanalyse als systematischer Einstieg. Deshalb werden in diesem Abschnitt die Anforderungen an das gesamte Softwareprojekt gestellt. Dazu werden zunächst die funktionalen Anforderungen, welche anhand der Arbeitsprozesse aufgeteilt werden, und anschließend die nicht funktionalen Anforderungen erarbeitet und erläutert.\\
+In diesem Kapitel werden die Anforderungen hergeleitet und erläutert, allerdings nicht bis ins kleinste Detail analysiert und auch nicht alle Anforderungen vorgestellt. Eine vollständige Liste aller Anforderungen ist dem Anhang zu entnehmen.
 
 \section{Ware einräumen}
-Zu Beginn stellt sich die grundsätzliche Frage, wie die Smartglass dem Mitarbeiter überhaupt konkret helfen kann, Ware in das richtige Regal einzuräumen. Die Idee der Nutzung der Smartglass ist es, dass der Mitarbeiter dauerhaft ein Display bei der Arbeit mit sich trägt. So kann dem Mitarbeiter angezeigt werden, wo ein entsprechendes Produkt eingelagert werden soll. Dies geschieht indem, der Mitarbeiter das jeweilige Produkt digital erfasst und anschließend die Smartglass den Lagerort auf dem Display anzeigt bzw. ihn sogar dorthin führt. Dazu muss es eine Möglichkeit geben das Produkt zu erfassen. 
+Zu Beginn stellt sich die grundsätzliche Frage, wie die Smartglass dem Mitarbeiter überhaupt konkret helfen kann, Ware in das richtige Regal einzuräumen. Die Idee der Nutzung einer Smartglass ist es, dass der Mitarbeiter jederzeit während der Arbeit auf das Display der Datenbrille schauen kann. So kann dem Mitarbeiter angezeigt werden, wo ein entsprechendes Produkt eingelagert werden soll. Dazu erfasst der Mitarbeiter das jeweilige Produkt digital, anschließend zeigt die Smartglass den Lagerort auf dem Display \bzw führt ihn sogar dorthin. Voraussetzung ist eine gegebene Möglichkeit, das Produkt zu erfassen. Darüber hinaus muss die Smartglass eine Zuordnung (Mapping) zwischen dem Barcode und dem Produkt herstellen können.
 
 \begin{itemize}
-	\item Anforderung B10: Es gibt eine Möglichkeit, ein einen Produktcode digital zu erfassen. \label{anforderung_b10}
-\end{itemize}
-Nachdem die Smartglass die Möglichkeit hat, ein Produkt digital zu erfassen, muss eine Zuordnung zwischen dem Code und dem Produkt geschehen. Als Anforderung ergibt sich eine Mappingfunktion zwischen eingescanntem Code und Produkt. 
-
-\begin{itemize}
+	\item Anforderung B10: Es gibt eine Möglichkeit, einen Produktcode digital zu erfassen. \label{anforderung_b10}
 	\item Anforderung B20: Es gibt eine Möglichkeit, mithilfe des eingescannten Codes ein Produkt zu identifizieren. \label{anforderung_b20}
 \end{itemize}
 
-Damit auf dem Display nun der entsprechende Regalplatz angezeigt werden kann, muss die Smartglass
-eine Möglichkeit haben zu wissen bzw. zu erfahren, wo dieses Produkt einzuräumen ist. 
-\\
-Grundlegend dafür ist eine Karte von einem Regal mit hinterlegten Informationen zu den entsprechenden Produkten. Diese Karte muss offensichtlich erstellt, bearbeitet und gelöscht werden können. Zusätzlich muss die Karte von der Brille erreichbar sein, sodass eine Zusammenarbeit möglich ist. Daraus ergeben sich folgende Anforderungen:
+Damit auf dem Display nun der entsprechende Regalplatz angezeigt werden kann, muss die Smartglass in Erfahrung bringen können, wo dieses Produkt einzuräumen ist. Basis für die Visualisierung der Produktposition sind hinterlegte Informationen zu einem Regal und den zugeordneten Produkten. Diese Daten müssen erstellt und verwaltet werden können. Zusätzlich müssen die Daten von der Datenbrille abgerufen werden können, sodass die Visualisierung der Position angezeigt werden kann. Daraus ergeben sich folgende Anforderungen:
 
 \begin{itemize}
-	\item Anforderung A10: Es gibt eine Möglichkeit Produkte zu administrieren.\label{anforderung_a10}
-	\item Anforderung A20: Es gibt eine Möglichkeit einzelne und mehrere Regale zu administrieren. \label{anforderung_a20}
-	\item Anforderung A30: Es gibt eine Möglichkeit innerhalb der Regale verschiedene Regalplätze zu definieren und diesen einzelne Produkte zuzuordnen. \label{anforderung_a30}
+	\item Anforderung A10: Es gibt eine Möglichkeit, Produkte zu administrieren.\label{anforderung_a10}
+	\item Anforderung A20: Es gibt eine Möglichkeit, einzelne und mehrere Regale zu administrieren. \label{anforderung_a20}
+	\item Anforderung A30: Es gibt eine Möglichkeit, innerhalb der Regale verschiedene Regalplätze zu definieren und diesen einzelne Produkte zuzuordnen. \label{anforderung_a30}
 \end{itemize}
 
 Nachdem es eine Karte mit Produktinformationen und eine Produktidentifikation gefordert wurde, ist es nötig zwischen diesen beiden ein Mapping durchzuführen und anschließend dem Mitarbeiter bzw. dem Nutzer der Brille ein Bild anzuzeigen, dass den Mitarbeiter zum entsprechenden Platz des Regal führt. Das führt zu folgenden Anforderungen:
