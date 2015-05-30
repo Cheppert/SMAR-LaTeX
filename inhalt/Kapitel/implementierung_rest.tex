@@ -1,7 +1,7 @@
 \chapter{Implementierung der Client-Schnittstelle}
 \label{cha:impl_api}
 
-Die Client-Schnittstelle dient der Kommunikation zwischen den Clients (z.B. Smartglass) und dem \acs{SMAR}-Server, um Zugriff auf die Daten aus der Datenbank zu erhalten und diese zu manipulieren.\\
+Die Client-Schnittstelle dient der Kommunikation zwischen den Clients (\zB Smart\-glass) und dem \acs{SMAR}-Server, um Zugriff auf die Daten aus der Datenbank zu erhalten und diese zu manipulieren.\\
 
 Für diese Client-Schnittstelle fiel die Wahl auf eine \acs{REST} \acs{API}. Dabei handelt es sich um einen Webservice, der Ressourcen über fest definierte Routen (virtuelle Dateipfade auf dem Server) bereitstellt. Diese Routen können über die Standard-\acs{HTTP}-Befehle wie z.B. \emph{GET} oder \emph{POST} angesprochen werden und sind somit technologisch sehr flexibel -- \acs{HTTP}-Anfragen können von fast allen Programmiersprachen und -umgebungen versendet und empfangen werden.\\
 
@@ -55,7 +55,7 @@ Der \acs{JWT}-Header besteht ebenfalls aus zwei Name/Wert-Paaren und sieht in di
 	\caption{\acs{JWT}-Header}
 	\label{fig:jwt_header}
 \end{figure}
-Der Header beschreibt den Typ (\acs{JWT}) und den verwendeten Algorithmus \shorthandoff{"} ("alg":"HS256") \shorthandon{"} zur Signierung. In \ac{SMAR} wurde der HS256-Algorithmus zur Signierung des Claims-Set verwendet. Das Claims-Set wurde somit mit einem privaten Schlüssel und SHA-256 zu einem Hash-Wert errechnet (dies ist der dritte Teil des \acs{JWT}). Die Signierung kann aufgrund des symmetrischen Signierungsalgorithmus außerdem nur mit dem selben privaten Schlüssel überprüft werden.\\
+Der Header beschreibt den Typ (\acs{JWT}) und den verwendeten Algorithmus \shorthandoff{"} ("alg":\ "HS256") \shorthandon{"} zur Signierung. In \ac{SMAR} wurde der HS256-Algorithmus zur Signierung des Claims-Set verwendet. Das Claims-Set wurde somit mit einem privaten Schlüssel und SHA-256 zu einem Hash-Wert errechnet (dies ist der dritte Teil des \acs{JWT}). Die Signierung kann aufgrund des symmetrischen Signierungsalgorithmus außerdem nur mit dem selben privaten Schlüssel überprüft werden.\\
 Ein \acl{JWT} stellt somit die Identität der Nachricht \bzw des \acs{JSON}-Objekt sicher und verhindert die unbemerkte Manipulation.\\
 
 Durch den Einsatz von PHP JWT wird in \ac{SMAR} die korrekt authentifizierte Kommunikation mit der \acs{REST} \acs{API} sichergestellt -- sowohl von der App, als auch von der Web Administration.\\

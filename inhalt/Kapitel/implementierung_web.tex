@@ -88,7 +88,7 @@ Bei einem erfolgreichen Login werden anschließend folgende Daten in einer neu e
 	\item Zeit seit dem letzten Seitenaufruf (Datum + Uhrzeit)
 	\item ein gültiger \acs{JWT} zur Authentifizierung gegenüber der \acs{REST} \acs{API}\footnote{Siehe Kapitel \ref{cha:jwt} \nameref{cha:jwt}}
 \end{itemize}
-Der \acl{JWT} wird im Rahmen der Session-Erstellung generiert. Nach Generierung der Session wird nun die Startseite der Anwendung angezeigt. Sollte der Login-Vorgang aufgrund einer ungültigen Benutzername/Passwort-Kombination gescheitert sein, so wird die Login-Seite mit einer entsprechenden Fehlermeldung erneut angezeigt.\\
+Der \acl{JWT} wird im Rahmen der Session-Erstellung generiert. Nach Generierung der Session wird nun die Startseite der Anwendung angezeigt. Sollte der Login-Vorgang aufgrund einer ungültigen Benutzername/ Passwort-Kom\-bination gescheitert sein, so wird die Login-Seite mit einer entsprechenden Fehlermeldung erneut angezeigt.\\
 
 Das Hash-Verfahren für das Passwort, so wie ein individueller Salt-Wert pro Benutzer stellen eine Authentifizierung nach aktuellem Standard mit hoher Sicherheit dar. Auch wenn einem Angreifer das Auslesen der Benutzerdaten aus der Datenbank gelingt, kann er das Passwort eines Benutzers und somit den Zugriff mit einer vorgefertigten Rainbowtabelle nicht erlangen. Er muss eine große, für jeden Benutzer individuelle Rainbowtabelle anlegen, die bei einer Passwortlänge von 6 bis 9 Zeichen (in \acs{SMAR} länger!) bei mindestens 62 möglichen Zeichen (A-Z,a-z und 0-9) plus 64 Byte (Salt-Wert-Länge) bereits bis zu 1000 Petabyte groß ist.\footnote{$\sum_{n=6}^{9} 62^{n}*(n+64)=1004$ Petabyte (keine Komprimierung)}\\
 
