@@ -103,7 +103,7 @@ Dieses Skript zur Session-Überprüfung wird auf jeder Unterseite -- zusammen mi
 Die \acs{REST} \acs{API} verhält sich dem Skript zur Session-Überprüfung ähnlich. Bevor eine Anfrage von \acs{REST} bearbeitet wird, wird eine Funktion ausgeführt, die den \acs{JWT} auf Gültigkeit überprüft. Dieser wird dazu zunächst dekodiert\footnote{Siehe Kapitel \ref{cha:jwt} \nameref{cha:jwt}} und anschließend werden die im Token gespeicherten Daten mit der Datenbank abgeglichen. Nur bei einem erfolgreichen Abgleich wird die Anfrage bearbeitet.
 
 \subsubsection{\acf{AuthZ}}
-Im Gegensatz zu den Benutzern der \ac{VR}-Geräte, die entweder durch ihre Aufgabe volle Berechtigung auf den \ac{AR}-Geräten oder überhaupt keine Berechtigung benötigen (und somit keine verschiedene Berechtigungsstufen erforderlich sind), gibt es in der Webadministration verschiedenste Benutzer mit unterschiedlichen Berechtigungen im Unternehmen.\\
+Im Gegensatz zu den Benutzern der \ac{AR}-Geräte, die entweder durch ihre Aufgabe volle Berechtigung auf den \ac{AR}-Geräten oder überhaupt keine Berechtigung benötigen (und somit keine verschiedene Berechtigungsstufen erforderlich sind), gibt es in der Webadministration verschiedenste Benutzer mit unterschiedlichen Berechtigungen im Unternehmen.\\
 Während der Filialleiter sowohl Zugriff auf die Benutzerverwaltung, als auch auf die Regal- und Produktverwaltung haben sollte, so sollte ein Mitarbeiter, der für die Warenannahme und -einräumung beauftragt wurde, keinen Zugriff auf die Benutzerverwaltung haben.\\
 Vor allem durch die Benutzerverwaltung ist hier ebenfalls auf rechtliche Bestimmungen zu achten. § 3a Satz 2 \acs{BDSG}\footnote{\acf{BDSG}}:
 \begin{quote}
