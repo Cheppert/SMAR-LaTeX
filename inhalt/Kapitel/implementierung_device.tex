@@ -90,58 +90,55 @@ Die Smartglass selbst lädt bei Start der App automatisch den neuesten Stand der
 \label{sec:produkt_finden}
 Dieser Abschnitt beschreibt, wie ein Mitarbeiter mithilfe der Smartglass einen Produktplatz finden kann. Dies wird anhand eines Sequenzdiagramms veranschaulicht. Die Voraussetzung für diesen Prozess ist, dass der Anwender den Menüpunkt \glqq Produkt finden\grqq  im Hauptmenü ausgewählt hat.
 
-Wie die folgende Grafik zeigt, gibt es drei Akteure, die miteinander kommunizieren: den Mitarbeiter, die Smartglass und die Datenbank.
+Wie die folgende Grafik zeigt, gibt es drei Akteure, die miteinander kommunizieren: den Mitarbeiter, die Smartglass und die Datenbank (REST API).
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.8]{Bilder/Abbildungen/SMAR_produkt_finden_Sequenzdiagramm.png}}
-	\caption{Sequenzdiagramm Produkt finden}
+	\caption{Sequenzdiagramm: Produkt finden}
 	\label{fig:jwt_encode}
 \end{figure}
 Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan-Modus springt (\emph{scan\_product()}). 
 
-Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Code (\emph{get\_code()}). Dies geschieht mit der ZBar Library. Nachdem die Smartglass den Code errechnet hat, verschickt sie diesen Code an den Datenbankserver, der sich im gleichen Netzwerk befindet, welcher die zugehörigen Produktinformationen an die Smartglass zurückschickt. Mithilfe des Barcodes sucht die Datenbank intern zuerst nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
+Sofern der Artikel gescannt wurde, berechnet die Smartglass aus dem Bild den entsprechenden Barcode (\emph{get\_code()}). Dies geschieht mit der ZBar Library. Nachdem die Smartglass den Barcode errechnet hat, verschickt sie diesen Code an die Client-Schnittstelle auf dem Server, der sich im gleichen Netzwerk befindet. Mithilfe des Barcodes sucht die Datenbank intern nach dem entsprechenden Produkt. Anschließend werden über das Produkt folgende Informationen zurück an die Smartglass geschickt:
 \begin{itemize}
 	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
 	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
 	\item Die aktuell ausgewählte Unit (Karton, Einzelstück).
-	\item Die zugehörige Shelf-ID als auch die entsprechende Section-ID.
+	\item Die zugehörige Shelf-ID als auch die entsprechende Section-ID zur Positionsangabe.
 \end{itemize}
 Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angezeigt.
 
-Mithilfe der Produktinformation, um welches Produkt es sich handelt, und den hinterlegten SVG-Grafiken aller Produktplätze generiert die Smartglass ein Bild – genauer die entsprechende SVG Grafik (generate\_picture()). Die Smartglass hat intern eine Karte mit den Attributen Shelf und Section. Dies sind Unterteilungen der Grafik in entsprechende Bereiche. Die Brille weiß allerdings nicht, welches Produkt in welchem Shelf, Section Paar liegt. Mithilfe der Datenbank erfährt sie diese Informationen und kann mit der lokal gespeicherten Karte, das Bild erzeugen. Dieses Bild zeigt einen Ausschnitt des Regalplatzes und markiert den Bereich, in dem das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (send\_shelf\_picture()).
+Mithilfe der Produktinformation und den hinterlegten \acs{SVG}-Grafiken aller Produktplätze generiert die Smartglass ein Bild (\emph{generate\_picture()}). Die \acs{SVG}-Grafik enthält im \acs{XML}-Code Informationen zu den enthaltenen Regalplätzen. Mithilfe der Positionsinformationen aus der Datenbank kann die Smartglass die passende Grafik laden und den Regalplatz entsprechend markieren, in den das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (\emph{send\_shelf\_picture()}).
 
-Da in den meisten Fällen nach der Produktplatz suche, das jeweilige Produkt eingeräumt werden soll, fragt die Brille den Mitarbeiter, ob er dies tun möchte.
-Bestätigt er, springt sozusagen der Instruction Pointer in den Prozess \glqq Produkt einräumen\grqq . Dort wird allerdings der Scan-Vorgang übersprungen und öffnet den Dialog mit schon getroffenen Produktinformationen. 
-Verneint der Nutzer, so springt die Smartglass zurück an den Anfang vom \glqq Produkt finden\grqq Prozess. 
+Da in den meisten Fällen nach der Produktplatzsuche das jeweilige Produkt eingeräumt werden soll, fragt die App den Mitarbeiter, ob er in den Einräummodus wechseln möchte.
+Bestätigt er, springt der \textit{Instruction Pointer} in den Prozess \glqq Produkt einräumen\grqq ; dort wird allerdings der Scan-Vorgang übersprungen und direkt der Dialog mit den bereits bekannten Produktinformationen geöffnet. Verneint der Nutzer, so springt die Smartglass zurück an den Anfang des \glqq Produkt finden\grqq -Prozesses. 
+
 
 \subsection{Produkt einräumen}
-Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses \glqq Produkt einräumen\grqq . Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion „Produkt einräumen“ ausgewählt hat. 
+Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses \glqq Produkt einräumen\grqq . Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion \glqq Produkt einräumen\grqq~ ausgewählt hat. 
+
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.7]{Bilder/Abbildungen/SMAR_produkt_einraeumen_Sequenzdiagramm.png}}
-	\caption{Sequenzdiagramm Produkt einräumen}
+	\caption{Sequenzdiagramm: Produkt einräumen}
 	\label{fig:jwt_encode}
 \end{figure}
-Ähnlich dem Prozess, Produkt finden, gibt es drei Aktoren, den Mitarbeiter, die Smartglass und die Datenbank. Nachdem Start öffnet die Smartglass den Barcodescanner und berechnet aus dem erfassten Bild einen Code (get\_code()). Dieser Code wird an die Datenbank verschickt, mit der Aufforderung produktspezifische Informationen anzugeben (get\_productinformation()). Die Datenbank sucht diese Informationen raus und antwortet der Smartglass mit diesen (send\_productinformation()). Bei diesen Informationen handelt es sich um folgende: 
+
+Ähnlich dem Prozess \glqq Produkt finden\grqq~ gibt es drei Akteure: den Mitarbeiter, die Smartglass und die Datenbank (REST API). Zunächst öffnet die Smartglass den Barcodescanner und ermittelt den sichtbaren Barcode (\emph{get\_code()}). Dieser Code wird mit der Aufforderung, produktspezifische Informationen zurück zu geben,  an die REST API verschickt (\emph{get\_productinformation()}). Die Client-Schnittstelle fragt diese Informationen von der Datenbank ab und antwortet der Smartglass mit den Produktdaten (\emph{send\_productinformation()}). Bei diesen Informationen handelt es sich um folgende: 
 \begin{enumerate}
 	\item Der Name zur ergonomischen und leichten Handhabung für den Mitarbeiter.
 	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
 	\item Die aktuell gescannte Unit (Karton, Einzelstück).
 \end{enumerate}
-Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. 
+Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt, an dem der Prozess \glqq Produkt finden\grqq~ in diesen Prozess springt, sollte der Mitarbeiter von dort aus in den Einräummodus wechseln -- so muss der Mitarbeiter weniger mit der Smartglass interagieren, sodass Zeit gespart wird. Er hat allerdings noch die Möglichkeit, die Unit entsprechend anzupassen (\emph{ask\_for\_unit()} und \emph{\emph{enter\_unit()}}). Dabei kann nicht nur die Unit angegeben werden (ob Karton oder Einzelstück), sondern auch die Anzahl (\zB 4 Kartons); damit soll die mehrfache Interaktion vermieden werden. 
 
-Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt an dem der Prozess \glqq Produkt finden\grqq , in diesen Prozess springt.
+Schließlich bestätigt der Mitarbeiter (\emph{enter\_unit()}) und die Smartglass leitet die neuen Informationen an die API weiter (\emph{update\_stock()}). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (\emph{update\_stock()}).
 
-So muss der Mitarbeiter weniger mit der Smartglass interagieren, sodass Zeit gespart wird. Er hat allerdings noch die Möglichkeit die Unit entsprechend anzupassen (ask\_for\_unit() und enter\_unit()). Dabei hat der Mitarbeiter auch die Möglichkeit nicht nur die Unit anzugeben (ob Karton oder Einzelstück), sondern auch die Anzahl (\zB 4 Kartons). Damit soll die mehrfache Interaktion vermieden werden. 
-
-Schließlich bestätigt der Mitarbeiter (enter\_unit()) und die Smartglass leitet die neuen Informationen an die Datenbank weiter (update\_stock()). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (update\_stock()).
-
-Die Datenbank bestätigt dies (confirm\_update()), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (die Füllstände) (show\_productinformation()), und springt schließlich zurück zum Anfang des Prozesses. 
-
+Die Datenbank bestätigt dies (\emph{confirm\_update()}), die Smartglass aktualisiert die Informationen, die dem Nutzer angezeigt werden (insbesondere die Füllstände) (\emph{show\_productinformation()}), und springt schließlich zurück zum Anfang des Prozesses. 
 
 
 \subsection{Warenannahme}
-Dieser Abschnitt beschreibt den Interaktionsprozess zwischen dem Mitarbeiter, der Smartglass und der Datenbank. Wie in den vorherigen Abschnitten wird ein Sequenzdiagramm zur Illustrierung verwendet. Voraussetzung für diesen Prozess ist, dass der Mitarbeiter den Prozess "Warenannahme" im Hauptmenü ausgewählt hat. 
+Dieser Abschnitt beschreibt den Interaktionsprozess zwischen dem Mitarbeiter, der Smartglass und der Datenbank (REST API) während der Warenannahme. Wie in den vorherigen Abschnitten wird ein Sequenzdiagramm zur Veranschaulichung verwendet. Voraussetzung für diesen Prozess ist, dass der Mitarbeiter den Prozess \textit{Warenannahme} im Hauptmenü ausgewählt hat. 
 \\
 Ist dies geschehen öffnet die Smartglass den Scanmodus und erwartet vom Mitarbeiter, dass dieser den Bestellschein einscannt. Der Bestellschein ist deshalb wichtig, damit die folgenden Waren, die angenommen werden, der korrekten Lieferung zugeordnet werden können (scan\_delivery\_note()). 
 \\
