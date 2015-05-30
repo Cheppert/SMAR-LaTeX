@@ -20,12 +20,19 @@
 \chapter{Reflexion}
 Das folgende Kapitel beschäftigt sich mit der kritischen Reflexion der Leistung und Entscheidungen des Projektteams und bezieht sich ausschließlich auf die Software.\\
 
+Die folgende Abbildung \ref{fig:anforderungen_erfuellt} zeigt den Erfüllungsgrad der analysierten Anforderungen:
 \begin{figure}[H]
 	\centering
-	{\includegraphics[scale=0.73]{Bilder/Abbildungen/anforderungen_zusammenfassung_bewertung.png}}
+	{\includegraphics[width=\textwidth]{Bilder/Abbildungen/anforderungen_zusammenfassung_bewertung.png}}
 	\caption{Übersicht der Anforderungen mit Erfüllungsgrad}
 	\label{fig:anforderungen_erfuellt}
 \end{figure}
+Auf die erfüllten Anforderungen wird nicht nochmals eingegangen. Diese, sowie alle anderen Anforderungen wurden im Kapitel \ref{annforderungnsanalyse} \nameref{annforderungnsanalyse} detailliert erklärt.\\
+Die Anforderung B40.1, welche das Augmented Reality darstellt, wurde nur teilweise umgesetzt, da die direkte Verbindung zur realen Welt im Projektrahmen nicht erreicht werden konnte. Die Darstellung findet mit Hilfe von manipulierten SVG-Grafiken statt, sodass der Benutzer die Verbindung zur realen Welt selbst herstellen muss. Dies wird jedoch durch Zusatzinformationen (wie \zB der Anzeige welche Produkte um die Zielsection herumliegen) unterstützt und ist für ein \glqq Proof of Concept\grqq akzeptabel.
+%TODO A20
+Außerdem wurde die nicht funktionale Anforderung BN20 inklusive der darauf aufbauenden Anforderungen BN20.10.1 und BN20.10 nur teilweise oder sogar gar nicht erfüllt. Dies ist der Entwicklung in einem kleinen Team und der fehlenden Möglichkeit zu testen, gekoppelt mit einem engen Zeitplan gegen Ende des Projektes, geschuldet. Die Anwendung wurde durch thread-sicheres Multithreading, sowie durch ein sauberes Exception-Handling sehr robust gestaltet. Allerdings ist durch die geringe Anzahl an Tests nicht garantiert, dass jeder Fehler korrekt abgefangen und entsprechend selbst beschrieben wird. Da während der Testphase (sehr selten) Fehler aufgetaucht sind, die nicht mehr behoben werden konnten und zu Abstürzen führen könnten, wurde die Anforderung BN20.10 als nicht erfüllt angesehen.\\
+
+Sowohl die bewertete Tabelle der Anforderungen, als auch eine Bewertung der selbstdefinierten Ziele (siehe Anhang) zeigen deutlich, dass die Priorität 1 (Pflicht) Anforderungen größtenteils und zu genüge erfüllt wurden. Allerdings wurden Ziele darüber hinaus (Priorität 2: Wünschenswert) nur selten erfüllt. Dies zeigt nochmals deutlich, dass es sich bei dieser Anwendung um ein \glqq Proof of Concept\grqq des computergestützten Shelf-Managements mit Augmented Reality handelt und die Technologie und dieses Projekt noch viel ungenutztes Potential aufweisen.\\
 
 Während die grundlegende Architektur, das Projekt \ac{SMAR} in einer Thin Client-Server-Architektur aufzubauen, in diesem Szenario durchaus Sinn macht, da in der Anwendung mehrere Clients vorhanden sind, die alle auf dieselben Daten - teilweise gleichzeitig - zugreifen, würde eine Berechnung der Daten auf den Clients inkonsistente Stände verursachen und die Performanz negativ beeinflussen. Außerdem waren die eingesetzten Technologien auf den Smartglasses durch das Android Betriebssystem weitestgehend vorgegeben. Entscheidungen wie \zB das Benutzen der ZBar Library, statt der ZXing Anwendung zur Bar-Code-Erkennung sorgen dafür, dass das Projekt eigenständig funktioniert und keine weiteren Softwarevoraussetzungen benötigt. Die \ac{REST} \ac{API} erzeugt eine einfache Kommunikation zwischen Clients (Web Administration und Android-App) und Server und wird von allen Teilen sehr gut unterstützt. Die Web Administration jedoch, die größtenteils eine asynchrone Kommunikation benutzt, kommuniziert im Hintergrund mit PHP-Skripten. Dies ist vor Allem aufgrund der asynchronen Arbeitsweise sehr kompliziert gelöst und nicht zeitgemäß. Hier wäre es von Vorteil gewesen einen NodeJS-Server mit einem AngularJS-Webfrontend einzusetzen. Dies hätte die Programmierung vereinfacht und deutlich Zeit gespart.\\
 

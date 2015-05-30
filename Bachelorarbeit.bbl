@@ -19,6 +19,23 @@
   {{Brown}{Jeff}{J.}{}{}} {} {} \bibAnnoteFile {zbar}
 
 \backrefparscanfalse
+\bibitem[{Bruhn\jbdy {2008}}%
+         {Controlling : Zeitschrift für erfolgsorientierte
+  Unternehmenssteuerung \jbsy {2008}}%
+         {{0}{}{article}{2008}{}{}{}{}%
+          {2008}}%
+         {{Dienstleistungscontrolling durch eine ganzheitliche Betrachtung der
+  Erfolgskette des Dienstleistungsmanagements}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{controlling}
+ \jbbibargs {\bibnf {Bruhn} {Manfred} {M.} {} {}} {Manfred Bruhn} {au}
+  {sexless} {\bibapifont {Dienstleistungscontrolling durch eine ganzheitliche
+  Betrachtung der Erfolgskette des Dienstleistungsmanagements}\bibatsep {}
+  \bibJTsep \bibjtfont {Controlling : Zeitschrift für erfolgsorientierte
+  Unternehmenssteuerung}  \artyearformat {2008}} {\bibartperiodhowcited}
+  \jbdoitem {{Bruhn}{Manfred}{M.}{}{}} {} {} \bibAnnoteFile {controlling}
+
+\backrefparscanfalse
 \bibitem[{comScore\jbdy {2015}}%
          {}%
          {{0}{}{}{2015}{}{}{}{}%
@@ -99,6 +116,20 @@
   \bibAnnoteFile {uebertragungsgeschwindigkeit}
 
 \backrefparscanfalse
+\bibitem[{Gargenta\jbdy {2011}}%
+         {}%
+         {{0}{}{book}{2011}{}{}{}{}%
+          {Köln\bpubaddr {} O'Reilly Germany\bibbdsep {} 2011}}%
+         {{Einführung in die Android-Entwicklung}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{android_general}
+ \jbbibargs {\bibnf {Gargenta} {Marko} {M.} {} {}} {Marko Gargenta} {au}
+  {sexless} {\bibtfont {Einführung in die Android-Entwicklung}\bibatsep {}
+  \apyformat {Köln\jbpublisher{\bpubaddr {} O'Reilly Germany}\bibbdsep {}
+  2011}\jbisbn {978--3--868--99114--7}} {\bibhowcited} \jbdoitem
+  {{Gargenta}{Marko}{M.}{}{}} {} {} \bibAnnoteFile {android_general}
+
+\backrefparscanfalse
 \bibitem[{Gargenta\jbbtasep Nakamura\jbdy {2014}}%
          {}%
          {{0}{}{book}{2014}{}{}{}{}%
@@ -142,6 +173,22 @@
   {sexless} {\bibtfont {OMAP4430}\bibatsep {} 2013 \jburluse
   {omap4430}\bibbudcsep {}\urldatecomment 2015-05-20} {\bibhowcited} \jbdoitem
   {{Instruments}{Texas}{T.}{}{}} {} {} \bibAnnoteFile {omap4430}
+
+\backrefparscanfalse
+\bibitem[{Laperrière\jbdy {2014}}%
+         {}%
+         {{0}{}{book}{2014}{}{}{}{}%
+          {Berlin Heidelberg\bpubaddr {} Springer Berlin Heidelberg\bibbdsep {}
+  2014}}%
+         {{CIRP Encyclopedia of Production Engineering}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{augmented_reality}
+ \jbbibargs {\bibnf {Laperrière} {Luc} {L.} {} {}} {Luc Laperrière} {au}
+  {sexless} {\bibtfont {CIRP Encyclopedia of Production Engineering}\bibatsep
+  {}  \apyformat {Berlin Heidelberg\jbpublisher{\bpubaddr {} Springer Berlin
+  Heidelberg}\bibbdsep {} 2014}\jbisbn {978--3--642--20616--0}} {\bibhowcited}
+  \jbdoitem {{Laperrière}{Luc}{L.}{}{}} {} {} \bibAnnoteFile
+  {augmented_reality}
 
 \backrefparscanfalse
 \bibitem[{Oaks\jbbtasep Wong\jbdy {2004}}%
@@ -194,16 +241,32 @@
          {{0}{}{book}{2015}{}{}{}{}%
           {Köln\bpubaddr {} O'Reilly Germany\bibbdsep {} 2015}}%
          {{Angular JS: Moderne Webanwendungen und Single Page Applications mit
-  JavaScript -}%
+  JavaScript}%
           {}{}{2}{}{}{}{}{}}%
         ]{book_jwt}
  \jbbibargs {\bibnf {Steyer} {Manfred} {M.} {} {}\Bibbtasep \bibnf {Softic}
   {Vildan} {V.} {} {}} {Manfred SteyerVildan Softic} {aus} {sexless} {\bibtfont
   {Angular JS: Moderne Webanwendungen und Single Page Applications mit
-  JavaScript -}\bibatsep {}  \apyformat {Köln\jbpublisher{\bpubaddr {}
-  O'Reilly Germany}\bibbdsep {} 2015}\jbisbn {978--3--955--61951--0}}
-  {\bibhowcited} \jbdoitem {{Steyer}{Manfred}{M.}{}{};
-  {Softic}{Vildan}{V.}{}{}} {} {} \bibAnnoteFile {book_jwt}
+  JavaScript}\bibatsep {}  \apyformat {Köln\jbpublisher{\bpubaddr {} O'Reilly
+  Germany}\bibbdsep {} 2015}\jbisbn {978--3--955--61951--0}} {\bibhowcited}
+  \jbdoitem {{Steyer}{Manfred}{M.}{}{}; {Softic}{Vildan}{V.}{}{}} {} {}
+  \bibAnnoteFile {book_jwt}
+
+\backrefparscanfalse
+\bibitem[{Venkatesh\jbbtasep Davis\jbdy {2015}}%
+         {}%
+         {{0}{}{}{2015}{}{}{}{}%
+          {2015}}%
+         {{Technology Acceptance Model}%
+          {}{}{2}{}{}{}{}{}}%
+        ]{tam}
+ \jburldef
+  {tam}{http://www.vvenkatesh.com/it/organizations/theoretical_models.asp}%
+ \jbbibargs {\bibnf {Venkatesh} {} {} {} {}\Bibbtasep \bibnf {Davis} {} {} {}
+  {}} { Venkatesh Davis} {aus} {sexless} {\bibtfont {Technology Acceptance
+  Model}\bibatsep {} 2015 \jburluse {tam}\bibbudcsep {}\urldatecomment
+  2015-05-29} {\bibhowcited} \jbdoitem {{Venkatesh}{}{}{}{}; {Davis}{}{}{}{}}
+  {} {} \bibAnnoteFile {tam}
 
 \backrefparscanfalse
 \bibitem[{Wikipedia\jbdy {2015}}%

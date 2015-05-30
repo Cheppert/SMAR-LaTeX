@@ -8,4 +8,5 @@
 \expandafter\urldef\csname jburl@bluetooth\endcsname\url{http://www.golem.de/1004/74635.html}
 \expandafter\urldef\csname jburl@omap4430\endcsname\url{http://www.ti.com/product/omap4430}
 \expandafter\urldef\csname jburl@mt_rand\endcsname\url{http://php.net/manual/de/function.mt-rand.php}
+\expandafter\urldef\csname jburl@tam\endcsname\url{http://www.vvenkatesh.com/it/organizations/theoretical_models.asp}
 \expandafter\urldef\csname jburl@wqvga\endcsname\url{http://en.wikipedia.org/wiki/Graphics_display_resolution#WQVGA_.28400x240.29}
