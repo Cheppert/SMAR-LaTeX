@@ -111,8 +111,14 @@ Der Name sowie die Füllstände im Lager und im Verkauf werden dem Nutzer angeze
 Mithilfe der Produktinformation und den hinterlegten \acs{SVG}-Grafiken aller Produktplätze generiert die Smartglass ein Bild (\emph{generate\_picture()}). Die \acs{SVG}-Grafik enthält im \acs{XML}-Code Informationen zu den enthaltenen Regalplätzen. Mithilfe der Positionsinformationen aus der Datenbank kann die Smartglass die passende Grafik laden und den Regalplatz entsprechend markieren, in den das Produkt einzuräumen ist. Dieses Bild wird dem Mitarbeiter anschließend angezeigt. (\emph{send\_shelf\_picture()}).
 
 Da in den meisten Fällen nach der Produktplatzsuche das jeweilige Produkt eingeräumt werden soll, fragt die App den Mitarbeiter, ob er in den Einräummodus wechseln möchte.
-Bestätigt er, springt der \textit{Instruction Pointer} in den Prozess \glqq Produkt einräumen\grqq ; dort wird allerdings der Scan-Vorgang übersprungen und direkt der Dialog mit den bereits bekannten Produktinformationen geöffnet. Verneint der Nutzer, so springt die Smartglass zurück an den Anfang des \glqq Produkt finden\grqq -Prozesses. 
-
+Bestätigt er, springt der \textit{Instruction Pointer} in den Prozess \glqq Produkt einräumen\grqq ; dort wird allerdings der Scan-Vorgang übersprungen und direkt der Dialog mit den bereits bekannten Produktinformationen geöffnet. Verneint der Nutzer, so springt die Smartglass zurück an den Anfang des \glqq Produkt finden\grqq -Prozesses. \\
+Wie das Ergebnis letztlich aussieht zeigt folgendes Mockup. Hierbei ist zu beachten, dass dies nicht 100\% der tatsächlichen Umsetzung entspricht. 
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=0.7]{Bilder/Abbildungen/produkt_finden_mockup.png}}
+	\caption{Mockup: Produkt finden}
+	\label{fig:jwt_encode}
+\end{figure}
 
 \subsection{Produkt einräumen}
 Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses \glqq Produkt einräumen\grqq . Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion \glqq Produkt einräumen\grqq~ ausgewählt hat. 
@@ -152,7 +158,7 @@ Damit der Mitarbeiter eine Rückmeldung am Ende seiner Arbeit bekommt, erscheint
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.75]{Bilder/Abbildungen/SMAR_warenannahme_Sequenzdiagramm.png}}
-	\caption{Sequenzdiagramm Produkt einräumen}
+	\caption{Sequenzdiagramm Warenannahme}
 	\label{fig:sequenz_warenannnahme}
 \end{figure}
 
@@ -230,7 +236,13 @@ Die Eingabe der Anmeldedaten muss daher über andere Eingabemethoden stattfinden
 
 Der Benutzername ist - im Gegensatz - zum Passwort zumindest gegenüber den anderen Mitarbeitern, die Zugriff auf die Brille haben, kein Geheimnis und kann bekannt sein.\\
 Die Eingabe des Benutzernamens über ein Sprachkommando gestaltet sich schwierig und als nicht effektiv. Im Rahmen dieser Arbeit wurde ein Test durchgeführt, der die Spracherkennung testete. Dies funktionierte bei vordefinierten Sprachbefehlen und bei wenig Störgeräuschen zufriedenstellend. Für die Eingabe von Benutzernamen ist dies jedoch nicht geeignet, da die Anmeldung sowohl in ruhigen Umgebungen, als auch lauten Filialen schnell funktionieren muss. Darüber hinaus kann die Erkennung von Eigennamen, die eventuell durch verschiedene Sprachen geprägt sind, nicht zuverlässig garantiert werden.\\
-Die Entscheidung fiel daher auf eine Liste, die beim Starten der App vom Server abgerufen wird und auf der LogIn-Seite der App angezeigt wird. Der Server liefert eine Liste mit Benutzern zurück, die für die Brille zugelassen sind\footnote{Siehe Kapitel \ref{cha:authn_server} \nameref{cha:authn_server}}. Der Benutzer wählt über die Knöpfe an der Brille den Benutzernamen aus der Liste aus und wird anschließend zur Eingabe des gültigen Passworts aufgefordert.\\
+Die Entscheidung fiel daher auf eine Liste, die beim Starten der App vom Server abgerufen wird und auf der LogIn-Seite der App angezeigt wird. Der Server liefert eine Liste mit Benutzern zurück, die für die Brille zugelassen sind\footnote{Siehe Kapitel \ref{cha:authn_server} \nameref{cha:authn_server}}. Der Benutzer wählt über die Knöpfe an der Brille den Benutzernamen aus der Liste aus und wird anschließend zur Eingabe des gültigen Passworts aufgefordert. Das folgende Mockup zeigt schematisch diese Liste.\\
+\begin{figure}[H]
+	\centering
+	{\includegraphics[scale=0.7]{Bilder/Abbildungen/login_mockup.png}}
+	\caption{Login Mockup}
+	\label{fig:sequenz_warenannnahme}
+\end{figure}
 Dies garantiert eine, nach den Möglichkeiten der Vuzix M100 gegebenen, zuverlässige und schnelle Anmeldung. Diese Anmeldemethode ist verständlicherweise nur für eine geringe Anzahl an Benutzern (<30) effizient, jedoch wird davon ausgegangen, dass in einem Supermarkt in der Regel nicht mehr als 20 bis 30 Angestellte mit der Warenannahme/-einräumung beauftragt werden.\\
 
 Auch bei der Passworteingabe gibt es ähnliche Probleme, jedoch muss hier darauf geachtet werden, dass Passwörter ausschließlich dem jeweiligen Benutzer (und eventuell dem Systemadministrator) bekannt sein dürfen \bzw nur im Besitz des Benutzers liegen dürfen. Eine Auswahl aus einer Liste und die Eingabe per Spracherkennung sind somit nicht nur aus Sicht der Bedienung, sondern vor Allem aus Sicherheitsgründen nicht praktikabel.\\
