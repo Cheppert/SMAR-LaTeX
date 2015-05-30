@@ -213,7 +213,7 @@ Die gängige Ein-Faktor-Authentifizierung besteht aus der Kombination eines Benu
 	\item in das Firmennetzwerk eingebunden ist und
 	\item gegenüber dem Server authentifiziert\footnote{s. Kapitel \ref{cha:authn_server}\nameref{cha:authn_server}} ist.
 \end{itemize}
-Eine Zwei-Faktor-Authentifizierung ist somit bereits gegeben, da der Benutzer sowohl Wissen (Benutzername und Passwort) als auch Besitz benötigt (Die authentifizierte \acl{VR}-Brille).\\
+Eine Zwei-Faktor-Authentifizierung ist somit bereits gegeben, da der Benutzer sowohl Wissen (Benutzername und Passwort) als auch Besitz benötigt (Die authentifizierte \acl{AR}-Brille).\\
 Die Grundlage für eine gute Anwendungssicherheit ist somit gegeben.
 
 Die Brille hat, wie im Kapitel \ref{cha:technik}\nameref{cha:technik} beschrieben, folgende Eingabemethoden:
@@ -223,7 +223,7 @@ Die Brille hat, wie im Kapitel \ref{cha:technik}\nameref{cha:technik} beschriebe
 	\item Mikrofon zur Erkennung von Sprachbefehlen
 	\item Kamera mit entsprechenden Bibliotheken zur Erkennung von Bar- und QR-Codes
 \end{itemize}
-Die, für die oben beschriebene \acf{AuthN} übliche Eingabemethode, die textbasierte Eingabe über eine entsprechende Tastatur ist über die \ac{VR}-Brille ohne zusätzliche Hardware nicht möglich. Zusätzliche Hardware wäre zu dem umständlich und würde die Bedienung des Gerätes erschweren. Die Usability ist bei dieser Eingabemethode nicht gegeben.\\
+Die, für die oben beschriebene \acf{AuthN} übliche Eingabemethode, die textbasierte Eingabe über eine entsprechende Tastatur ist über die \ac{AR}-Brille ohne zusätzliche Hardware nicht möglich. Zusätzliche Hardware wäre zu dem umständlich und würde die Bedienung des Gerätes erschweren. Die Usability ist bei dieser Eingabemethode nicht gegeben.\\
 
 Die Eingabe der Anmeldedaten muss daher über andere Eingabemethoden stattfinden und wird in 2 Teile unterteilt:
 \begin{enumerate}
@@ -252,10 +252,10 @@ Im letzten Kapitel wurde beschrieben, wie sichergestellt wird, dass sich nur bek
 \begin{itemize}
 	\item Ein Angestellter einer Filiale, der mit der Warenannahme beauftragt ist und somit für die Nutzung der Brille freigeschaltet ist, lässt seinen Firmenausweis beim Einräumen in einem öffentlichen Bereich liegen. Auf dem Firmenausweis sind sowohl der vollständige Name, als auch der QR-Code, der für die Authentifizierung genutzt wird, aufgedruckt. Ein Angreifer, der Zugriff auf das System bekommen möchte, entdeckt dies und fotografiert den Firmenausweis ab.
 \end{itemize}
-Im oben dargestellten Szenario sind die persönlichen Benutzerdaten - ohne Wissen des Opfers - gestohlen worden. Der Angreifer hat zwar keinen Zugriff auf eine im Markt vorhandene \ac{VR}-Brille, aber eventuell ist er im Besitz der App und hat diese auf einem eigenen Android-Gerät installiert. Ist das Firmennetzwerk zusätzlich noch schlecht abgesichert, \zB durch Nutzung des \ac{WEP} Verschlüsselungsprotokolls, so kann sich der Angreifer mit seinem eigenen Android-Gerät und über die Anmeldedaten des Angestellten auf dem Server authentifizieren.\\
+Im oben dargestellten Szenario sind die persönlichen Benutzerdaten - ohne Wissen des Opfers - gestohlen worden. Der Angreifer hat zwar keinen Zugriff auf eine im Markt vorhandene \ac{AR}-Brille, aber eventuell ist er im Besitz der App und hat diese auf einem eigenen Android-Gerät installiert. Ist das Firmennetzwerk zusätzlich noch schlecht abgesichert, \zB durch Nutzung des \ac{WEP} Verschlüsselungsprotokolls, so kann sich der Angreifer mit seinem eigenen Android-Gerät und über die Anmeldedaten des Angestellten auf dem Server authentifizieren.\\
 Er kann den Warenbestand nun entsprechend manipulieren und der Filiale Schaden zufügen.\\
 
-Um dies zu verhindern, wurde eine Zwei-Faktor-Authentifizierung in die Anwendung integriert. Somit muss sich nicht nur der Benutzer, sondern ebenfalls die \ac{VR}-Brille \bzw das benutzte Gerät gegenüber dem Server authentifizieren.\\
+Um dies zu verhindern, wurde eine Zwei-Faktor-Authentifizierung in die Anwendung integriert. Somit muss sich nicht nur der Benutzer, sondern ebenfalls die \ac{AR}-Brille \bzw das benutzte Gerät gegenüber dem Server authentifizieren.\\
 
 Die App liest dazu beim Starten der Anwendung die \ac{MAC}-Adresse des Gerätes aus und speichert diese in der für den Login zuständigen Klasse ab. Sobald sich der Benutzer anmeldet (seinen Benutzernamen ausgewählt hat und den persönlichen QR-Code eingescannt hat), wird die \ac{MAC}-Adresse an die Login-Daten angehängt und eine Anfrage (Ausführen der "authenticate"-Anwendung der REST Api\footnote{s. Kapitel \ref{cha:impl_api}\nameref{cha:impl_api}}) an den Server mit allen Daten (\ac{MAC}-Adresse, Benutzer, Passwort) geschickt. Ist die \ac{MAC}-Adresse gültig, liefert der Server den \ac{JWT}, ansonsten gibt es eine Fehlermeldungen und alle weiteren Anfragen werden abgelehnt.\\
 
@@ -272,7 +272,7 @@ Bei der Benutzung der App gibt es sowohl für das Gerät, als auch für den Benu
 
 Die \acl{AuthZ} findet daher zeitgleich zu der \acl{AuthN} statt. Der \ac{JWT} wird ausschließlich bei erfolgreicher Identifikation und Berechtigung zurückgegeben, ansonsten gibt es eine entsprechende Fehlermeldung.\\
 
-Das Gerät autorisiert sich gegenüber dem Server über das Flag, welches bestimmt, ob das Gerät aktuell aktiv sein soll. Ist dieses Flag gesetzt, besitzt dieses Gerät (\zB \acs{VR}-Brille) volle Berechtigung und weitere Anfragen werden bei gültigem \ac{JWT} übergeben, ansonsten werden alle weiteren Anfragen abgelehnt. Diese \acl{AuthZ} macht Sinn, sollte das Gerät kurzfristig nicht in der Filiale sein. Das Gerät kann gesperrt und reaktiviert werden, ohne dass es gelöscht und anschließend wieder registriert werden muss.\\
+Das Gerät autorisiert sich gegenüber dem Server über das Flag, welches bestimmt, ob das Gerät aktuell aktiv sein soll. Ist dieses Flag gesetzt, besitzt dieses Gerät (\zB \acs{AR}-Brille) volle Berechtigung und weitere Anfragen werden bei gültigem \ac{JWT} übergeben, ansonsten werden alle weiteren Anfragen abgelehnt. Diese \acl{AuthZ} macht Sinn, sollte das Gerät kurzfristig nicht in der Filiale sein. Das Gerät kann gesperrt und reaktiviert werden, ohne dass es gelöscht und anschließend wieder registriert werden muss.\\
 
 Da ein Benutzer ebenfalls nur diese zwei Berechtigungsstufen beim Benutzen der App besitzt, wird die Anfrage ähnlich der Brille ausgeführt. Ein Benutzer besitzt in seinem Datenbank-Eintrag in der Spalte \glqq role\_device\grqq~~ entweder eine 1 (true) und wird autorisiert oder eine 0 (false) und der Server meldet einen entsprechenden Fehler zurück.\\
 
