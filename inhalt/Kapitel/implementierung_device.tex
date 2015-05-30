@@ -95,7 +95,7 @@ Wie die folgende Grafik zeigt, gibt es drei Akteure, die miteinander kommunizier
 	\centering
 	{\includegraphics[scale=0.8]{Bilder/Abbildungen/SMAR_produkt_finden_Sequenzdiagramm.png}}
 	\caption{Sequenzdiagramm: Produkt finden}
-	\label{fig:jwt_encode}
+	\label{fig:sequenz_finden}
 \end{figure}
 Nachdem der Mitarbeiter die Funktion gestartet hat, vermittelt er der Smartglass den Befehl ein Produkt zu finden, sodass die Smartglass sofort in den Scan-Modus springt (\emph{scan\_product()}). 
 
@@ -112,8 +112,7 @@ Mithilfe der Produktinformation und den hinterlegten \acs{SVG}-Grafiken aller Pr
 
 Da in den meisten Fällen nach der Produktplatzsuche das jeweilige Produkt eingeräumt werden soll, fragt die App den Mitarbeiter, ob er in den Einräummodus wechseln möchte.
 Bestätigt er, springt der \textit{Instruction Pointer} in den Prozess \glqq Produkt einräumen\grqq ; dort wird allerdings der Scan-Vorgang übersprungen und direkt der Dialog mit den bereits bekannten Produktinformationen geöffnet. Verneint der Nutzer, so springt die Smartglass zurück an den Anfang des \glqq Produkt finden\grqq -Prozesses. \\
-
-Das folgende Mockup verdeutlicht die Ausgabe der App. Dies kann von der realen Erscheinung abweichen. 
+Wie das Ergebnis letztlich aussieht zeigt folgendes Mockup. Hierbei ist zu beachten, dass dies nicht 100\% der tatsächlichen Umsetzung entspricht. 
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.7]{Bilder/Abbildungen/produkt_finden_mockup.png}}
@@ -122,13 +121,13 @@ Das folgende Mockup verdeutlicht die Ausgabe der App. Dies kann von der realen E
 \end{figure}
 
 \subsection{Produkt einräumen}
-Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses \glqq Produkt einräumen\grqq . Dabei soll die Umsetzung chronologisch beschrieben werden mit zur Hilfenahme des folgenden Sequenzdiagramms. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion \glqq Produkt einräumen\grqq~ ausgewählt hat. 
+Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke in die Umsetzung des Prozesses \glqq Produkt einräumen\grqq . Dabei soll die Umsetzung anhand des folgenden Sequenzdiagramms chronologisch beschrieben werden. Vorausgesetzt ist, dass der Mitarbeiter schon die Funktion \glqq Produkt einräumen\grqq~ ausgewählt hat. 
 
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.7]{Bilder/Abbildungen/SMAR_produkt_einraeumen_Sequenzdiagramm.png}}
 	\caption{Sequenzdiagramm: Produkt einräumen}
-	\label{fig:jwt_encode}
+	\label{fig:sequenz_einraeumen}
 \end{figure}
 
 Ähnlich dem Prozess \glqq Produkt finden\grqq~ gibt es drei Akteure: den Mitarbeiter, die Smartglass und die Datenbank (REST API). Zunächst öffnet die Smartglass den Barcodescanner und ermittelt den sichtbaren Barcode (\emph{get\_code()}). Dieser Code wird mit der Aufforderung, produktspezifische Informationen zurück zu geben,  an die REST API verschickt (\emph{get\_productinformation()}). Die Client-Schnittstelle fragt diese Informationen von der Datenbank ab und antwortet der Smartglass mit den Produktdaten (\emph{send\_productinformation()}). Bei diesen Informationen handelt es sich um folgende: 
@@ -137,7 +136,7 @@ Dieser Abschnitt gibt Implementierungsdetails sowie architektonische Einblicke i
 	\item Die Füllstände von dem Artikel auf der Verkaufsfläche und im  Lager.
 	\item Die aktuell gescannte Unit (Karton, Einzelstück).
 \end{enumerate}
-Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit, und damit Menge, vorselektiert werden. Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt, an dem der Prozess \glqq Produkt finden\grqq~ in diesen Prozess springt, sollte der Mitarbeiter von dort aus in den Einräummodus wechseln -- so muss der Mitarbeiter weniger mit der Smartglass interagieren, sodass Zeit gespart wird. Er hat allerdings noch die Möglichkeit, die Unit entsprechend anzupassen (\emph{ask\_for\_unit()} und \emph{\emph{enter\_unit()}}). Dabei kann nicht nur die Unit angegeben werden (ob Karton oder Einzelstück), sondern auch die Anzahl (\zB 4 Kartons); damit soll die mehrfache Interaktion vermieden werden. 
+Die gescannte Unit ist dabei der Barcode an einem Karton oder einem einzelnen Produkt. So kann die einzuräumende Unit (und damit auch die Menge) vorselektiert werden. Diese Informationen werden dem Mitarbeiter auf dem Display angezeigt. Dies ist auch der Punkt, an dem der Prozess \glqq Produkt finden\grqq~ in diesen Prozess springt, sollte der Mitarbeiter von dort aus in den Einräummodus wechseln -- so muss der Mitarbeiter weniger mit der Smartglass interagieren, sodass Zeit gespart wird. Er hat allerdings noch die Möglichkeit, die Unit entsprechend anzupassen (\emph{ask\_for\_unit()} und \emph{\emph{enter\_unit()}}). Dabei kann nicht nur die Unit angegeben werden (ob Karton oder Einzelstück), sondern auch die Anzahl (\zB 4 Kartons); damit soll die mehrfache Interaktion vermieden werden. 
 
 Schließlich bestätigt der Mitarbeiter (\emph{enter\_unit()}) und die Smartglass leitet die neuen Informationen an die API weiter (\emph{update\_stock()}). So werden dort die Füllstände für das Lager und auf der Verkaufsfläche entsprechend angepasst (\emph{update\_stock()}).
 
@@ -145,80 +144,68 @@ Die Datenbank bestätigt dies (\emph{confirm\_update()}), die Smartglass aktuali
 
 
 \subsection{Warenannahme}
-Dieser Abschnitt beschreibt den Interaktionsprozess zwischen dem Mitarbeiter, der Smartglass und der Datenbank (REST API) während der Warenannahme. Wie in den vorherigen Abschnitten wird ein Sequenzdiagramm zur Veranschaulichung verwendet. Voraussetzung für diesen Prozess ist, dass der Mitarbeiter den Prozess \textit{Warenannahme} im Hauptmenü ausgewählt hat. 
-\\
-Ist dies geschehen öffnet die Smartglass den Scanmodus und erwartet vom Mitarbeiter, dass dieser den Bestellschein einscannt. Der Bestellschein ist deshalb wichtig, damit die folgenden Waren, die angenommen werden, der korrekten Lieferung zugeordnet werden können (scan\_delivery\_note()). 
-\\
-Wurde der Code eingescannt, wird intern der Code berechnet und ein Request an die Datenbank geschickt (get\_delivery\_information()). Dabei wird der gescannte Code mitgeschickt. Die Datenbank überprüft den Code und sucht die erwartenden Produkte und Mengen heraus (get\_delivery\_information()). Diese sendet die Datenbank als Response zurück an die Smartglass (send\_information()), welche diese dem Mitarbeiter anzeigt (show\_delivery\_information()).
-\\
-Wie in der Schleife zu sehen, wiederholt sich der folgende Vorgang solang bis entweder der Bestellschein abgearbeitet ist oder der Mitarbeiter diesen unterbricht. Bis dahin Scannt der Mitarbeiter jeden Artikel bzw. Karton (scan\_product()). Daraufhin berechnet die Smartglass den Code, verschickt diesen an die Datenbank, sodass diese mit entsprechenden Produktinformationen antworten kann. So ist eine Zuordnung zwischen dem gescannten Produkt und der folgenden Auswahl von einzuräumender Kartongröße und deren Anzahl möglich. Hat der Mitarbeiter diese Daten eingetragen und bestätigt, so werden diese in einer lokalen Liste gespeichert. \\
-Ist der Mitarbeiter fertig, wird ihm eine Differenz angezeigt. Diese Differenz setzt sich, aus dem was bestellt wurde und dem was angeliefert wurde, zusammen. So hat der Mitarbeiter den Überblick und kann folglich den Vorgang abschließen. \\
-Bei diesem Vorgang geschehen zwei Sachen. Zum Einen werden die Anzahlen im Lager entsprechend der Eingabe des Nutzers erhöht. Zum Anderen wird ein neuer Eintrag in der Datenbank gemacht. Dieser Eintrag entspricht ebenfalls den getroffenen Eingaben des Nutzers. Er ist erforderlich um im Anschluss eine Differenz zwischen Bestellung und Lieferung durchführen zu können.\\
-Damit der Mitarbeiter eine Rückmeldung am Ende seiner Arbeit bekommt, erscheint eine kurze Erfolgsmeldung (success\_delivery\_scan()).
+Dieser Abschnitt beschreibt den Interaktionsprozess zwischen dem Mitarbeiter, der Smartglass und der Datenbank (REST API) während der Warenannahme. Wie in den vorherigen Abschnitten wird ein Sequenzdiagramm zur Veranschaulichung verwendet. Voraussetzung für diesen Prozess ist, dass der Mitarbeiter den Prozess \textit{Warenannahme} im Hauptmenü ausgewählt hat.\\
+
+Ist dies geschehen, öffnet die Smartglass den Scanmodus und erwartet vom Mitarbeiter, dass dieser den Code auf dem Bestellschein einscannt. Der Bestellschein ist deshalb wichtig, damit die Waren, die im Folgenden erfasst werden, der entsprechenden Bestellung zugeordnet werden können (\emph{scan\_delivery\_note()}).\\
+Wurde der Code eingescannt, so wird anhand des ermittelten Codes über die Client-Schnittstelle die Positionsliste der Bestellung angefragt (\emph{get\_delivery\_information()}). Die API ermittelt die erwartenden Produkte und Mengen (\emph{get\_delivery\_information()}) und sendet diese als Liste zurück an die Smartglass (\emph{send\_information()}), welche diese dem Mitarbeiter anzeigt (\emph{show\_delivery\_information()}).\\
+
+Wie in der Schleife zu sehen, wiederholt sich der nun folgende Vorgang solange, bis entweder der Bestellschein abgearbeitet ist oder der Mitarbeiter diesen Vorgang unterbricht. Der Mitarbeiter scannt einen Artikel \bzw Karton der Lieferung (\emph{scan\_product()}). Daraufhin ermittelt die Smartglass den Code, verschickt diesen an die Client-Schnittstelle, sodass diese mit entsprechenden Produktinformationen antworten kann. So ist eine Zuordnung zwischen dem gescannten Produkt und der folgenden Auswahl von einzuräumender Kartongröße und deren Anzahl möglich. Hat der Mitarbeiter diese Daten eingetragen und bestätigt, so werden diese in einer Liste auf der Smartglass gespeichert.\\
+
+Ist der Mitarbeiter fertig, wird ihm eine Differenzliste angezeigt. Diese setzt sich aus den bestellten und den gelieferten Mengen zusammen. So hat der Mitarbeiter den Überblick und kann im nächsten Schritt den Vorgang abschließen.\\
+Bei Abschluss der Warenannahme werden die Lagerbestände der Produkte entsprechend der Eingaben des Nutzers im Lager erhöht. Außerdem werden neue Einträge in der Datenbank angelegt, welche die Lieferung abbilden, um später z.B: eine Differenzliste über die Webadministration zu erstellen. Damit der Mitarbeiter eine Rückmeldung am Ende seiner Arbeit bekommt, erscheint eine kurze Erfolgsmeldung (\emph{success\_delivery\_scan()}).
 
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.75]{Bilder/Abbildungen/SMAR_warenannahme_Sequenzdiagramm.png}}
-	\caption{Sequenzdiagramm Warenannahme}
+	\caption{Sequenzdiagramm: Warenannahme}
 	\label{fig:sequenz_warenannnahme}
 \end{figure}
 
 \section{HTTP Nutzung}
 \label{sec:httpnutzung}
-Dieser Abschnitt befasst sich nicht mit einem konkreten Prozess, sondern erklärt das allgemeine Vorgehen und die Akteure bei einem der vielen REST API Aufrufe. Voraussetzungen für eine einwandfrei Nutzung der REST API sind zwei Pakete auf der Smartglass. Diese sind standardmäßig ausgeliefert und müssen somit nicht manuell nachinstalliert werden.
+Dieser Abschnitt befasst sich nicht mit einem konkreten Prozess, sondern erklärt das allgemeine Vorgehen und die Akteure bei einem der vielen REST API Aufrufe. Voraussetzung für eine einwandfreie Nutzung der REST API sind zwei Pakete auf der Smartglass. Diese sind standardmäßig ausgeliefert und müssen somit nicht manuell nachinstalliert werden:
 \begin{enumerate}
 	\item org.apache.http
 	\item org.json.JSONObject
 \end{enumerate}
-Das erste Paket stellt die Hauptklassen und -methoden zur Nutzung von HTTP Komponenten. Diese sind essentiell, um das HTTP Protokoll zu verwenden. Es stellt zum Beispiel über HTTP die Verbindung auf und bietet die Möglichkeiten Requests zu versenden und Responses entgegen zu nehmen.\footnote{\citep{http}} Grundsätzlich ist zu sagen, dass hier nur eine schematische und vereinfachte Erklärung gewählt ist. 
-\\
-Das zweite Paket bietet Möglichkeiten JSON Objekte zu erstellen und mit diesen zu arbeiten. \footnote{\citep{json}}
-\\
-Das folgende Klassendiagramm visualisiert die nötigen Klassen, um einen HTTP Request zu schicken, eine Antwort zu erhalten und schließlich die Informationen davon, zu verwenden.
+Das erste Paket enthält die Hauptklassen und -methoden zur Nutzung von HTTP Komponenten. Diese sind essentiell, um das HTTP-Protokoll zu verwenden; darüber können zum Beispiel HTTP-Verbindungen geöffnet, Requests versendet und Responses entgegen genommen werden.\footnote{\citep{http}} Mit Hilfe des zweiten Pakets können JSON-Objekte erstellt und bearbeitet werden. \footnote{\citep{json}}\\
+
+Das folgende Klassendiagramm visualisiert die nötigen Klassen, um einen HTTP-Request zu versenden, eine Antwort zu erhalten und schließlich die Daten daraus zu verwenden.
+
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.7]{Bilder/Abbildungen/http_request_klassendiagramm.png}}
-	\caption{HTTP Request Klassendiagramm}
-	\label{fig:sequenz_warenannnahme}
+	\caption{Klassen zur Verwendung von HTTP-Requests}
+	\label{fig:http_klassen}
 \end{figure}
-Zu Beginn wird ein Objekt der Klasse \glqq HttpClient\grqq erzeugt. Der HttpClient kann ein sogenanntes \glqq request\_object\grqq verwenden. In der Grafik ist es konkret ein \glqq HttpGet\grqq -Objekt, das erzeugt wird. Grundsätzlich sind aber auch HttpPost, HttpDelete und HttpPut, nur um die wichtigsten HTTP Verben zu nennen, möglich. In einer Instanz der Klasse HttpGet wird eine URL zugewiesen, und anschließend benutzt das Objekt HttpClient, mithilfe der \glqq execute\grqq -Methode, das request\_object.
-\\
-Wird dieser Befehl ausgeführt, so wird ein Http-Request an den Server geschickt. Dieser antwortet mit einem einfach HttpResponse, bestehend aus Header und Body. Sofern der Request korrekt und ohne Fehler durchlaufen ist, ist der Body des Response nicht leer. Somit kann er mithilfe eines Objekts der Klasse HttpResponse angenommen werden. Prinzipiell ist darin ein String enthalten. 
-\\
-Die HttpResponses sind in diesem konkreten Projekt in JSON Syntax\footnote{JSON (JavaScript Object Notation) ist ein leichtgewichtiges Datentransferformat.} geschrieben, sodass die Antworten des Servers leicht verwendet werden können. Dies ist mithilfe eines JSON Objekts simpel zu realisieren. Dazu wird die Methode bzw. auch der Konstruktor mit dem entsprechendem String gefüllt. Die Umwandlung des String in einzelne Attribute übernimmt das Objekt selbst. Mithilfe der Methode \textit{get(String)} können einzelne Attribute herausgezogen werden, indem als  \textit{String} der Name des Attributes angegeben wird.
-\\
-Somit lassen sich die vielen Http-Aufrufe, also die Interaktion mit den hinterlegten REST Services, sehr einfach sowohl elegant nutzen als auch verarbeiten.
+
+Zu Beginn wird ein Objekt der Klasse \emph{HttpClient} erzeugt. Der HttpClient kann ein sogenanntes \emph{request\_object} erzeugen -- konkret in der Grafik ein \emph{HttpGet}-Objekt. Grundsätzlich sind aber auch HttpPost, HttpDelete und HttpPut, nur um die wichtigsten HTTP Verben zu nennen, möglich. Der Instanz der Klasse HttpGet wird eine URL zugewiesen, und anschließend benutzt das Objekt HttpClient, mithilfe der \emph{execute}-Methode, das \emph{request\_object}.\\
+
+Wird dieser Befehl ausgeführt, so wird ein Http-Request an den Server geschickt. Dieser antwortet mit einem einfachen HttpResponse, bestehend aus Header und Body. Sofern der Request korrekt und ohne Fehler durchlaufen ist, ist der Body des Response nicht leer. Somit kann er mithilfe eines Objekts der Klasse HttpResponse angenommen werden. Die Daten können nun als String weiterverarbeitet werden.\\
+
+Die HttpResponses sind in diesem konkreten Projekt in \acs{JSON}-Syntax geschrieben, sodass die Antworten des Servers leicht verwendet werden können. Dies ist mithilfe eines JSON-Objektes simpel zu realisieren. Dazu wird die Methode bzw. auch der Konstruktor mit dem entsprechendem String gefüllt. Die Umwandlung des Strings in einzelne Attribute übernimmt das Objekt selbst. Mithilfe der Methode \textit{get(String)} können einzelne Attribute herausgezogen werden, indem als \textit{String} der Name des Attributes angegeben wird.\\
+
+Somit lassen sich die vielen HTTP-Aufrufe, also die Interaktion mit den REST-Services der Client-API, sehr einfach nutzen und verarbeiten.
 
 \section{Settings}
 \label{sec:settings}
-Dieser Abschnitt beschreibt und erklärt die Umsetzung des Speicherungsmechanismus auf der Smartglass. Hierzu wird die Klasse \glqq PreferencesHelper.java\grqq erläutert. 
-\\
-Prinzipiell werden in einer Applikation unter einer Android-Umgebung Informationen in einem sogenannten SharedPreferences-Pool gespeichert. Diese sind in der ganzen Applikation verfügbar, haben einen Namen und einen Wert. Dazu wird der Pool der aktuellen Applikation geladen und über einen Editor editierbar gemacht. So können Einstellungen verändert werden. 
-\\
-Ähnlich ist das Abrufen von Einstellungen. Dazu wird ebenfalls über die aktuelle Applikation  der \glqq SharedPreferences\grqq aufgerufen, und darin der Name der Einstellung herausgesucht. Anschließend erhält man den Wert der Einstellung. 
-\\
-Es wurde sich dafür entschieden die oben erwähnte Klasse zu implementieren, um eine Abstraktionsschicht für jegliche Zugriffe auf Einstellungen zu gewährleisten. So laufen alle Zugriffe gleich ab, und bei Änderungen oder Erweiterungen gibt es einen zentralen Ort. Dennoch sind alle nutzenden Klassen von Veränderungen betroffen. 
+Prinzipiell werden in einer Applikation unter einer Android-Umgebung Informationen in einem sogenannten SharedPreferences-Pool gespeichert. Diese sind in der ganzen Applikation verfügbar und enthalten die gespeicherten Einstellungen als Key-Value-Pairs (Schlüssel-Wert-Paare). Dazu wird der Pool der aktuellen Applikation geladen und über einen Editor editierbar gemacht. So können Einstellungen verändert werden.\\
+Ähnlich verläuft das Abrufen von Einstellungen. Dazu werden ebenfalls über die aktuelle Applikation die \emph{SharedPreferences} aufgerufen und darin der Name der Einstellung herausgesucht. Anschließend erhält man den Wert der Einstellung.\\
+
+Die Speicherung von Einstellungen auf der Smartglass wird mit der Klasse \emph{PreferencesHelper.java} organisiert, welche Hilfsfunktionen zur einfacheren Speicherung von Einstellungen enthält. Damit wird eine Abstraktionsschicht für jegliche Zugriffe auf Einstellungen bereitgestellt. So laufen alle Zugriffe gleich ab, und bei Änderungen oder Erweiterungen braucht nur die Helper-Klasse bearbeitet werden. Dennoch sind alle nutzenden Klassen von Veränderungen betroffen. 
 
 
 \section{Rechteverwaltung}
 \label{cha:rechteverwaltung_vr}
 
 \subsection{\acf{AuthN}}
-Das folgende Kapitel beschäftigt sich mit der Authentifizierung in der App gegenüber dem Server. Benutzte Bibliotheken und Eingabemethoden werden erklärt. Darüber hinaus wird die verwendete Methode mit anderen technisch möglichen Eingabemethoden verglichen.\\
-
-\acl{AuthN} dient der Identifikation einer Person/eines Gerätes.
+Das folgende Kapitel beschäftigt sich mit der Authentifizierung in der App gegenüber dem Server. Benutzte Bibliotheken und Eingabemethoden werden erklärt und die verwendete Methode mit anderen technisch möglichen Eingabemethoden verglichen.
 
 \subsubsection{\acs{AuthN} gegenüber der Brille}
-Die App auf der eingesetzten Vuzix M100 Virtual Reality Brille wird, wie beschrieben, zur Warenannahme, sowie zum Einräumen von Produkten verwendet - mit der Brille kann der Warenbestand daher aktiv verändert und manipuliert werden.\\
-Diese Veränderung sollte, um \zB strukturierten Diebstahl zu vermeiden, nur durch authentifizierte \acs{AuthN} und autorisierte \acs{AuthZ} Personen durchgeführt werden.\\
+Die App auf der eingesetzten Vuzix M100 Virtual Reality Brille wird, wie beschrieben, zur Warenannahme, sowie zum Einräumen von Produkten verwendet -- mit der Brille kann der Warenbestand daher aktiv verändert und manipuliert werden.\\
+Diese Veränderung sollte, um \zB strukturierten Diebstahl zu vermeiden, nur durch authentifizierte (\acs{AuthN}) und autorisierte (\acs{AuthZ}) Personen durchgeführt werden.\\
 
-Die gängige Ein-Faktor-Authentifizierung besteht aus der Kombination eines Benutzernamens mit einem Passwort. Dieses Verfahren hat sich bewährt und bietet bei korrekter Implementation eine durchschnittliche Sicherheit vor unbefugtem Zugriff. Diese Sicherheit würde im Rahmen dieser Anwendung ausreichen, da der Angreifer neben den Benutzerdaten, ebenfalls Zugriff auf ein Gerät haben muss, welches:
-\begin{itemize}
-	\item in das Firmennetzwerk eingebunden ist und
-	\item gegenüber dem Server authentifiziert\footnote{s. Kapitel \ref{cha:authn_server}\nameref{cha:authn_server}} ist.
-\end{itemize}
-Eine Zwei-Faktor-Authentifizierung ist somit bereits gegeben, da der Benutzer sowohl Wissen (Benutzername und Passwort) als auch Besitz benötigt (Die authentifizierte \acl{AR}-Brille).\\
-Die Grundlage für eine gute Anwendungssicherheit ist somit gegeben.
+Die weit verbreitete Ein-Faktor-Authentifizierung besteht aus der Kombination eines Benutzernamens mit einem Passwort. Dieses Verfahren hat sich bewährt und bietet bei korrekter Implementation eine durchschnittliche Sicherheit vor unbefugtem Zugriff. Diese Sicherheit würde im Rahmen dieser Anwendung ausreichen, da ein potenzieller Angreifer neben den Benutzerdaten ebenfalls Zugriff auf ein Gerät haben müsste, welches in das Firmennetzwerk eingebunden ist und gegenüber dem Server authentifiziert\footnote{s. Kapitel \ref{cha:authn_server}\nameref{cha:authn_server}} ist. Eine Zwei-Faktor-Authentifizierung ist somit bereits gegeben, da der Benutzer sowohl Wissen (Benutzername und Passwort) als auch Besitz benötigt (die authentifizierte \acl{AR}-Brille).\\
 
 Die Brille hat, wie im Kapitel \ref{cha:technik}\nameref{cha:technik} beschrieben, folgende Eingabemethoden:
 \begin{itemize}
@@ -227,63 +214,60 @@ Die Brille hat, wie im Kapitel \ref{cha:technik}\nameref{cha:technik} beschriebe
 	\item Mikrofon zur Erkennung von Sprachbefehlen
 	\item Kamera mit entsprechenden Bibliotheken zur Erkennung von Bar- und QR-Codes
 \end{itemize}
-Die, für die oben beschriebene \acf{AuthN} übliche Eingabemethode, die textbasierte Eingabe über eine entsprechende Tastatur ist über die \ac{AR}-Brille ohne zusätzliche Hardware nicht möglich. Zusätzliche Hardware wäre zu dem umständlich und würde die Bedienung des Gerätes erschweren. Die Usability ist bei dieser Eingabemethode nicht gegeben.\\
+Die für die oben beschriebene \acf{AuthN} übliche Eingabemethode der textbasierten Eingabe über eine entsprechende Tastatur ist über die \ac{AR}-Brille ohne zusätzliche Hardware nicht möglich. Zusätzliche Hardware wäre unpraktisch und würde die Bedienung des Gerätes erschweren.\\
 
-Die Eingabe der Anmeldedaten muss daher über andere Eingabemethoden stattfinden und wird in 2 Teile unterteilt:
+Die Eingabe der Anmeldedaten muss daher über andere Eingabemethoden stattfinden. Für \acs{SMAR} wird die Eingabe vereinfacht und in zwei Komponenten unterteilt:
 \begin{enumerate}
 	\item Eingabe/Auswahl des Benutzernamens
 	\item Eingabe des Passworts
 \end{enumerate}
 
-Der Benutzername ist - im Gegensatz - zum Passwort zumindest gegenüber den anderen Mitarbeitern, die Zugriff auf die Brille haben, kein Geheimnis und kann bekannt sein.\\
-Die Eingabe des Benutzernamens über ein Sprachkommando gestaltet sich schwierig und als nicht effektiv. Im Rahmen dieser Arbeit wurde ein Test durchgeführt, der die Spracherkennung testete. Dies funktionierte bei vordefinierten Sprachbefehlen und bei wenig Störgeräuschen zufriedenstellend. Für die Eingabe von Benutzernamen ist dies jedoch nicht geeignet, da die Anmeldung sowohl in ruhigen Umgebungen, als auch lauten Filialen schnell funktionieren muss. Darüber hinaus kann die Erkennung von Eigennamen, die eventuell durch verschiedene Sprachen geprägt sind, nicht zuverlässig garantiert werden.\\
-Die Entscheidung fiel daher auf eine Liste, die beim Starten der App vom Server abgerufen wird und auf der LogIn-Seite der App angezeigt wird. Der Server liefert eine Liste mit Benutzern zurück, die für die Brille zugelassen sind\footnote{Siehe Kapitel \ref{cha:authn_server} \nameref{cha:authn_server}}. Der Benutzer wählt über die Knöpfe an der Brille den Benutzernamen aus der Liste aus und wird anschließend zur Eingabe des gültigen Passworts aufgefordert. Das folgende Mockup zeigt schematisch diese Liste.\\
+Die Eingabe des Benutzernamens über ein Sprachkommando gestaltet sich schwierig. Im Rahmen dieser Arbeit wurde ein Test der Spracherkennung durchgeführt. Diese funktionierte bei vordefinierten Sprachbefehlen und bei wenig Störgeräuschen zufriedenstellend. Für die Eingabe von Benutzernamen ist dies jedoch nicht geeignet, da die Anmeldung sowohl in ruhigen Umgebungen, als auch lauten Filialen schnell funktionieren muss. Darüber hinaus kann die Erkennung von Eigennamen, die eventuell durch verschiedene Sprachen geprägt sind, nicht zuverlässig garantiert werden.\\
+Der Login auf der Brille wurde daher über die Auswahl des Nutzernamens aus einer Liste umgesetzt, die beim Starten der App vom Server abgerufen wird und auf der Login-Seite der App angezeigt wird. Der Server liefert eine Liste mit Benutzern zurück, die für die Brille zugelassen sind.\footnote{Siehe Kapitel \ref{cha:authn_server} \nameref{cha:authn_server}} Der Benutzer wählt über die Knöpfe an der Brille seinen Benutzernamen aus der Liste aus und wird anschließend zur Eingabe des gültigen Passworts aufgefordert. Das folgende Mockup zeigt schematisch diese Liste.\\
+
 \begin{figure}[H]
 	\centering
 	{\includegraphics[scale=0.7]{Bilder/Abbildungen/login_mockup.png}}
 	\caption{Login Mockup}
 	\label{fig:sequenz_warenannnahme}
 \end{figure}
-Dies garantiert eine, nach den Möglichkeiten der Vuzix M100 gegebenen, zuverlässige und schnelle Anmeldung. Diese Anmeldemethode ist verständlicherweise nur für eine geringe Anzahl an Benutzern (<30) effizient, jedoch wird davon ausgegangen, dass in einem Supermarkt in der Regel nicht mehr als 20 bis 30 Angestellte mit der Warenannahme/-einräumung beauftragt werden.\\
 
-Auch bei der Passworteingabe gibt es ähnliche Probleme, jedoch muss hier darauf geachtet werden, dass Passwörter ausschließlich dem jeweiligen Benutzer (und eventuell dem Systemadministrator) bekannt sein dürfen \bzw nur im Besitz des Benutzers liegen dürfen. Eine Auswahl aus einer Liste und die Eingabe per Spracherkennung sind somit nicht nur aus Sicht der Bedienung, sondern vor Allem aus Sicherheitsgründen nicht praktikabel.\\
-Ein Passwort, das auf Gesten basiert, ist aufgrund der geringen Anzahl an Variationen und möglichen Kombinationen ebenfalls nicht sicher.\\
-Die Passworteingabe muss daher über die vierte Eingabemöglichkeit getätigt werden: die Eingabe über Barcodes/QR-Codes mit Hilfe der Kamera.\\
+Dies garantiert eine, entsprechend den eingeschränkten Möglichkeiten der Vuzix M100, zuverlässige und schnelle Anmeldung. Diese Anmeldemethode ist verständlicherweise nur für eine geringe Anzahl an Benutzern (ca. 30) effizient, jedoch wird davon ausgegangen, dass in einem Supermarkt in der Regel nicht mehr als 20 bis 30 Angestellte mit der Warenannahme/-einräumung beauftragt werden.\\
+Die Anzeige aller möglichen Nutzernamen könnte ein Sicherheitsrisiko darstellen. Der Benutzername ist -- im Gegensatz zum Passwort -- zumindest gegenüber den anderen Mitarbeitern, die Zugriff auf die Brille haben, kein Geheimnis und kann bekannt sein.\\
 
-Sobald der Benutzer seinen Benutzernamen aus der Liste ausgewählt hat, wird die Kamera, sowie eine Bibliothek zur Erkennung von QR-Codes gestartet. Der Benutzer scannt seinen persönlichen QR-Code, der in einen String mit einer Länge von 64 Zeichen umgewandelt wird. Diese Daten werden an den Server weitergeleitet, der die Anmeldung schließlich bestätigt (bei korrekter Kombination) oder widerruft (bei ungültigen Login-Daten). Bei korrekter Authentifizierung, gibt der Server einen \ac{JWT} zurück, welcher bei einer Anfrage an den Server mitgeschickt werden muss und auf Korrektheit überprüft wird. Bei einem widerrufenen Login erhält die App ausschließlich eine Fehlermeldung, weitere Anfragen werden aufgrund des fehlenden \ac{JWT} nicht ausgeführt.\\
+Auch bei der Passworteingabe gibt es ähnliche Probleme, jedoch muss hier darauf geachtet werden, dass Passwörter ausschließlich dem jeweiligen Benutzer (und eventuell dem Systemadministrator) bekannt sein dürfen \bzw nur im Besitz des Benutzers liegen dürfen. Eine Auswahl aus einer Liste und die Eingabe per Spracherkennung sind somit nicht nur aus Sicht der Bedienung, sondern vor allem aus Sicherheitsgründen nicht praktikabel.\\
+Ein Passwort, das auf Gesten basiert, ist aufgrund der geringen Anzahl an Variationen und möglichen Kombinationen ebenfalls nicht sicher. Die Passworteingabe muss daher über die vierte Eingabemöglichkeit getätigt werden: die Eingabe über Barcodes/QR-Codes mit Hilfe der Kamera.\\
 
-Der QR-Code kann mit Hilfe der Weboberfläche generiert werden oder es kann ein bestehender Code aktiviert werden (s. Kapitel: \ref{cha:impl_web}\nameref{cha:impl_web}). Der QR-Code kann durch den Benutzer aufbewahrt werden, sollte der Code in unbefugte Hände gelangen, kann ein neuer Code generiert werden. Außerdem ist es möglich vorhandene Codes, wie \zB ein Code auf der persönlichen Firmen-Zugangskarte des Benutzers, zu verwenden.\\
+Sobald der Benutzer seinen Benutzernamen aus der Liste ausgewählt hat, wird die Kamera, sowie eine Bibliothek zur Erkennung von QR-Codes gestartet. Der Benutzer scannt seinen persönlichen QR-Code, der in einen String mit einer Länge von 64 Zeichen umgewandelt wird. Diese Daten werden an den Server weitergeleitet, der die Anmeldung schließlich bestätigt (bei korrekter Kombination) oder widerruft (bei ungültigen Login-Daten). Bei korrekter Authentifizierung gibt der Server einen \acl{JWT} zurück, welcher bei allen weiteren Anfragen an den Server mitgeschickt werden muss und auf dort auf Korrektheit überprüft wird. Bei einem ungültigen Login erhält die App ausschließlich eine Fehlermeldung, weitere Anfragen werden aufgrund des fehlenden \acs{JWT} nicht ausgeführt.\\
 
+Der QR-Code kann mit Hilfe der Weboberfläche generiert werden, oder es kann ein bestehender Code aktiviert werden (siehe Kapitel \ref{cha:impl_web} (\nameref{cha:impl_web})). Der QR-Code kann durch den Benutzer aufbewahrt werden; sollte der Code in unbefugte Hände gelangen, kann ein neuer Code generiert werden. Außerdem ist es möglich, vorhandene Codes zu verwenden, wie \zB ein Code auf der persönlichen Firmen-Zugangskarte des Benutzers\\
 Die benötigte Sicherheit und das effiziente Anmelden an die Anwendung ist mit dieser Lösung gewährleistet.
 
 \subsubsection{\acs{AuthN} gegenüber dem Server}
 \label{cha:authn_server}
 Im letzten Kapitel wurde beschrieben, wie sichergestellt wird, dass sich nur bekannte und authorisierte Benutzer anmelden können. Dass dies nicht unbedingt ausreichend ist, verdeutlicht das folgende Szenario:
-\begin{itemize}
-	\item Ein Angestellter einer Filiale, der mit der Warenannahme beauftragt ist und somit für die Nutzung der Brille freigeschaltet ist, lässt seinen Firmenausweis beim Einräumen in einem öffentlichen Bereich liegen. Auf dem Firmenausweis sind sowohl der vollständige Name, als auch der QR-Code, der für die Authentifizierung genutzt wird, aufgedruckt. Ein Angreifer, der Zugriff auf das System bekommen möchte, entdeckt dies und fotografiert den Firmenausweis ab.
-\end{itemize}
-Im oben dargestellten Szenario sind die persönlichen Benutzerdaten - ohne Wissen des Opfers - gestohlen worden. Der Angreifer hat zwar keinen Zugriff auf eine im Markt vorhandene \ac{AR}-Brille, aber eventuell ist er im Besitz der App und hat diese auf einem eigenen Android-Gerät installiert. Ist das Firmennetzwerk zusätzlich noch schlecht abgesichert, \zB durch Nutzung des \ac{WEP} Verschlüsselungsprotokolls, so kann sich der Angreifer mit seinem eigenen Android-Gerät und über die Anmeldedaten des Angestellten auf dem Server authentifizieren.\\
-Er kann den Warenbestand nun entsprechend manipulieren und der Filiale Schaden zufügen.\\
+\begin{quote}
+\textit{Ein Angestellter einer Filiale, der mit der Warenannahme beauftragt ist und somit für die Nutzung der Brille freigeschaltet ist, lässt seinen Firmenausweis beim Einräumen in einem öffentlichen Bereich liegen. Auf dem Firmenausweis sind sowohl der vollständige Name, als auch der QR-Code, der für die Authentifizierung genutzt wird, aufgedruckt. Ein Angreifer, der Zugriff auf das System bekommen möchte, entdeckt dies und fotografiert den Firmenausweis ab.}
+\end{quote}
+Im oben dargestellten Szenario sind die persönlichen Benutzerdaten -- ohne Wissen des Opfers -- gestohlen worden. Der Angreifer hat zwar keinen Zugriff auf eine im Markt vorhandene \ac{AR}-Brille, aber eventuell ist er im Besitz der App und hat diese auf einem eigenen Android-Gerät installiert. Ist das Firmennetzwerk zusätzlich noch schlecht abgesichert, \zB durch Nutzung des veralteten \ac{WEP} Verschlüsselungsprotokolls, so kann sich der Angreifer mit seinem eigenen Android-Gerät und über die Anmeldedaten des Angestellten auf dem Server authentifizieren. Er kann den Warenbestand nun entsprechend manipulieren und der Filiale Schaden zufügen.\\
 
-Um dies zu verhindern, wurde eine Zwei-Faktor-Authentifizierung in die Anwendung integriert. Somit muss sich nicht nur der Benutzer, sondern ebenfalls die \ac{AR}-Brille \bzw das benutzte Gerät gegenüber dem Server authentifizieren.\\
+Um dies zu verhindern, wurde eine Zwei-Faktor-Authentifizierung in die Anwendung integriert. Somit muss sich nicht nur der Benutzer, sondern auch die \ac{AR}-Brille \bzw das benutzte Gerät gegenüber dem Server authentifizieren.\\
+Eine \ac{MAC}-Adresse und somit das dazugehörige Gerät werden durch einen Eintrag in der Datenbank registriert. Für jedes Gerät wird ein Name, sowie die \ac{MAC}-Adresse vergeben und ein Flag gesetzt, ob dieses Gerät aktuell aktiv sein soll. Das registrierte Gerät kann sich somit gegenüber dem Server erfolgreich identifizieren.\\
 
-Die App liest dazu beim Starten der Anwendung die \ac{MAC}-Adresse des Gerätes aus und speichert diese in der für den Login zuständigen Klasse ab. Sobald sich der Benutzer anmeldet (seinen Benutzernamen ausgewählt hat und den persönlichen QR-Code eingescannt hat), wird die \ac{MAC}-Adresse an die Login-Daten angehängt und eine Anfrage (Ausführen der "authenticate"-Anwendung der REST Api\footnote{s. Kapitel \ref{cha:impl_api}\nameref{cha:impl_api}}) an den Server mit allen Daten (\ac{MAC}-Adresse, Benutzer, Passwort) geschickt. Ist die \ac{MAC}-Adresse gültig, liefert der Server den \ac{JWT}, ansonsten gibt es eine Fehlermeldungen und alle weiteren Anfragen werden abgelehnt.\\
-
-Eine \ac{MAC}-Adresse und somit das dazugehörige Gerät werden durch einen Eintrag in der Datenbank registriert. Für jedes Gerät wird ein Name, sowie die \ac{MAC}-Adresse vergeben und ein Flag gesetzt, ob dieses Gerät aktuell aktiv sein soll. Das registrierte Gerät kann sich somit gegenüber dem Server erfolgreich identifizieren.
+Die App liest dazu beim Starten der Anwendung die \ac{MAC}-Adresse des Gerätes aus und speichert diese in der für den Login zuständigen Klasse ab. Die \ac{MAC}-Adresse ist die Hardware-Adresse des Gerätes, hat einen gerätegebundenen, einzigartigen Charakter und ist so ein hinreichendes Identifizierungsmerkmal eines Gerätes.\\
+Sobald sich der Benutzer anmeldet (also seinen Benutzernamen ausgewählt hat und den persönlichen QR-Code eingescannt hat), wird die \ac{MAC}-Adresse an die Login-Daten angehängt und eine Anfrage (durch Ausführen des \emph{Authentication}-Service der REST API\footnote{s. Kapitel \ref{cha:impl_api}\nameref{cha:impl_api}}) an den Server mit allen Daten (\ac{MAC}-Adresse, Benutzer, Passwort) geschickt. Ist die \ac{MAC}-Adresse gültig und im System freigegeben, liefert der Server den \ac{JWT}, ansonsten gibt es eine Fehlermeldung und alle weiteren Anfragen werden abgelehnt.
 
 \subsection{\acf{AuthZ}}
-Die \acl{AuthZ} beschreibt - im Gegensatz zur \acl{AuthN} - nicht die Identifikation einer Person/eines Gerätes, sondern prüft die Berechtigungen der bereits vorhandenen Identifikation. Für eine \acl{AuthZ} ist daher eine bereits erfolgreiche \acl{AuthN} erforderlich.
-
-Bei der Benutzung der App gibt es sowohl für das Gerät, als auch für den Benutzer ausschließlich 2 Berechtigungsstufen:
+Die \acl{AuthZ} prüft die Berechtigungen der bereits vorhandenen Identifikation. Bei der Benutzung der App gibt es sowohl für das Gerät, als auch für den Benutzer ausschließlich 2 Berechtigungsstufen:
 \begin{itemize}
-	\item Benutzer/Gerät hat die Berechtigung Daten zu lesen/bearbeiten/löschen,
-	\item Benutzer/Gerät hat keine Berechtigung auf die Daten zuzugreifen.
+	\item Benutzer/Gerät hat die Berechtigung, Daten zu lesen/bearbeiten/löschen,
+	\item Benutzer/Gerät hat keine Berechtigung, auf die Daten zuzugreifen.
 \end{itemize}
 
 Die \acl{AuthZ} findet daher zeitgleich zu der \acl{AuthN} statt. Der \ac{JWT} wird ausschließlich bei erfolgreicher Identifikation und Berechtigung zurückgegeben, ansonsten gibt es eine entsprechende Fehlermeldung.\\
 
-Das Gerät autorisiert sich gegenüber dem Server über das Flag, welches bestimmt, ob das Gerät aktuell aktiv sein soll. Ist dieses Flag gesetzt, besitzt dieses Gerät (\zB \acs{AR}-Brille) volle Berechtigung und weitere Anfragen werden bei gültigem \ac{JWT} übergeben, ansonsten werden alle weiteren Anfragen abgelehnt. Diese \acl{AuthZ} macht Sinn, sollte das Gerät kurzfristig nicht in der Filiale sein. Das Gerät kann gesperrt und reaktiviert werden, ohne dass es gelöscht und anschließend wieder registriert werden muss.\\
+Das Gerät autorisiert sich gegenüber dem Server über das Flag, welches bestimmt, ob das Gerät aktuell im System aktiv ist. Ist dieses Flag gesetzt, besitzt dieses Gerät (\zB \acs{AR}-Brille) volle Berechtigung zur Nutzung der \acs{API} und weitere Anfragen werden bei gültigem \ac{JWT} übergeben, ansonsten werden alle weiteren Anfragen abgelehnt. Diese \acl{AuthZ} macht Sinn, sollte das Gerät vorübergehend aus dem operativen Betrieb genommen werden. Das Gerät kann gesperrt und reaktiviert werden, ohne dass es aus dem System gelöscht und anschließend wieder registriert werden muss.\\
 
-Da ein Benutzer ebenfalls nur diese zwei Berechtigungsstufen beim Benutzen der App besitzt, wird die Anfrage ähnlich der Brille ausgeführt. Ein Benutzer besitzt in seinem Datenbank-Eintrag in der Spalte \glqq role\_device\grqq~~ entweder eine 1 (true) und wird autorisiert oder eine 0 (false) und der Server meldet einen entsprechenden Fehler zurück.\\
+Da ein Benutzer ebenfalls nur diese zwei Berechtigungsstufen beim Benutzen der App besitzt, wird die Anfrage ähnlich der Brille ausgeführt. Ein Benutzer besitzt in seinem Datenbank-Eintrag in der Spalte \emph{role\_device}~ entweder eine 1 (true) und wird zur Nutzung der Brille autorisiert, oder eine 0 (false) und der Server meldet einen entsprechenden Fehler zurück.\\
 
-Weitere Berechtigungsstufen werden an dieser Stelle nicht benötigt, da ein Angestellter, der mit der Warenannahme oder -einräumung beauftragt ist, die gesamte App-Funktionalität benutzt und ein Angestellter, der keine der beiden Aufgaben benötigt, keinen Zugriff auf die Brille benötigt.
+Weitere Berechtigungsstufen werden an dieser Stelle nicht benötigt, da ein Angestellter, der mit der Warenannahme oder -einräumung beauftragt ist, die gesamte App-Funktionalität inklusive aller Schreibrechte benutzt, jedoch ein Angestellter, der keine der Aufgaben durchführt, von vornherein keinen Zugriff auf die Smartglass haben muss.
